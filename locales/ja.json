@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "serp_checker": "セルプチェッカー",
+    "light": "ライト",
+    "dark": "暗い",
+    "system": "システム"
+  },
+  "frontend": {
+    "go_to_homepage": "ホームページへ",
+    "page_not_found": "ページが見つかりません"
+  }
+}

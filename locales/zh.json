@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "serp_checker": "搜索引擎优化检查器",
+    "light": "亮",
+    "dark": "暗",
+    "system": "系统"
+  },
+  "frontend": {
+    "go_to_homepage": "去首页",
+    "page_not_found": "找不到网页"
+  }
+}

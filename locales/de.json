@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "serp_checker": "Serp-Checker",
+    "light": "Licht",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "frontend": {
+    "go_to_homepage": "Gehen Sie zur Startseite",
+    "page_not_found": "Seite nicht gefunden"
+  }
+}
