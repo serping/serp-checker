@@ -7,9 +7,7 @@ export const HomeFormSchema = z.object({
   lang: z.string(),
   country: z.string(),
   device: z.enum(appConfig.devices),
-  location: z.string().min(2, {
-    message: "location must be at least 2 characters.",
-  }),
+  location: z.string().optional()
 })
 export type HomeFormValues = z.infer<typeof HomeFormSchema>;
 
