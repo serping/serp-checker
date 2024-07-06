@@ -23,13 +23,14 @@ import { language } from "@/language";
 import apiClient from "@/lib/api";
 import { HomeFormSchema, type HomeFormValues, type Location } from "@/shema/index";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { debounce } from 'lodash';
 import {
   MapPin,
   Monitor,
   Search,
   Smartphone
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export function SerpForm({
@@ -82,14 +83,27 @@ export function SerpForm({
     setSubmited(true);
   }
 
+  const fetchLocations = (value: string) => {
+    apiClient.get('/location', { params: { q: value, num: 20 } })
+      .then((res) => {
+        if (res.data) {
+          setLocations(res.data);
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  };
+
+  const debouncedFetchLocations = useCallback(
+    debounce((value: string) => {
+      fetchLocations(value);
+    }, 500),
+    []
+  );
+
   const locationOnInputValueChange =(value: string)=>{
-    apiClient.get('/location',{ params: { q: value, num: 20}}).then((res)=>{
-      if(res.data){
-        setLocations(res.data)
-      }
-    }).catch((error)=>{
-      console.log("error",error)
-    })
+    debouncedFetchLocations(value);
   }
 
   const locationResults = useMemo(()=>{
@@ -177,17 +191,6 @@ export function SerpForm({
                   </Select>
                   <FormMessage />
               </FormItem>
-                // <FormItem> 
-                //   <FormControl>
-                //     <Combobox
-                //       className="w-full"
-                //       defaultValue={field.value as string}
-                //       onValueChange={(e) => {field.onChange(e);} }
-                //       frameworks={devices}
-                //     />
-                //   </FormControl>
-                //   <FormMessage />
-                // </FormItem>
               )}
             />
             <FormField
