@@ -11,9 +11,10 @@ export function Main({
 }: Readonly<{ 
   params: { locale: string; };
 }>) {
+  const locale = params.locale;
   const defaultValues =  {
     query: "",
-    locale: params.locale,
+    locale: locale === "zh" ? "zh-Hans" : locale,
     country: "us",
     location: "",
     device: "desktop" as DeviceType,
