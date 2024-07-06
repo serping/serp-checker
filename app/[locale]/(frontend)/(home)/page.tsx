@@ -3,7 +3,7 @@ import { Main } from "@/frontend/home/main";
 export default function Home({
   params
 }: Readonly<{ 
-  params: { locale: string; country: string; };
+  params: { locale: string; };
 }>) { 
   return (
     <div>

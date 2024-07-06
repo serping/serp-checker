@@ -9,12 +9,12 @@ import { Results } from "./results";
 export function Main({ 
   params
 }: Readonly<{ 
-  params: { locale: string; country: string };
+  params: { locale: string; };
 }>) {
   const defaultValues =  {
     query: "",
     locale: params.locale,
-    country: params.country,
+    country: "us",
     location: "",
     device: "desktop" as DeviceType,
   }
