@@ -1,5 +1,4 @@
 import { GeoTargets, csvData, dataLoaded, type Row } from "@/models/GeoTrgets";
-import { NextResponse } from 'next/server';
 
 GeoTargets().catch((error: any) => {
   console.error('Failed to load CSV data:', error);
@@ -37,7 +36,7 @@ export async function GET(req: Request) {
       }
     });
 
-    return new NextResponse(
+    return new Response(
       JSON.stringify({ data: rows, total_count }),
       {
         status: 200,
@@ -46,7 +45,7 @@ export async function GET(req: Request) {
     );
 
   } catch (error: any) {
-    return new NextResponse(
+    return new Response(
       JSON.stringify({ error: error.message }),
       {
         status: 500,

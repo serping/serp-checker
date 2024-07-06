@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "serp_checker": "Проверка SERP",
+    "light": "Светлая",
+    "dark": "Темная",
+    "system": "Системная"
+  },
+  "frontend": {
+    "go_to_homepage": "Перейти на главную страницу",
+    "page_not_found": "Страница не найдена"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "serp_checker": "Serp Checker",
+    "light": "라이트",
+    "dark": "다크",
+    "system": "시스템"
+  },
+  "frontend": {
+    "go_to_homepage": "홈페이지로 이동",
+    "page_not_found": "페이지를 찾을 수 없음"
+  }
+}

@@ -34,17 +34,13 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export function SerpForm({
+  defaultValues,
   onSubmit
 }:{
-  onSubmit?: (values: HomeFormValues) => void;
+  defaultValues: HomeFormValues;
+  onSubmit?: ({values}:{values: HomeFormValues}) => void;
 }) {
-  const defaultValues =  {
-    query: "",
-    lang: "en",
-    country: "us",
-    location: "",
-    device: "desktop" as DeviceType,
-  }
+  
   const devices: {
     value: DeviceType;
     label: string;
@@ -73,7 +69,7 @@ export function SerpForm({
 
   useEffect(()=>{
     if(submited){
-      if(onSubmit) onSubmit(values);
+      if(onSubmit) onSubmit({values});
       setSubmited(false)
     }
   },[submited])
@@ -121,7 +117,7 @@ export function SerpForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <div className="flex px-4">
+        <div className="flex px-8">
           <div className="grid grid-cols-5 gap-4 w-full">
             <FormField
               control={form.control}
@@ -130,7 +126,7 @@ export function SerpForm({
                 <FormItem nospace={true} className="relative">
                   <Search size={20} className="absolute left-3.5 top-3 text-muted-foreground" />
                   <FormControl>
-                    <Input type="search" className="pl-11" placeholder="openai" {...field} />
+                    <Input type="search" className="pl-11" placeholder="Search ..." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -155,7 +151,7 @@ export function SerpForm({
             />
             <FormField
               control={form.control}
-              name="lang"
+              name="locale"
               render={({ field }) => (
                 <FormItem> 
                   <FormControl>
