@@ -1,10 +1,5 @@
 "use client"
 
-import { language } from "@/language";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import { Combobox } from "@/components/ui/combobox";
 import {
@@ -15,6 +10,15 @@ import {
   FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { countries } from "@/country";
+import { language } from "@/language";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  MapPin,
+  Search
+} from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
  
 const formSchema = z.object({
@@ -22,7 +26,10 @@ const formSchema = z.object({
     message: "query must be at least 2 characters.",
   }),
   lang: z.string(),
-  country: z.string()
+  country: z.string(),
+  location: z.string().min(2, {
+    message: "location must be at least 2 characters.",
+  }),
 })
 
 
@@ -32,6 +39,9 @@ export function SerpForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       query: "",
+      lang: "en",
+      country: "us",
+      location: "",
     },
   })
 
@@ -41,40 +51,76 @@ export function SerpForm() {
     console.log(values)
   }
   
-  return (  
+  return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-4 gap-4">
-        <FormField
-          control={form.control}
-          name="query"
-          render={({ field }) => (
-            <FormItem> 
-              <FormControl>
-                <Input placeholder="openai" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="lang"
-          render={({ field }) => (
-            <FormItem> 
-              <FormControl>
-                <Combobox
-                  className="w-full"
-                  defaultValue={field.value as string}
-                  onValueChange={(e) => {field.onChange(e);} }
-                  frameworks={language.map(item => { return { value: item.code, label: `${item.name} (${item.code})` } })}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="flex px-4">
+          <div className="grid grid-cols-5 gap-4 w-full">
+            <FormField
+              control={form.control}
+              name="query"
+              render={({ field }) => (
+                <FormItem nospace={true} className="relative">
+                  <Search className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground" />
+                  <FormControl>
+                    <Input type="search" className="pl-10" placeholder="openai" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="lang"
+              render={({ field }) => (
+                <FormItem> 
+                  <FormControl>
+                    <Combobox
+                      className="w-full"
+                      defaultValue={field.value as string}
+                      onValueChange={(e) => {field.onChange(e);} }
+                      frameworks={language.map(item => { return { value: item.code, label: `${item.name}  (${item.code.toUpperCase()})` } })}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="country"
+              render={({ field }) => (
+                <FormItem> 
+                  <FormControl>
+                    <Combobox
+                      className="w-full"
+                      defaultValue={field.value as string}
+                      onValueChange={(e) => {field.onChange(e);} }
+                      frameworks={countries.map(item => { return { value: item.code, label: `${item.flag} ${item.name} (${item.code.toUpperCase()})` } })}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="location"
+              render={({ field }) => (
+                <FormItem nospace={true} className="relative">
+                  <MapPin size={20} className="absolute left-3.5 top-3 text-muted-foreground" />
+                  <FormControl>
+                    <Input type="search" className="pl-10" placeholder="sera" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <Button type="submit">Look Up</Button>
+        </div>
       </form>
+      
     </Form>
   );
 }

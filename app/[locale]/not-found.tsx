@@ -1,5 +1,5 @@
-import { NotFound } from "@/frontend/shared/not-found";
-
-export default function NotFoundPage() {
-  return <NotFound />;
+import { redirect } from 'next/navigation';
+ 
+export default function RootPage() {
+  redirect('/404');
 }

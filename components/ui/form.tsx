@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
+import * as React from "react"
 import {
   Controller,
   ControllerProps,
@@ -12,8 +12,8 @@ import {
   useFormContext,
 } from "react-hook-form"
 
-import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+import { cn } from "@/lib/utils"
 
 const Form = FormProvider
 
@@ -72,15 +72,15 @@ const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 )
 
-const FormItem = React.forwardRef<
+const FormItem = React.forwardRef< 
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement>& { nospace?: boolean;  }
+>(({ nospace = false, className, ...props }, ref) => {
   const id = React.useId()
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div ref={ref} className={cn(nospace ? "" : "space-y-2", className)} {...props} />
     </FormItemContext.Provider>
   )
 })
@@ -167,12 +167,8 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = "FormMessage"
 
 export {
-  useFormField,
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-  FormField,
+  Form, FormControl,
+  FormDescription, FormField, FormItem,
+  FormLabel, FormMessage, useFormField
 }
+
