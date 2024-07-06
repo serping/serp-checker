@@ -1,7 +1,7 @@
 "use client"
 
 import { Check, ChevronsUpDown } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -26,6 +26,8 @@ type Props = {
   placeholder?: string;
   defaultSelectLabel?: string;
   frameworks:{
+    disabled?: boolean;
+    icon?: React.ReactNode;
     value: string;
     label: string;
   }[]
@@ -53,7 +55,9 @@ export function Combobox({
       setContentWidth(buttonRef.current.offsetWidth);
     }
   }, [buttonRef.current]);
-
+  const currentFramework = useMemo(()=>{
+    return frameworks.find((framework) => framework.value === value)
+  }, [value])
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -61,12 +65,17 @@ export function Combobox({
           size="lg"
           ref={buttonRef}
           variant="outline"
-          role="combobox"
+          role="combobox" 
           aria-expanded={open}
-          className={cn("justify-between", className)}
+          className={cn("justify-between px-4", className)}
         >
           {value
-            ? frameworks.find((framework) => framework.value === value)?.label
+          ? (
+            <span className="flex items-center">
+              {(currentFramework?.icon ? currentFramework?.icon : null)}
+              <span className={currentFramework?.icon ? "ml-2" : ""}>{currentFramework?.label}</span>
+            </span>
+            )
             : defaultSelectLabel}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -79,10 +88,11 @@ export function Combobox({
             <CommandGroup>
               {frameworks.map((framework) => (
                 <CommandItem
+                  disabled={framework.disabled ?? false}
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
+                    setValue(currentValue)
                     setOpen(false)
                   }}
                 >

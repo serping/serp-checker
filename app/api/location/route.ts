@@ -1,33 +1,7 @@
-import { parse } from '@fast-csv/parse';
-import fs from 'fs';
+import { GeoTargets, csvData, dataLoaded, type Row } from "@/models/GeoTrgets";
 import { NextResponse } from 'next/server';
-import path from 'path';
 
-export const dynamic = 'force-dynamic';
-type Row = Record<string, string>;
-
-const filePath = path.join(process.cwd(), 'data', 'geotargets.csv');
-
-let csvData: Row[] = [];
-let dataLoaded = false;
-async function loadCsvData(): Promise<void> {
-  return new Promise<void>((resolve, reject) => {
-    fs.createReadStream(filePath)
-      .pipe(parse({ headers: true }))
-      .on('data', (row: Row) => {
-        csvData.push(row);
-      })
-      .on('end', () => {
-        dataLoaded = true;
-        resolve();
-      })
-      .on('error', (error) => {
-        reject(error);
-      });
-  });
-}
-
-loadCsvData().catch((error) => {
+GeoTargets().catch((error: any) => {
   console.error('Failed to load CSV data:', error);
 });
 

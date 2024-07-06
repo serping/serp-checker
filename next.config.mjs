@@ -4,7 +4,7 @@ const withNextIntl = nextIntlPlugin("./i18n.ts");
 
 const nextConfig = {
   eslint: {
-    dirs: ["app", "lib", "components"],
+    dirs: ["app", "lib", "components", "models"],
   },
 };
 

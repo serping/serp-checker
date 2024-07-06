@@ -1,12 +1,9 @@
-import { SerpForm } from "@/frontend/home/form";
+import { Main } from "@/frontend/home/main";
 
 export default function Home() {
   return (
     <div>
-      <SerpForm />
-      <div className="container">
-        Home
-      </div>
+      <Main />
     </div>
   );
 }

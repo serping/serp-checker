@@ -10,50 +10,72 @@ import {
   FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { DeviceType } from "@/config";
 import { countries } from "@/country";
 import { language } from "@/language";
+import { HomeFormSchema, type HomeFormValues } from "@/shema/index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   MapPin,
-  Search
+  Monitor,
+  Search,
+  Smartphone
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-
  
-const formSchema = z.object({
-  query: z.string().min(2, {
-    message: "query must be at least 2 characters.",
-  }),
-  lang: z.string(),
-  country: z.string(),
-  location: z.string().min(2, {
-    message: "location must be at least 2 characters.",
-  }),
-})
-
-
-export function SerpForm() {
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      query: "",
-      lang: "en",
-      country: "us",
-      location: "",
+export function SerpForm({
+  onSubmit
+}:{
+  onSubmit?: (values: HomeFormValues) => void;
+}) {
+  const defaultValues =  {
+    query: "",
+    lang: "en",
+    country: "us",
+    location: "",
+    device: "desktop" as DeviceType,
+  }
+  const devices: {
+    value: DeviceType;
+    label: string;
+    disabled?: boolean;
+    icon: React.ReactNode;
+  }[] = [
+    {
+      value: "desktop",
+      label: "Desktop",
+      icon: <Monitor size={20} className="text-muted-foreground" />
     },
+    {
+      value: "mobile",
+      label: "Mobile (Coming Soon..)",
+      disabled: true,
+      icon: <Smartphone size={20} className="text-muted-foreground" />
+    }
+  ]
+  const [submited, setSubmited] = useState<boolean>(false);
+  const [values, setValues] = useState<HomeFormValues>(defaultValues);
+  const form = useForm<HomeFormValues>({
+    resolver: zodResolver(HomeFormSchema),
+    defaultValues
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  useEffect(()=>{
+    if(submited){
+      if(onSubmit) onSubmit(values);
+      setSubmited(false)
+    }
+  },[submited])
+
+  function handleSubmit(values: HomeFormValues) {
+    setValues(values);
+    setSubmited(true);
   }
   
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(handleSubmit)}>
         <div className="flex px-4">
           <div className="grid grid-cols-5 gap-4 w-full">
             <FormField
@@ -64,23 +86,6 @@ export function SerpForm() {
                   <Search className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground" />
                   <FormControl>
                     <Input type="search" className="pl-10" placeholder="openai" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="lang"
-              render={({ field }) => (
-                <FormItem> 
-                  <FormControl>
-                    <Combobox
-                      className="w-full"
-                      defaultValue={field.value as string}
-                      onValueChange={(e) => {field.onChange(e);} }
-                      frameworks={language.map(item => { return { value: item.code, label: `${item.name}  (${item.code.toUpperCase()})` } })}
-                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -105,6 +110,41 @@ export function SerpForm() {
             />
             <FormField
               control={form.control}
+              name="lang"
+              render={({ field }) => (
+                <FormItem> 
+                  <FormControl>
+                    <Combobox
+                      className="w-full"
+                      defaultValue={field.value as string}
+                      onValueChange={(e) => {field.onChange(e);} }
+                      frameworks={language.map(item => { return { value: item.code, label: `${item.name}  (${item.code.toUpperCase()})` } })}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="device"
+              render={({ field }) => (
+                <FormItem> 
+                  <FormControl>
+                    <Combobox
+                      className="w-full"
+                      defaultValue={field.value as string}
+                      onValueChange={(e) => {field.onChange(e);} }
+                      frameworks={devices}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="location"
               render={({ field }) => (
                 <FormItem nospace={true} className="relative">
@@ -117,7 +157,7 @@ export function SerpForm() {
               )}
             />
           </div>
-          <Button type="submit">Look Up</Button>
+          <Button type="submit" className="ml-4">Look Up</Button>
         </div>
       </form>
       
