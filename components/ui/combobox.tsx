@@ -18,27 +18,31 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
+import { ComboboxFramework } from "@/shema"
 
+ 
 type Props = {
   className?: string;
+  inputClassName?: string;
+  canCancel?: boolean;
   defaultValue?: string;
+  onInputValueChange?: (currentValue: string) => void;
   onValueChange?: (currentValue: string) => void;
   placeholder?: string;
   defaultSelectLabel?: string;
-  frameworks:{
-    disabled?: boolean;
-    icon?: React.ReactNode;
-    value: string;
-    label: string;
-  }[]
+  defaultSelectIcon?: React.ReactNode;
+  frameworks: ComboboxFramework[]
 }
 export function Combobox({
   className,
   defaultValue = "",
   frameworks,
   placeholder = 'Search',
-  defaultSelectLabel= 'Select ...',
-  onValueChange
+  defaultSelectLabel = 'Select ...',
+  defaultSelectIcon,
+  canCancel = false,
+  onValueChange,
+  onInputValueChange
 }: Props) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(defaultValue);
@@ -55,9 +59,27 @@ export function Combobox({
       setContentWidth(buttonRef.current.offsetWidth);
     }
   }, [buttonRef.current]);
+
   const currentFramework = useMemo(()=>{
     return frameworks.find((framework) => framework.value === value)
-  }, [value])
+  }, [value]);
+
+  const CurrentLabel =()=>{
+    if(value){
+      const label = currentFramework?.short_label || currentFramework?.label;
+      return(
+        <span className="flex items-center">
+         {currentFramework?.icon ? currentFramework?.icon : null}
+         <span className={currentFramework?.icon ? "ml-2" : ""}>{label}</span>
+        </span> 
+      )
+    }else{
+      return(
+        <span className="flex items-center">{defaultSelectIcon ?  defaultSelectIcon : null  }<span className={defaultSelectIcon ? "ml-2" : ""}>{defaultSelectLabel}</span></span> 
+      )
+    }
+  }
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -69,20 +91,13 @@ export function Combobox({
           aria-expanded={open}
           className={cn("justify-between px-4", className)}
         >
-          {value
-          ? (
-            <span className="flex items-center">
-              {(currentFramework?.icon ? currentFramework?.icon : null)}
-              <span className={currentFramework?.icon ? "ml-2" : ""}>{currentFramework?.label}</span>
-            </span>
-            )
-            : defaultSelectLabel}
+          <CurrentLabel />
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className={cn("p-0", className)} style={{ width: contentWidth }}>
         <Command>
-          <CommandInput placeholder={placeholder} />
+          <CommandInput onValueChange={ onInputValueChange } placeholder={placeholder} />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
@@ -92,7 +107,11 @@ export function Combobox({
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue)
+                    if(canCancel){
+                      setValue(currentValue === value ? "" : currentValue)
+                    }else{
+                      setValue(currentValue) 
+                    }
                     setOpen(false)
                   }}
                 >

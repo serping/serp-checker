@@ -10,10 +10,18 @@ import {
   FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { DeviceType } from "@/config";
 import { countries } from "@/country";
 import { language } from "@/language";
-import { HomeFormSchema, type HomeFormValues } from "@/shema/index";
+import apiClient from "@/lib/api";
+import { HomeFormSchema, type HomeFormValues, type Location } from "@/shema/index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   MapPin,
@@ -21,9 +29,9 @@ import {
   Search,
   Smartphone
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
- 
+
 export function SerpForm({
   onSubmit
 }:{
@@ -56,6 +64,7 @@ export function SerpForm({
   ]
   const [submited, setSubmited] = useState<boolean>(false);
   const [values, setValues] = useState<HomeFormValues>(defaultValues);
+  const [locations, setLocations] = useState<Location[]>([]);
   const form = useForm<HomeFormValues>({
     resolver: zodResolver(HomeFormSchema),
     defaultValues
@@ -68,10 +77,32 @@ export function SerpForm({
     }
   },[submited])
 
-  function handleSubmit(values: HomeFormValues) {
+  const handleSubmit =(values: HomeFormValues)=>{
     setValues(values);
     setSubmited(true);
   }
+
+  const locationOnInputValueChange =(value: string)=>{
+    apiClient.get('/location',{ params: { q: value, num: 20}}).then((res)=>{
+      if(res.data){
+        setLocations(res.data)
+      }
+    }).catch((error)=>{
+      console.log("error",error)
+    })
+  }
+
+  const locationResults = useMemo(()=>{
+    return locations.map(item => {
+      return { 
+        short_label: item["Name"],
+        label: item["Canonical Name"],
+        value: item["Canonical Name"],
+        icon: <MapPin size={20} className="text-muted-foreground" /> 
+      }
+    } )
+  },[locations])
+
   
   return (
     <Form {...form}>
@@ -83,9 +114,9 @@ export function SerpForm({
               name="query"
               render={({ field }) => (
                 <FormItem nospace={true} className="relative">
-                  <Search className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground" />
+                  <Search size={20} className="absolute left-3.5 top-3 text-muted-foreground" />
                   <FormControl>
-                    <Input type="search" className="pl-10" placeholder="openai" {...field} />
+                    <Input type="search" className="pl-11" placeholder="openai" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -130,17 +161,33 @@ export function SerpForm({
               control={form.control}
               name="device"
               render={({ field }) => (
-                <FormItem> 
-                  <FormControl>
-                    <Combobox
-                      className="w-full"
-                      defaultValue={field.value as string}
-                      onValueChange={(e) => {field.onChange(e);} }
-                      frameworks={devices}
-                    />
-                  </FormControl>
+                <FormItem>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <div className="relative">
+                        <span className="absolute left-3.5 top-3 text-muted-foreground">{devices.find(item => item.value === field.value)?.icon}</span>
+                        <SelectTrigger className="pl-12" > 
+                          <SelectValue/> 
+                        </SelectTrigger>
+                      </div>
+                    </FormControl>
+                    <SelectContent>
+                      {devices.map(item => <SelectItem key={item.value} value={item.value} disabled={item.disabled}>{item.label}</SelectItem>)}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
-                </FormItem>
+              </FormItem>
+                // <FormItem> 
+                //   <FormControl>
+                //     <Combobox
+                //       className="w-full"
+                //       defaultValue={field.value as string}
+                //       onValueChange={(e) => {field.onChange(e);} }
+                //       frameworks={devices}
+                //     />
+                //   </FormControl>
+                //   <FormMessage />
+                // </FormItem>
               )}
             />
             <FormField
@@ -148,9 +195,16 @@ export function SerpForm({
               name="location"
               render={({ field }) => (
                 <FormItem nospace={true} className="relative">
-                  <MapPin size={20} className="absolute left-3.5 top-3 text-muted-foreground" />
                   <FormControl>
-                    <Input type="search" className="pl-10" placeholder="sera" {...field} />
+                    <Combobox
+                      canCancel={true}
+                      defaultSelectIcon={<MapPin size={20} className="text-muted-foreground" />}
+                      className="w-full"
+                      defaultSelectLabel="All Location"
+                      onInputValueChange={locationOnInputValueChange}
+                      onValueChange={(e) => {field.onChange(e);} }
+                      frameworks={locationResults}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
