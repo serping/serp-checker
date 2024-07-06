@@ -14,7 +14,7 @@ apiClient.interceptors.response.use(
     let message = "";
 
     if (error.response?.status === 403) {
-      message = "Unauthorized: x-api-key is not match";
+      message = "Unauthorized";
     } else if (error.response?.status === 402) {
       message = "Pick a plan to use this feature";
     } else {

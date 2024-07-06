@@ -3,8 +3,11 @@ import { serpingApiConfig } from "serping/types/config";
 const regions = ["us-east-1"] as const;
 const locales = ['en', 'es', 'ja', 'de', 'fr', 'zh'] as const;
 const defaultLocale = "en" as const;
+const devices = ["desktop", "mobile"] as const;
+
 export type RegionType = typeof regions[number];
 export type LocaleType = typeof locales[number];
+export type DeviceType = typeof devices[number];
 export type SerpingApiType = Record<RegionType, serpingApiConfig>
 
 export const appConfig = {
@@ -24,6 +27,7 @@ export const appConfig = {
     } as Record<LocaleType, string>
   },
   regions,
+  devices,
   serpingApi: {
     "us-east-1": {
       baseUrl: config.serpingApi["us-east-1"].baseUrl,

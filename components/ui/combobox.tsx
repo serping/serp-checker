@@ -1,9 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -18,54 +17,64 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { cn } from "@/lib/utils"
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-]
+type Props = {
+  className?: string;
+  defaultValue?: string;
+  onValueChange?: (currentValue: string) => void;
+  placeholder?: string;
+  defaultSelectLabel?: string;
+  frameworks:{
+    value: string;
+    label: string;
+  }[]
+}
+export function Combobox({
+  className,
+  defaultValue = "",
+  frameworks,
+  placeholder = 'Search',
+  defaultSelectLabel= 'Select ...',
+  onValueChange
+}: Props) {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(defaultValue);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [contentWidth, setContentWidth] = useState<number | undefined>(undefined);
+ 
+ 
+  useEffect(() => {
+    if(onValueChange) onValueChange(value);
+  }, [value]);
 
-export function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  useEffect(() => {
+    if (buttonRef.current) {
+      setContentWidth(buttonRef.current.offsetWidth);
+    }
+  }, [buttonRef.current]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
+          ref={buttonRef}
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className={cn("justify-between", className)}
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
+            : defaultSelectLabel}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className={cn("p-0", className)} style={{ width: contentWidth }}>
         <Command>
-          <CommandInput placeholder="Search framework..." />
+          <CommandInput placeholder={placeholder} />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
               {frameworks.map((framework) => (
                 <CommandItem
