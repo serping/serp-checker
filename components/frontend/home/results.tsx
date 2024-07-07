@@ -63,6 +63,7 @@ export function Results({
             switch( row.original.type ){
               case "normal":
               case "site_links":
+              case "book":
                 original = row.original as SerpNormal;
                 return (
                   <div className="flex items-center gap-2"> 
