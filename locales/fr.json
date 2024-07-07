@@ -11,7 +11,8 @@
     "home": {
       "position": "Position",
       "type": "Type de moteur de recherche",
-      "title": "Titre"
+      "title": "Titre",
+      "results_for": "résultats pour \"{query}\""
     }
   }
 }

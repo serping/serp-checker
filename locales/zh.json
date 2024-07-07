@@ -11,7 +11,8 @@
     "home": {
       "position": "位置",
       "type": "搜索引擎类型",
-      "title": "标题"
+      "title": "标题",
+      "results_for": "\"{query}\" 的结果"
     }
   }
 }

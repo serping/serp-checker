@@ -11,7 +11,8 @@
     "home": {
       "position": "位置",
       "type": "セルプタイプ",
-      "title": "タイトル"
+      "title": "タイトル",
+      "results_for": "\"{query}\"の結果"
     }
   }
 }

@@ -8,6 +8,7 @@ import { type HomeFormValues } from "@/shema/index";
 import { useEffect, useState } from "react";
 import { SerpJsonSchema, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { Results } from "./results";
+import { Status } from "./status";
 
 export function Main({ 
   params
@@ -77,8 +78,9 @@ export function Main({
   return (
     <div>
       <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} />
+      <Status searchParams={searchParams} />
       {loading && <SkeletonList num={10} /> }
-      {!loading &&  searchParams.query && results && <Results searchParams={searchParams} results={results} /> } 
+      {!loading &&  searchParams.query && results && <Results results={results} /> } 
     </div>
   );
 }

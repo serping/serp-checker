@@ -11,7 +11,8 @@
     "home": {
       "position": "Posizione",
       "type": "Tipo di servizio",
-      "title": "Titolo"
+      "title": "Titolo",
+      "results_for": "risultati per \"{query}\""
     }
   }
 }

@@ -11,7 +11,8 @@
     "home": {
       "position": "Position",
       "type": "Serp-Typ",
-      "title": "Titel"
+      "title": "Titel",
+      "results_for": "Ergebnisse für \"{query}\""
     }
   }
 }

@@ -11,7 +11,8 @@
     "home": {
       "position": "Posición",
       "type": "Tipo de serpiente",
-      "title": "Título"
+      "title": "Título",
+      "results_for": "resultados para \"{query}\""
     }
   }
 }

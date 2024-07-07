@@ -11,7 +11,8 @@
     "home": {
       "position": "위치",
       "type": "Serp 유형",
-      "title": "제목"
+      "title": "제목",
+      "results_for": "\"{query}\"에 대한 결과"
     }
   }
 }

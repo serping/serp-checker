@@ -2,7 +2,7 @@
 "use client" 
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 import { LocalResults, PeopleAlsoAsk, SerpInlineImages, SerpInlineVideos } from "@/frontend/google/desktop";
-import { type HomeFormValues } from "@/shema/index";
+import { ItemSource } from "@/frontend/google/shared/ItemSource";
 import type {
   ColumnDef
 } from "@tanstack/react-table";
@@ -16,11 +16,9 @@ import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { type SerpColumn, type SerpJSON, type SerpNormal } from "serping/zod/google/desktop-serp";
 
-export function Results({
-  searchParams,
+export function Results({ 
   results
 }:{
-  searchParams: HomeFormValues;
   results: SerpJSON
 }) {
 
@@ -66,8 +64,8 @@ export function Results({
               case "book":
                 original = row.original as SerpNormal;
                 return (
-                  <div className="flex items-center gap-2"> 
-                    {original.title}
+                  <div className="flex items-center gap-2">
+                    <ItemSource source={original.source} />
                     {original.thumbnail && <ImageIcon className="ml-2" size={20} />}
                   </div>
                 )
@@ -123,7 +121,6 @@ export function Results({
 
   return (
     <div className="">
-      <h2 className="text-xl font-semibold">Results for “{searchParams.query}”</h2>
       <Table>
           <TableHeader> 
             {table.getHeaderGroups().map(headerGroup => (
