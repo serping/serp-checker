@@ -122,7 +122,7 @@ export function Results({
   }); 
 
   return (
-    <div className="px-8 pt-10">
+    <div className="">
       <h2 className="text-xl font-semibold">Results for “{searchParams.query}”</h2>
       <Table>
           <TableHeader> 

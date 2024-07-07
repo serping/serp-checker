@@ -1,5 +1,6 @@
 "use client"
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { DeviceType } from "@/config";
 import { SerpForm } from "@/frontend/home/form";
 import apiClient from "@/lib/api";
@@ -50,13 +51,34 @@ export function Main({
     }
   }, [searchParams]);
 
+  const SkeletonItem =()=>{
+    return (
+      <div className="flex items-center space-x-4 my-4">
+        <Skeleton className="h-12 w-12 rounded-full" />
+        <div className="space-y-2 w-full">
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-full" />
+        </div>
+      </div>
+    )
+  }
+
+  const SkeletonList =({num}:{num: number})=>{
+    const items = [];
+    for (let i = 0; i < num; i++) {
+      items.push(<SkeletonItem key={i} />)
+    }
+    return items;
+  }
+
   const onSubmit =({values}:{values: HomeFormValues})=>{
     setSearchParams(values)
   }
   return (
     <div>
       <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} />
-      {searchParams.query && results && <Results searchParams={searchParams} results={results} />}
+      {loading && <SkeletonList num={10} /> }
+      {!loading &&  searchParams.query && results && <Results searchParams={searchParams} results={results} /> } 
     </div>
   );
 }

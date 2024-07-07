@@ -6,7 +6,7 @@ export default function Home({
   params: { locale: string; };
 }>) { 
   return (
-    <div>
+    <div className="px-8">
       <Main params={params} />
     </div>
   );
