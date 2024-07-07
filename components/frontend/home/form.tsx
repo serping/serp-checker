@@ -35,9 +35,11 @@ import { useForm } from "react-hook-form";
 
 export function SerpForm({
   defaultValues,
+  loading,
   onSubmit
 }:{
   defaultValues: HomeFormValues;
+  loading?: boolean;
   onSubmit?: ({values}:{values: HomeFormValues}) => void;
 }) {
   
@@ -117,8 +119,8 @@ export function SerpForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <div className="flex px-8">
-          <div className="grid grid-cols-5 gap-4 w-full">
+        <div className="flex flex-col px-8 md:flex-row">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
             <FormField
               control={form.control}
               name="query"
@@ -210,7 +212,7 @@ export function SerpForm({
               )}
             />
           </div>
-          <Button type="submit" className="ml-4">Look Up</Button>
+          <Button loading={loading} type="submit" className="mt-4 md:mt-0 md:ml-4">Look Up</Button>
         </div>
       </form>
       

@@ -23,6 +23,7 @@ export function Main({
   }
   const [searchParams, setSearchParams] = useState<HomeFormValues>(defaultValues);
   const [results, setResults] = useState<SerpJSON|null>(null); 
+  const [loading, setLoading] = useState<boolean>(false); 
 
   useEffect(()=>{
     if(searchParams.query){
@@ -36,14 +37,15 @@ export function Main({
         num: 100,
         // device: searchParams.device,
       }
+      setLoading(true);
       apiClient.post('/google/serp', { body: JSON.stringify(params) })
       .then((data) => {
-        if (data) {
-          setResults(SerpJsonSchema.parse(data))
-        }
+        setResults(SerpJsonSchema.parse(data));
+        setLoading(false);
       })
       .catch((error) => {
-        console.log("error", error);
+        console.error("error", error);
+        setLoading(false);
       });
     }
   }, [searchParams]);
@@ -53,7 +55,7 @@ export function Main({
   }
   return (
     <div>
-      <SerpForm defaultValues={defaultValues} onSubmit={onSubmit} />
+      <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} />
       {searchParams.query && results && <Results searchParams={searchParams} results={results} />}
     </div>
   );
