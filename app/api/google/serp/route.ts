@@ -7,7 +7,6 @@ export async function POST(req: Request) {
 
   try {
     const searchParams = GoogleSerpSearchParamSchema.parse(JSON.parse(body));
-    console.log("searchParams", searchParams)
     const serping = new Serping({ region: "us-east-1" });
     const data = await serping.googleSerp(searchParams);
     return new Response(
