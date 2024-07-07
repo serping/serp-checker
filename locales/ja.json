@@ -7,6 +7,11 @@
   },
   "frontend": {
     "go_to_homepage": "ホームページへ",
-    "page_not_found": "ページが見つかりません"
+    "page_not_found": "ページが見つかりません",
+    "home": {
+      "position": "位置",
+      "type": "セルプタイプ",
+      "title": "タイトル"
+    }
   }
 }

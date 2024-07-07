@@ -7,6 +7,11 @@
   },
   "frontend": {
     "go_to_homepage": "홈페이지로 이동",
-    "page_not_found": "페이지를 찾을 수 없음"
+    "page_not_found": "페이지를 찾을 수 없음",
+    "home": {
+      "position": "위치",
+      "type": "Serp 유형",
+      "title": "제목"
+    }
   }
 }

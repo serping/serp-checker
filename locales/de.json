@@ -7,6 +7,11 @@
   },
   "frontend": {
     "go_to_homepage": "Gehen Sie zur Startseite",
-    "page_not_found": "Seite nicht gefunden"
+    "page_not_found": "Seite nicht gefunden",
+    "home": {
+      "position": "Position",
+      "type": "Serp-Typ",
+      "title": "Titel"
+    }
   }
 }

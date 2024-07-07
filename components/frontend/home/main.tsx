@@ -2,8 +2,10 @@
 
 import { DeviceType } from "@/config";
 import { SerpForm } from "@/frontend/home/form";
+import apiClient from "@/lib/api";
 import { type HomeFormValues } from "@/shema/index";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { SerpJsonSchema, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { Results } from "./results";
 
 export function Main({ 
@@ -20,13 +22,39 @@ export function Main({
     device: "desktop" as DeviceType,
   }
   const [searchParams, setSearchParams] = useState<HomeFormValues>(defaultValues);
+  const [results, setResults] = useState<SerpJSON|null>(null); 
+
+  useEffect(()=>{
+    if(searchParams.query){
+      const params = {
+        q: searchParams.query,
+        hl: searchParams.locale,
+        gl: searchParams.country,
+        location: searchParams.location,
+        snapshot: "on",
+        thumbnail: "on",
+        num: 100,
+        // device: searchParams.device,
+      }
+      apiClient.post('/google/serp', { body: JSON.stringify(params) })
+      .then((data) => {
+        if (data) {
+          setResults(SerpJsonSchema.parse(data))
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+    }
+  }, [searchParams]);
+
   const onSubmit =({values}:{values: HomeFormValues})=>{
     setSearchParams(values)
   }
   return (
     <div>
       <SerpForm defaultValues={defaultValues} onSubmit={onSubmit} />
-      {searchParams.query && <Results searchParams={searchParams} />}
+      {searchParams.query && results && <Results searchParams={searchParams} results={results} />}
     </div>
   );
 }

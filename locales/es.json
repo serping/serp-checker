@@ -7,6 +7,11 @@
   },
   "frontend": {
     "go_to_homepage": "Ir a la página de inicio",
-    "page_not_found": "Página no encontrada"
+    "page_not_found": "Página no encontrada",
+    "home": {
+      "position": "Posición",
+      "type": "Tipo de serpiente",
+      "title": "Título"
+    }
   }
 }

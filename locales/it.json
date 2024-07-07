@@ -7,6 +7,11 @@
   },
   "frontend": {
     "go_to_homepage": "Vai alla homepage",
-    "page_not_found": "Pagina non trovata"
+    "page_not_found": "Pagina non trovata",
+    "home": {
+      "position": "Posizione",
+      "type": "Tipo di servizio",
+      "title": "Titolo"
+    }
   }
 }
