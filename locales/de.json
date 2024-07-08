@@ -13,6 +13,10 @@
       "type": "Serp-Typ",
       "title": "Titel",
       "results_for": "Ergebnisse für \"{query}\""
+    },
+    "serp": {
+      "featured_snippets": "Ausgewählte Ausschnitte",
+      "people_also_ask": "Die Leute fragen auch"
     }
   }
 }

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { VideoIcon } from "lucide-react";
 import type { SerpInlineVideos, SerpVideo } from "serping/zod/google/desktop-serp";
 
-export function SerpInlineVideos({original, className}:{original: SerpInlineVideos, className?: string;}){
+export function InlineVideos({original, className}:{original: SerpInlineVideos, className?: string;}){
   const videos = original.inline_videos;
   return (
     <div className={cn(className)}> 

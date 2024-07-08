@@ -13,6 +13,10 @@
       "type": "Type de moteur de recherche",
       "title": "Titre",
       "results_for": "résultats pour \"{query}\""
+    },
+    "serp": {
+      "featured_snippets": "Extraits en vedette",
+      "people_also_ask": "Les gens demandent aussi"
     }
   }
 }

@@ -13,6 +13,10 @@
       "type": "搜索引擎类型",
       "title": "标题",
       "results_for": "\"{query}\" 的结果"
+    },
+    "serp": {
+      "featured_snippets": "精选片段",
+      "people_also_ask": "人们还问"
     }
   }
 }

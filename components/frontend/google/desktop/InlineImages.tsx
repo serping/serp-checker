@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { ImageIcon } from "lucide-react";
 import type { SerpInlineImages } from "serping/zod/google/desktop-serp";
 
-export function SerpInlineImages({original, className}:{original: SerpInlineImages, className?: string;}){
+export function InlineImages({original, className}:{original: SerpInlineImages, className?: string;}){
   const collection = original.collection;
   return (
     <div className={cn(className)}>

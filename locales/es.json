@@ -13,6 +13,10 @@
       "type": "Tipo de serpiente",
       "title": "Título",
       "results_for": "resultados para \"{query}\""
+    },
+    "serp": {
+      "featured_snippets": "Fragmentos destacados",
+      "people_also_ask": "La gente también pregunta"
     }
   }
 }

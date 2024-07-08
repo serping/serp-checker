@@ -13,6 +13,10 @@
       "type": "Tipo di servizio",
       "title": "Titolo",
       "results_for": "risultati per \"{query}\""
+    },
+    "serp": {
+      "featured_snippets": "Snippet in primo piano",
+      "people_also_ask": "Le persone chiedono anche"
     }
   }
 }

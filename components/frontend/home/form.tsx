@@ -120,7 +120,7 @@ export function SerpForm({
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <div className="flex flex-col md:flex-row mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
             <FormField
               control={form.control}
               name="query"

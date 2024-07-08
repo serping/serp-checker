@@ -2,12 +2,14 @@
 "use client" 
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 import {
+  InlineImages,
+  InlineVideos,
   LocalResults,
   PeopleAlsoAsk,
-  SerpInlineImages,
-  SerpInlineVideos,
-  SerpVideo
+  Video
 } from "@/frontend/google/desktop";
+
+import { ItemNormal } from "@/frontend/google/shared/ItemNormal";
 import { ItemSource } from "@/frontend/google/shared/ItemSource";
 import type {
   ColumnDef
@@ -20,7 +22,8 @@ import {
 import { ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
-import { type SerpColumn, type SerpJSON, type SerpNormal } from "serping/zod/google/desktop-serp";
+import { SerpColumnType, type SerpColumn, type SerpJSON, type SerpNormal } from "serping/zod/google/desktop-serp";
+import { FeaturedSnippets } from "../google/desktop/FeaturedSnippets";
 
 export function Results({ 
   results
@@ -47,23 +50,34 @@ export function Results({
           header: t("frontend.home.title"), 
           cell: ({ row }: { row: any}) => {
             let original = row.original;
-            switch( row.original.type ){
+            const type = row.original.type as SerpColumnType 
+            switch( type ){
               case "normal":
               case "site_links":
               case "book":
                 original = row.original as SerpNormal;
                 return (
                   <div className="flex items-center gap-2">
-                    <ItemSource source={original.source} />
+                    <div>
+                      <ItemSource source={original.source} />
+                      <ItemNormal item={ {title: original.title, snippet: original.snippet, link: original.source.link } }/>
+                    </div>
                     {original.thumbnail && <ImageIcon className="ml-2" size={20} />}
                   </div>
                 )
               case "video":
-                return <SerpVideo original={row.original} />
+                return <Video original={row.original} />
+              case "featured_snippets":
+                  return (
+                    <>
+                      <FeaturedSnippets original={row.original} className="text-sm text-secondary-foreground" />
+                      <ItemSource source={original.featured_snippets.source} className="mt-2" />
+                    </>
+                  )
               case "inline_videos": 
-                return <SerpInlineVideos original={row.original} />
+                return <InlineVideos original={row.original} />
               case "inline_images": 
-                return <SerpInlineImages original={row.original} />
+                return <InlineImages original={row.original} />
               case "people_also_ask": 
                 return <PeopleAlsoAsk original={row.original} />
               case "local_results": 
@@ -138,7 +152,7 @@ export function Results({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="py-2 group-first:rounded-t-md group-last:rounded-b-md"
+                      className="py-3 group-first:rounded-t-md group-last:rounded-b-md"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

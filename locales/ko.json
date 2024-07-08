@@ -13,6 +13,10 @@
       "type": "Serp 유형",
       "title": "제목",
       "results_for": "\"{query}\"에 대한 결과"
+    },
+    "serp": {
+      "featured_snippets": "추천 스니펫",
+      "people_also_ask": "사람들은 또한 묻습니다"
     }
   }
 }
