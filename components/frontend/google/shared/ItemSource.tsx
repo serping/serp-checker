@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { SerpItemSource } from 'serping/zod/google/base';
+import { SiteIcon } from './SiteIcon';
 export function ItemSource({
   source,
   size = 50,
@@ -11,11 +12,10 @@ export function ItemSource({
   size?: number; 
   className?: string;
 }){
-  const url = new URL(source.link);
   return( 
     <div className={cn(className,"relative flex items-center space-x-3 pb-3 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400")}>
       <div className="flex-shrink-0">
-         <img src={`https://www.google.com/s2/favicons?domain=${url.hostname}&sz=${size}`} className="h-8 w-8 rounded-full" />
+        <SiteIcon link={source.link} size={size} />
       </div>
       <div className="min-w-0 flex-1">
         <a href={source.link} className="focus:outline-none">

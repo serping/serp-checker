@@ -12,7 +12,10 @@
       "position": "위치",
       "type": "Serp 유형",
       "title": "제목",
-      "results_for": "\"{query}\"에 대한 결과"
+      "results_for": "\"{query}\"에 대한 결과",
+      "views": {
+        "preview": "시사"
+      }
     },
     "serp": {
       "featured_snippets": "추천 스니펫",

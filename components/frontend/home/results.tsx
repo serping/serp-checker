@@ -1,16 +1,7 @@
 
 "use client" 
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
-import {
-  InlineImages,
-  InlineVideos,
-  LocalResults,
-  PeopleAlsoAsk,
-  Video
-} from "@/frontend/google/desktop";
 
-import { ItemNormal } from "@/frontend/google/shared/ItemNormal";
-import { ItemSource } from "@/frontend/google/shared/ItemSource";
 import type {
   ColumnDef
 } from "@tanstack/react-table";
@@ -19,16 +10,17 @@ import {
   getCoreRowModel,
   useReactTable
 } from "@tanstack/react-table";
-import { ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
-import { SerpColumnType, type SerpColumn, type SerpJSON, type SerpNormal } from "serping/zod/google/desktop-serp";
-import { FeaturedSnippets } from "../google/desktop/FeaturedSnippets";
+import { type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { TitleCell } from "./title-cell";
 
 export function Results({ 
-  results
+  results,
+  preview = false
 }:{
-  results: SerpJSON
+  results: SerpJSON;
+  preview?: boolean;
 }) {
 
   const t = useTranslations();
@@ -40,7 +32,7 @@ export function Results({
           accessorKey: "position",
           header: t("frontend.home.position"),
           cell: ({ row }: { row: any}) =>  (
-            <div className="flex items-center gap-2"> 
+            <div className="flex items-center gap-2 w-[80px]"> 
               <span>{row.original?.position}</span>
             </div>
           )
@@ -49,51 +41,12 @@ export function Results({
           accessorKey: "title",
           header: t("frontend.home.title"), 
           cell: ({ row }: { row: any}) => {
-            let original = row.original;
-            const type = row.original.type as SerpColumnType 
-            switch( type ){
-              case "normal":
-              case "site_links":
-              case "book":
-                original = row.original as SerpNormal;
-                return (
-                  <div className="flex items-center gap-2">
-                    <div>
-                      <ItemSource source={original.source} />
-                      <ItemNormal item={ {title: original.title, snippet: original.snippet, link: original.source.link } }/>
-                    </div>
-                    {original.thumbnail && <ImageIcon className="ml-2" size={20} />}
-                  </div>
-                )
-              case "video":
-                return <Video original={row.original} />
-              case "featured_snippets":
-                  return (
-                    <>
-                      <FeaturedSnippets original={row.original} className="text-sm text-secondary-foreground" />
-                      <ItemSource source={original.featured_snippets.source} className="mt-2" />
-                    </>
-                  )
-              case "inline_videos": 
-                return <InlineVideos original={row.original} />
-              case "inline_images": 
-                return <InlineImages original={row.original} />
-              case "people_also_ask": 
-                return <PeopleAlsoAsk original={row.original} />
-              case "local_results": 
-                return <LocalResults original={row.original.local_results} />
-              default:
-                console.log('No conditions met');
-                return (
-                  <div className="flex items-center gap-2"> 
-                    -
-                  </div>
-                )
-            }
+            // console.log("preview", preview)
+           return <TitleCell row={row} preview={preview} />
           },
         }
       ], 
-      [results],
+      [results, preview],
     );
 
 

@@ -12,7 +12,10 @@
       "position": "Position",
       "type": "Type de moteur de recherche",
       "title": "Titre",
-      "results_for": "résultats pour \"{query}\""
+      "results_for": "résultats pour \"{query}\"",
+      "views": {
+        "preview": "Aperçu"
+      }
     },
     "serp": {
       "featured_snippets": "Extraits en vedette",

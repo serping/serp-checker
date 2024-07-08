@@ -12,7 +12,10 @@
       "position": "Posizione",
       "type": "Tipo di servizio",
       "title": "Titolo",
-      "results_for": "risultati per \"{query}\""
+      "results_for": "risultati per \"{query}\"",
+      "views": {
+        "preview": "Anteprima"
+      }
     },
     "serp": {
       "featured_snippets": "Snippet in primo piano",

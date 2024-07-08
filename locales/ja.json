@@ -12,7 +12,10 @@
       "position": "位置",
       "type": "セルプタイプ",
       "title": "タイトル",
-      "results_for": "\"{query}\"の結果"
+      "results_for": "\"{query}\"の結果",
+      "views": {
+        "preview": "プレビュー"
+      }
     },
     "serp": {
       "featured_snippets": "注目のスニペット",

@@ -12,7 +12,10 @@
       "position": "Position",
       "type": "Serp-Typ",
       "title": "Titel",
-      "results_for": "Ergebnisse für \"{query}\""
+      "results_for": "Ergebnisse für \"{query}\"",
+      "views": {
+        "preview": "Vorschau"
+      }
     },
     "serp": {
       "featured_snippets": "Ausgewählte Ausschnitte",

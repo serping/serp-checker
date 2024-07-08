@@ -26,6 +26,7 @@ export function Main({
   const [searchParams, setSearchParams] = useState<HomeFormValues>(defaultValues);
   const [results, setResults] = useState<SerpJSON|null>(null); 
   const [loading, setLoading] = useState<boolean>(false); 
+  const [preview, setPreview] = useState<boolean>(false); 
 
   useEffect(()=>{
     if(searchParams.query){
@@ -75,12 +76,17 @@ export function Main({
   const onSubmit =({values}:{values: HomeFormValues})=>{
     setSearchParams(values)
   }
+
+  const onCheckedChange=(checked: boolean)=>{
+    setPreview(checked)
+  }
+  
   return (
     <div>
       <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} />
-      <Status searchParams={searchParams} />
+      <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />
       {loading && <SkeletonList num={10} /> }
-      {!loading &&  searchParams.query && results && <Results results={results} /> } 
+      {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
     </div>
   );
 }
