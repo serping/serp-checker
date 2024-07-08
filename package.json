@@ -37,7 +37,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "react-hot-toast": "^2.4.1",
-    "serping": "^1.1.1-beta.11",
+    "serping": "^1.1.1-beta.12",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"

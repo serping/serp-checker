@@ -13,7 +13,7 @@ import {
 } from "@tanstack/react-table";
 import { ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { type SerpColumn, type SerpJSON, type SerpNormal } from "serping/zod/google/desktop-serp";
 
 export function Results({ 
@@ -35,23 +35,6 @@ export function Results({
               <span>{row.original?.position}</span>
             </div>
           )
-        },
-        {
-          accessorKey: "type",
-          header: t("frontend.home.type"),
-          cell: ({ row }: { row: any}) =>  {
-            const [open, setOpen] = useState(false);
-            const title = row.original.type.replace(/_/g,' ');
-            let data = row.original;
- 
-            if(row.original.type === "local_results") data = row.original.local_results;
-            if(row.original.type === "related_searches") data = row.original.related_searches;
-            return ( 
-              <div className="flex items-center gap-2 capitalize">
-                  <span className="mr-2 capitalize">{ title }</span> 
-                </div> 
-              )
-          }
         },
         {
           accessorKey: "title",
