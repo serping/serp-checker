@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 export function SiteIcon({
   link,
-  size = 20,
+  size = 50,
   className
 }:{
   link: string;
