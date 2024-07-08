@@ -1,7 +1,13 @@
 
 "use client" 
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
-import { LocalResults, PeopleAlsoAsk, SerpInlineImages, SerpInlineVideos } from "@/frontend/google/desktop";
+import {
+  LocalResults,
+  PeopleAlsoAsk,
+  SerpInlineImages,
+  SerpInlineVideos,
+  SerpVideo
+} from "@/frontend/google/desktop";
 import { ItemSource } from "@/frontend/google/shared/ItemSource";
 import type {
   ColumnDef
@@ -52,6 +58,8 @@ export function Results({
                     {original.thumbnail && <ImageIcon className="ml-2" size={20} />}
                   </div>
                 )
+              case "video":
+                return <SerpVideo original={row.original} />
               case "inline_videos": 
                 return <SerpInlineVideos original={row.original} />
               case "inline_images": 
