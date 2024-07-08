@@ -27,7 +27,7 @@ const List =({item, className}:{item: SerpFeaturedList, className?: string;})=>{
 const Normal =({item, className}:{item: SerpFeaturedNormal, className?: string;})=>{
   return (
     <div className={className}>
-      <Markdown content={item.snippet} />
+      <Markdown content={item.snippet} className="max-w-[650px] leading-7" />
       {item.images && <img src={item.images[0].thumbnail} />}
     </div>
   )
