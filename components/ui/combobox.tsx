@@ -23,7 +23,7 @@ import { ComboboxFramework } from "@/shema"
  
 type Props = {
   className?: string;
-  inputClassName?: string;
+  contentClassName?: string;
   canCancel?: boolean;
   defaultValue?: string;
   onInputValueChange?: (currentValue: string) => void;
@@ -35,6 +35,7 @@ type Props = {
   frameworks: ComboboxFramework[]
 }
 export function Combobox({
+  contentClassName,
   useCode = false,
   className,
   defaultValue = "",
@@ -50,14 +51,6 @@ export function Combobox({
   const [value, setValue] = useState(defaultValue);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [contentWidth, setContentWidth] = useState<number | undefined>(undefined);
- 
- 
-  // useEffect(() => {
-  //   if(onValueChange) {
-  //     console.log("onValueChange", value)
-  //     onValueChange(value);
-  //   }
-  // }, [value]);
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -106,7 +99,7 @@ export function Combobox({
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className={cn("p-0", className)} style={{ width: contentWidth }}>
+      <PopoverContent className={cn("p-0", contentClassName)} style={{ width: contentWidth }}>
         <Command>
           <CommandInput onValueChange={ onInputValueChange } placeholder={placeholder} />
           <CommandList>
