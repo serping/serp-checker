@@ -16,11 +16,25 @@
       "views": {
         "preview": "Anteprima"
       },
-      "look_up": "Cercare"
+      "look_up": "Cercare",
+      "form": {
+        "query": {
+          "error": {
+            "message": "La query deve contenere almeno 2 caratteri."
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "Snippet in primo piano",
       "people_also_ask": "Le persone chiedono anche"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking: controllo Serp gratuito",
+        "description": "Serp Checker gratuito, fonte Serping"
+      }
+    },
+    "desktop": "Desktop"
   }
 }

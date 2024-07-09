@@ -16,11 +16,25 @@
       "views": {
         "preview": "Vorschau"
       },
-      "look_up": "Nachschlagen"
+      "look_up": "Nachschlagen",
+      "form": {
+        "query": {
+          "error": {
+            "message": "Die Abfrage muss mindestens 2 Zeichen lang sein."
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "Ausgewählte Ausschnitte",
       "people_also_ask": "Die Leute fragen auch"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking: Kostenloser Serp-Checker",
+        "description": "Kostenloser Serp Checker, Quelle von Serping"
+      }
+    },
+    "desktop": "Desktop"
   }
 }

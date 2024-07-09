@@ -16,11 +16,25 @@
       "views": {
         "preview": "预览"
       },
-      "look_up": "抬头"
+      "look_up": "抬头",
+      "form": {
+        "query": {
+          "error": {
+            "message": "查询必须至少有 2 个字符。"
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "精选片段",
       "people_also_ask": "人们还问"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking：免费的 Serp 检查器",
+        "description": "免费 Serp 检查器，来源：Serping"
+      }
+    },
+    "desktop": "桌面"
   }
 }

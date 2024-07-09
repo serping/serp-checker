@@ -16,11 +16,25 @@
       "views": {
         "preview": "プレビュー"
       },
-      "look_up": "見上げる"
+      "look_up": "見上げる",
+      "form": {
+        "query": {
+          "error": {
+            "message": "クエリは少なくとも 2 文字である必要があります。"
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "注目のスニペット",
       "people_also_ask": "人々も尋ねます"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking: 無料の Serp チェッカー",
+        "description": "無料のSerpチェッカー、Serpingによるソース"
+      }
+    },
+    "desktop": "デスクトップ"
   }
 }

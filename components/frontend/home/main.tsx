@@ -20,7 +20,7 @@ export function Main({
   const defaultValues =  {
     query: "",
     locale: locale === "zh" ? "zh-Hans" : locale,
-    country: "us",
+    country: "us" ,
     location: "",
     device: "desktop" as DeviceType,
   }

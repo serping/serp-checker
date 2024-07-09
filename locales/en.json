@@ -16,11 +16,25 @@
       "views": {
         "preview": "Preview"
       },
-      "look_up": "Look Up"
+      "look_up": "Look Up",
+      "form": {
+        "query": {
+          "error": {
+            "message": "Query must be at least 2 characters."
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "Featured Snippets",
       "people_also_ask": "People Also Ask"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking: Free Serp Checker",
+        "description": "Free Serp Checker, Source by Serping"
+      }
+    },
+    "desktop": "Desktop"
   }
 }

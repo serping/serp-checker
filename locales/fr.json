@@ -16,11 +16,25 @@
       "views": {
         "preview": "Aperçu"
       },
-      "look_up": "Chercher"
+      "look_up": "Chercher",
+      "form": {
+        "query": {
+          "error": {
+            "message": "La requête doit comporter au moins 2 caractères."
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "Extraits en vedette",
       "people_also_ask": "Les gens demandent aussi"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking : vérificateur de Serp gratuit",
+        "description": "Vérificateur Serp gratuit, source par Serping"
+      }
+    },
+    "desktop": "Bureau"
   }
 }

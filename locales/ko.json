@@ -16,11 +16,25 @@
       "views": {
         "preview": "시사"
       },
-      "look_up": "찾다"
+      "look_up": "찾다",
+      "form": {
+        "query": {
+          "error": {
+            "message": "쿼리는 2자 이상이어야 합니다."
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "추천 스니펫",
       "people_also_ask": "사람들은 또한 묻습니다"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking: 무료 Serp 검사기",
+        "description": "무료 Serp 검사기, Serping의 소스"
+      }
+    },
+    "desktop": "데스크탑"
   }
 }

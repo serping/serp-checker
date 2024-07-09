@@ -17,9 +17,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
 import { DeviceType } from "@/config";
-import { countries } from "@/country";
-import { language } from "@/language";
+import { countryOptions } from "@/country";
+import { languageOptions } from "@/language";
 import apiClient from "@/lib/api";
 import { HomeFormSchema, type HomeFormValues, type Location } from "@/shema/index";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,6 +34,7 @@ import {
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
+import z from 'zod';
 
 export function SerpForm({
   defaultValues,
@@ -45,6 +47,7 @@ export function SerpForm({
   landing?: boolean;
   onSubmit?: ({values}:{values: HomeFormValues}) => void;
 }) {
+  const t = useTranslations();
   
   const devices: {
     value: DeviceType;
@@ -64,14 +67,19 @@ export function SerpForm({
       icon: <Smartphone size={20} className="text-muted-foreground" />
     }
   ]
+  const HomeFormSchemaOverWrite = HomeFormSchema.extend({
+    query: z.string().min(2, {
+      message: t("frontend.home.form.query.error.message"),
+    })
+  })
   const [submited, setSubmited] = useState<boolean>(false);
   const [values, setValues] = useState<HomeFormValues>(defaultValues);
   const [locations, setLocations] = useState<Location[]>([]);
-  const form = useForm<HomeFormValues>({
-    resolver: zodResolver(HomeFormSchema),
+  let form = useForm<HomeFormValues>({
+    resolver: zodResolver(HomeFormSchemaOverWrite),
     defaultValues
   })
-  const t = useTranslations();
+  
   useEffect(()=>{
     if(submited){
       if(onSubmit) onSubmit({values});
@@ -107,6 +115,15 @@ export function SerpForm({
     debouncedFetchLocations(value);
   }
 
+  const onDesktopChange =(checked: boolean, field: any)=>{
+    if(checked){
+      field.onChange("desktop")
+    }else{
+      field.onChange("mobile")
+    }
+    console.log("onDesktopChange", checked)
+  }
+
   const locationResults = useMemo(()=>{
     return locations.map(item => {
       return { 
@@ -140,7 +157,7 @@ export function SerpForm({
                   </FormItem>
                 )}
               />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
               
               <FormField
                 control={form.control}
@@ -149,10 +166,11 @@ export function SerpForm({
                   <FormItem> 
                     <FormControl>
                       <Combobox
+                        useCode={true}
                         className="w-full"
                         defaultValue={field.value as string}
                         onValueChange={(e) => {field.onChange(e);} }
-                        frameworks={countries.map(item => { return { value: item.code, label: `${item.flag} ${item.name} (${item.code.toUpperCase()})` } })}
+                        frameworks={ countryOptions }
                       />
                     </FormControl>
                     <FormMessage />
@@ -167,9 +185,10 @@ export function SerpForm({
                     <FormControl>
                       <Combobox
                         className="w-full"
+                        useCode={true}
                         defaultValue={field.value as string}
                         onValueChange={(e) => {field.onChange(e);} }
-                        frameworks={language.map(item => { return { value: item.code, label: `${item.name}  (${item.code.toUpperCase()})` } })}
+                        frameworks={ languageOptions }
                       />
                     </FormControl>
                     <FormMessage />
@@ -177,7 +196,7 @@ export function SerpForm({
                 )}
               />
               
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="device"
                 render={({ field }) => (
@@ -198,7 +217,7 @@ export function SerpForm({
                     <FormMessage />
                 </FormItem>
                 )}
-              />
+              /> */}
               <FormField
                 control={form.control}
                 name="location"
@@ -219,7 +238,16 @@ export function SerpForm({
                   </FormItem>
                 )}
               />
-            </div>
+            </div> 
+              <FormField
+                control={form.control}
+                name="device"
+                render={({ field }) => (
+                  <FormItem className="flex items-center justify-center">
+                      <Switch defaultValue={field.value} defaultChecked={field.value === "desktop"} disabled  onCheckedChange={(e)=> onDesktopChange(e, field) } className="mr-3" /> {t('frontend.desktop')}
+                  </FormItem>
+                )}
+              /> 
             <Button size="icon" loading={loading} type="submit" className="md:w-[200px] mx-auto">{t('frontend.home.look_up')}<Search size={20} className="ml-3" /></Button>
           </div>
         </form>
@@ -229,7 +257,7 @@ export function SerpForm({
   }
 
 
-  if(landing) return LandingForm();
+  if(landing) return LandingForm(); 
   
   return (
     <Form {...form}>
@@ -259,7 +287,8 @@ export function SerpForm({
                       className="w-full"
                       defaultValue={field.value as string}
                       onValueChange={(e) => {field.onChange(e);} }
-                      frameworks={countries.map(item => { return { value: item.code, label: `${item.flag} ${item.name} (${item.code.toUpperCase()})` } })}
+                      frameworks={countryOptions}
+                      useCode={true}
                     />
                   </FormControl>
                   <FormMessage />
@@ -276,7 +305,8 @@ export function SerpForm({
                       className="w-full"
                       defaultValue={field.value as string}
                       onValueChange={(e) => {field.onChange(e);} }
-                      frameworks={language.map(item => { return { value: item.code, label: `${item.name}  (${item.code.toUpperCase()})` } })}
+                      frameworks={languageOptions}
+                      useCode={true}
                     />
                   </FormControl>
                   <FormMessage />
@@ -314,6 +344,7 @@ export function SerpForm({
                   <FormControl>
                     <Combobox
                       canCancel={true}
+                      defaultValue={field.value as string}
                       defaultSelectIcon={<MapPin size={20} className="text-muted-foreground" />}
                       className="w-full"
                       defaultSelectLabel="All Location"

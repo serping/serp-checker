@@ -131,3 +131,11 @@ export const language = [
 export const languageCodes = language.map(item => item.code);
 export const LanguageCodeSchema = z.enum(languageCodes as [string, ...string[]]);
 export type LanguageCode = z.infer<typeof LanguageCodeSchema>;
+export const languageOptions = language.map(item => {
+  const value = `${item.name}  (${item.code.toUpperCase()})`;
+  return {
+    value: value,
+    code: item.code,
+    label: item.name
+  }
+});

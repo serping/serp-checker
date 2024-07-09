@@ -241,3 +241,11 @@ export const countries = [
 export const countryCodes = countries.map(item => item.code);
 export const CountryCodeSchema = z.enum(countryCodes as [string, ...string[]]);
 export type CountryCode = z.infer<typeof CountryCodeSchema>;
+export const countryOptions = countries.map(item => {
+  const value = `${item.flag} ${item.name} (${item.code.toUpperCase()})`;
+  return {
+    value: value,
+    code: item.code,
+    label: `${item.flag} ${item.name}`
+  }
+})

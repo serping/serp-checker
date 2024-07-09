@@ -16,11 +16,25 @@
       "views": {
         "preview": "Avance"
       },
-      "look_up": "Buscar"
+      "look_up": "Buscar",
+      "form": {
+        "query": {
+          "error": {
+            "message": "La consulta debe tener al menos 2 caracteres."
+          }
+        }
+      }
     },
     "serp": {
       "featured_snippets": "Fragmentos destacados",
       "people_also_ask": "La gente también pregunta"
-    }
+    },
+    "meta": {
+      "default": {
+        "title": "SerpChecking: Comprobador Serp gratuito",
+        "description": "Serp Checker gratuito, fuente por Serping"
+      }
+    },
+    "desktop": "Escritorio"
   }
 }

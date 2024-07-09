@@ -27,6 +27,7 @@ export type ComboboxFramework = {
   disabled?: boolean;
   icon?: React.ReactNode;
   short_label?: string;
+  code?: string;
   value: string;
   label: string;
 }

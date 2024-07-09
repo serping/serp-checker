@@ -28,12 +28,14 @@ type Props = {
   defaultValue?: string;
   onInputValueChange?: (currentValue: string) => void;
   onValueChange?: (currentValue: string) => void;
+  useCode?: boolean;
   placeholder?: string;
   defaultSelectLabel?: string;
   defaultSelectIcon?: React.ReactNode;
   frameworks: ComboboxFramework[]
 }
 export function Combobox({
+  useCode = false,
   className,
   defaultValue = "",
   frameworks,
@@ -50,9 +52,12 @@ export function Combobox({
   const [contentWidth, setContentWidth] = useState<number | undefined>(undefined);
  
  
-  useEffect(() => {
-    if(onValueChange) onValueChange(value);
-  }, [value]);
+  // useEffect(() => {
+  //   if(onValueChange) {
+  //     console.log("onValueChange", value)
+  //     onValueChange(value);
+  //   }
+  // }, [value]);
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -61,7 +66,13 @@ export function Combobox({
   }, [buttonRef.current]);
 
   const currentFramework = useMemo(()=>{
-    return frameworks.find((framework) => framework.value === value)
+    return frameworks.find((framework) => {
+      if(useCode){
+       return framework.code === value
+      }else{
+        return framework.value === value
+      } 
+    })
   }, [value]);
 
   const CurrentLabel =()=>{
@@ -107,10 +118,28 @@ export function Combobox({
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    if(canCancel){
-                      setValue(currentValue === value ? "" : currentValue)
+                    let val = "";
+                    if(useCode){
+                      const current = frameworks.find((framework) => framework.value === currentValue);
+                      if(!current){
+                        val = ""
+                      }else{
+                        if( !current?.code ){
+                          val = ""
+                        }else{
+                          if(canCancel){
+                            val = current.code === value ? "" : current.code;
+                          }else{
+                            val = current.code;
+                          }
+                        }
+                      }
                     }else{
-                      setValue(currentValue) 
+                      val = currentValue === value ? "" : currentValue;
+                    }
+                    setValue(val);
+                    if(onValueChange) {
+                      onValueChange(val);
                     }
                     setOpen(false)
                   }}

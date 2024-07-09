@@ -4,6 +4,7 @@ import { getMessagesForLocale } from "@/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { Inter as FontSans } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -15,10 +16,13 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-export const metadata: Metadata = {
-  title: "SerpChecking: Free Serp Checker",
-  description: "Free Serp Checker, Source by Serping",
-};
+export async function generateMetadata(locale: LocaleType): Promise<Metadata> {
+  const t = await getTranslations(locale);
+  return {
+    title: t('frontend.meta.default.title'),
+    description: t('frontend.meta.default.description'),
+  };
+}
 
 export default async function RootLayout({
   children,
