@@ -29,20 +29,15 @@ export function Results({
     useMemo(
       () => [
         {
-          accessorKey: "position",
-          header: t("frontend.home.position"),
-          cell: ({ row }: { row: any}) =>  (
-            <div className="flex items-center gap-2 w-[80px]"> 
-              <span>{row.original?.position}</span>
-            </div>
-          )
-        },
-        {
           accessorKey: "title",
-          header: t("frontend.home.title"), 
+          header: "", 
           cell: ({ row }: { row: any}) => {
-            // console.log("preview", preview)
-           return <TitleCell row={row} preview={preview} />
+           return (
+            <div className="flex items-center px-5">
+              <span className="text-base font-mono mr-3">{row.original?.position}</span>
+              <TitleCell row={row} preview={preview} /> 
+            </div>
+            )
           },
         }
       ], 
@@ -78,7 +73,7 @@ export function Results({
   }); 
 
   return (
-    <div className="">
+    <div>
       <Table>
           <TableHeader> 
             {table.getHeaderGroups().map(headerGroup => (

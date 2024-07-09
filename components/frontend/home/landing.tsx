@@ -1,4 +1,5 @@
  
+"use client"
 
 import { Faqs } from './faqs';
 export function Landing({className}:{  className?: string;}){

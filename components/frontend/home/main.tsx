@@ -4,6 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { DeviceType } from "@/config";
 import { SerpForm } from "@/frontend/home/form";
 import apiClient from "@/lib/api";
+import { cn } from "@/lib/utils";
 import { type HomeFormValues } from "@/shema/index";
 import { useEffect, useState } from "react";
 import { SerpJsonSchema, type SerpJSON } from "serping/zod/google/desktop-serp";
@@ -85,12 +86,16 @@ export function Main({
   }
   
   return (
-    <div>
-      <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} />
-      {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
-      {landing && <LandingPage className="md:max-w-[880px] mx-auto" />}
-      {loading && <SkeletonList num={10} /> }
-      {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
+    <div className={cn("flex",landing ? "flex-col" : "flex-row")}>
+      <div className={cn("flex-shrink-0 w-full", landing ? "": "md:w-[300px] mr-10")}>
+        <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} />
+      </div>
+      <div className=" flex-1">
+        {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
+        {landing && <LandingPage className="md:max-w-[880px] mx-auto" />}
+        {loading && <SkeletonList num={10} /> }
+        {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
+      </div>
     </div>
   );
 }

@@ -135,10 +135,12 @@ export function SerpForm({
     } )
   },[locations])
 
+  const formClassName = landing ? "" : "sticky top-5";
+
   const LandingForm =()=>{
     return (
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)}>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className={formClassName}>
           <div className="flex flex-col mb-10 max-w-[880px] m-auto gap-8 mt-10">
             <div className="text-center leading-8">
               <h1 className="text-4xl font-bold mb-3">SERP Checker</h1>
@@ -225,7 +227,7 @@ export function SerpForm({
                   </FormItem>
                 )}
               /> 
-            <Button size="icon" loading={loading} type="submit" className="md:w-[200px] mx-auto">{t('frontend.home.look_up')}<Search size={20} className="ml-3" /></Button>
+            <Button size="icon" loading={loading} type="submit" className="md:w-[200px] w-full mx-auto">{t('frontend.home.look_up')}<Search size={20} className="ml-3" /></Button>
           </div>
         </form>
         
@@ -238,9 +240,9 @@ export function SerpForm({
   
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <div className="flex flex-col md:flex-row mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
+      <form onSubmit={form.handleSubmit(handleSubmit)} className={formClassName}>
+        <div className="flex flex-col mb-10">
+          <div className="grid grid-cols-1  gap-4 w-full">
             <FormField
               control={form.control}
               name="query"
@@ -335,10 +337,9 @@ export function SerpForm({
               )}
             />
           </div>
-          <Button loading={loading} type="submit" className="mt-4 md:mt-0 md:ml-4">{t('frontend.home.look_up')}</Button>
+          <Button loading={loading} type="submit" className="mt-4">{t('frontend.home.look_up')}</Button>
         </div>
       </form>
-      
     </Form>
   );
 }
