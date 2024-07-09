@@ -139,7 +139,7 @@ export function SerpForm({
     return (
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
-          <div className="flex flex-col mb-10 max-w-[880px] m-auto gap-6 mt-10">
+          <div className="flex flex-col mb-10 max-w-[880px] m-auto gap-8 mt-10">
             <div className="text-center leading-8">
               <h1 className="text-4xl font-bold mb-3">SERP Checker</h1>
               <p className=" leading-8">Get fresh results every single time</p>
@@ -149,9 +149,9 @@ export function SerpForm({
                 name="query"
                 render={({ field }) => (
                   <FormItem nospace={true} className="relative text-center">
-                    <Search size={25} className="absolute left-3.5 top-4 text-muted-foreground" />
+                    <Search size={23} className="absolute left-3.5 top-3 text-muted-foreground" />
                     <FormControl>
-                      <Input type="search" className="pl-12 h-14 text-xl" placeholder="Search ..." {...field} />
+                      <Input type="search" className="pl-12 h-13 text-xl" placeholder="Search ..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
