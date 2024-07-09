@@ -40,7 +40,7 @@ const Overview =({
             <h3 className="font-semibold text-l text-blue-700 ">{original.title}</h3>
             <div className="max-w-[700px] line-clamp-1">{original.source.link}</div> 
           </a>
-          {original.thumbnail && <ImageIcon className="ml-2 text-muted-foreground" size={35} />}
+          {original.thumbnail && <ImageIcon className="ml-2 text-muted-foreground" size={25} />}
         </div> 
       )
     case "featured_snippets":
