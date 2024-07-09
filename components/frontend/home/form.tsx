@@ -79,7 +79,7 @@ export function SerpForm({
     resolver: zodResolver(HomeFormSchemaOverWrite),
     defaultValues
   })
-  
+
   useEffect(()=>{
     if(submited){
       if(onSubmit) onSubmit({values});
@@ -148,7 +148,7 @@ export function SerpForm({
                 control={form.control}
                 name="query"
                 render={({ field }) => (
-                  <FormItem nospace={true} className="relative">
+                  <FormItem nospace={true} className="relative text-center">
                     <Search size={25} className="absolute left-3.5 top-4 text-muted-foreground" />
                     <FormControl>
                       <Input type="search" className="pl-12 h-14 text-xl" placeholder="Search ..." {...field} />
@@ -167,7 +167,7 @@ export function SerpForm({
                     <FormControl>
                       <Combobox
                         useCode={true}
-                        className="w-full"
+                        className="w-full h-12"
                         defaultValue={field.value as string}
                         onValueChange={(e) => {field.onChange(e);} }
                         frameworks={ countryOptions }
@@ -184,7 +184,7 @@ export function SerpForm({
                   <FormItem> 
                     <FormControl>
                       <Combobox
-                        className="w-full"
+                        className="w-full h-12"
                         useCode={true}
                         defaultValue={field.value as string}
                         onValueChange={(e) => {field.onChange(e);} }
@@ -194,30 +194,7 @@ export function SerpForm({
                     <FormMessage />
                   </FormItem>
                 )}
-              />
-              
-              {/* <FormField
-                control={form.control}
-                name="device"
-                render={({ field }) => (
-                  <FormItem>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <div className="relative">
-                          <span className="absolute left-3.5 top-3 text-muted-foreground">{devices.find(item => item.value === field.value)?.icon}</span>
-                          <SelectTrigger className="pl-12" > 
-                            <SelectValue/> 
-                          </SelectTrigger>
-                        </div>
-                      </FormControl>
-                      <SelectContent>
-                        {devices.map(item => <SelectItem key={item.value} value={item.value} disabled={item.disabled}>{item.label}</SelectItem>)}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                </FormItem>
-                )}
-              /> */}
+              /> 
               <FormField
                 control={form.control}
                 name="location"
@@ -227,7 +204,7 @@ export function SerpForm({
                       <Combobox
                         canCancel={true}
                         defaultSelectIcon={<MapPin size={20} className="text-muted-foreground" />}
-                        className="w-full"
+                        className="w-full h-12"
                         defaultSelectLabel="All Location"
                         onInputValueChange={locationOnInputValueChange}
                         onValueChange={(e) => {field.onChange(e);} }
