@@ -15,7 +15,8 @@
       "results_for": "результаты по \"{query}\"",
       "views": {
         "preview": "Предварительный просмотр"
-      }
+      },
+      "look_up": "Искать"
     },
     "serp": {
       "featured_snippets": "Избранные фрагменты",

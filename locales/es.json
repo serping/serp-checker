@@ -15,7 +15,8 @@
       "results_for": "resultados para \"{query}\"",
       "views": {
         "preview": "Avance"
-      }
+      },
+      "look_up": "Buscar"
     },
     "serp": {
       "featured_snippets": "Fragmentos destacados",

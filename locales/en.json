@@ -15,7 +15,8 @@
       "results_for": "Results for \"{query}\"",
       "views": {
         "preview": "Preview"
-      }
+      },
+      "look_up": "Look Up"
     },
     "serp": {
       "featured_snippets": "Featured Snippets",

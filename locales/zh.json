@@ -15,7 +15,8 @@
       "results_for": "\"{query}\" 的结果",
       "views": {
         "preview": "预览"
-      }
+      },
+      "look_up": "抬头"
     },
     "serp": {
       "featured_snippets": "精选片段",

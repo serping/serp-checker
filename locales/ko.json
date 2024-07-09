@@ -15,7 +15,8 @@
       "results_for": "\"{query}\"에 대한 결과",
       "views": {
         "preview": "시사"
-      }
+      },
+      "look_up": "찾다"
     },
     "serp": {
       "featured_snippets": "추천 스니펫",

@@ -15,7 +15,8 @@
       "results_for": "Ergebnisse für \"{query}\"",
       "views": {
         "preview": "Vorschau"
-      }
+      },
+      "look_up": "Nachschlagen"
     },
     "serp": {
       "featured_snippets": "Ausgewählte Ausschnitte",

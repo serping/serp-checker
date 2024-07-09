@@ -7,6 +7,7 @@ import apiClient from "@/lib/api";
 import { type HomeFormValues } from "@/shema/index";
 import { useEffect, useState } from "react";
 import { SerpJsonSchema, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { Landing as LandingPage } from "./landing";
 import { Results } from "./results";
 import { Status } from "./status";
 
@@ -27,6 +28,7 @@ export function Main({
   const [results, setResults] = useState<SerpJSON|null>(null); 
   const [loading, setLoading] = useState<boolean>(false); 
   const [preview, setPreview] = useState<boolean>(false); 
+  const [landing, setLanding] = useState<boolean>(true); 
 
   useEffect(()=>{
     if(searchParams.query){
@@ -74,6 +76,7 @@ export function Main({
   }
 
   const onSubmit =({values}:{values: HomeFormValues})=>{
+    if(landing) setLanding(false);
     setSearchParams(values)
   }
 
@@ -83,8 +86,9 @@ export function Main({
   
   return (
     <div>
-      <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} />
-      <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />
+      <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} />
+      {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
+      {landing && <LandingPage className="md:max-w-[880px] mx-auto" />}
       {loading && <SkeletonList num={10} /> }
       {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
     </div>

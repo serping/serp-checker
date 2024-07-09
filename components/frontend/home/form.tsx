@@ -30,16 +30,19 @@ import {
   Search,
   Smartphone
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export function SerpForm({
   defaultValues,
+  landing = true,
   loading,
   onSubmit
 }:{
   defaultValues: HomeFormValues;
   loading?: boolean;
+  landing?: boolean;
   onSubmit?: ({values}:{values: HomeFormValues}) => void;
 }) {
   
@@ -68,7 +71,7 @@ export function SerpForm({
     resolver: zodResolver(HomeFormSchema),
     defaultValues
   })
-
+  const t = useTranslations();
   useEffect(()=>{
     if(submited){
       if(onSubmit) onSubmit({values});
@@ -115,6 +118,118 @@ export function SerpForm({
     } )
   },[locations])
 
+  const LandingForm =()=>{
+    return (
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleSubmit)}>
+          <div className="flex flex-col mb-10 max-w-[880px] m-auto gap-6 mt-10">
+            <div className="text-center leading-8">
+              <h1 className="text-4xl font-bold mb-3">SERP Checker</h1>
+              <p className=" leading-8">Get fresh results every single time</p>
+            </div>
+            <FormField
+                control={form.control}
+                name="query"
+                render={({ field }) => (
+                  <FormItem nospace={true} className="relative">
+                    <Search size={25} className="absolute left-3.5 top-4 text-muted-foreground" />
+                    <FormControl>
+                      <Input type="search" className="pl-12 h-14 text-xl" placeholder="Search ..." {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+              
+              <FormField
+                control={form.control}
+                name="country"
+                render={({ field }) => (
+                  <FormItem> 
+                    <FormControl>
+                      <Combobox
+                        className="w-full"
+                        defaultValue={field.value as string}
+                        onValueChange={(e) => {field.onChange(e);} }
+                        frameworks={countries.map(item => { return { value: item.code, label: `${item.flag} ${item.name} (${item.code.toUpperCase()})` } })}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="locale"
+                render={({ field }) => (
+                  <FormItem> 
+                    <FormControl>
+                      <Combobox
+                        className="w-full"
+                        defaultValue={field.value as string}
+                        onValueChange={(e) => {field.onChange(e);} }
+                        frameworks={language.map(item => { return { value: item.code, label: `${item.name}  (${item.code.toUpperCase()})` } })}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="device"
+                render={({ field }) => (
+                  <FormItem>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <div className="relative">
+                          <span className="absolute left-3.5 top-3 text-muted-foreground">{devices.find(item => item.value === field.value)?.icon}</span>
+                          <SelectTrigger className="pl-12" > 
+                            <SelectValue/> 
+                          </SelectTrigger>
+                        </div>
+                      </FormControl>
+                      <SelectContent>
+                        {devices.map(item => <SelectItem key={item.value} value={item.value} disabled={item.disabled}>{item.label}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="location"
+                render={({ field }) => (
+                  <FormItem nospace={true} className="relative">
+                    <FormControl>
+                      <Combobox
+                        canCancel={true}
+                        defaultSelectIcon={<MapPin size={20} className="text-muted-foreground" />}
+                        className="w-full"
+                        defaultSelectLabel="All Location"
+                        onInputValueChange={locationOnInputValueChange}
+                        onValueChange={(e) => {field.onChange(e);} }
+                        frameworks={locationResults}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <Button size="icon" loading={loading} type="submit" className="md:w-[200px] mx-auto">{t('frontend.home.look_up')}<Search size={20} className="ml-3" /></Button>
+          </div>
+        </form>
+        
+      </Form>
+    );
+  }
+
+
+  if(landing) return LandingForm();
   
   return (
     <Form {...form}>
@@ -212,7 +327,7 @@ export function SerpForm({
               )}
             />
           </div>
-          <Button loading={loading} type="submit" className="mt-4 md:mt-0 md:ml-4">Look Up</Button>
+          <Button loading={loading} type="submit" className="mt-4 md:mt-0 md:ml-4">{t('frontend.home.look_up')}</Button>
         </div>
       </form>
       
