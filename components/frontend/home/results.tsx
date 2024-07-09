@@ -33,8 +33,8 @@ export function Results({
           header: "", 
           cell: ({ row }: { row: any}) => {
            return (
-            <div className="flex items-center px-5">
-              <span className="text-base font-mono mr-3">{row.original?.position}</span>
+            <div className={`${row.original?.position ? "flex" : ""} items-center px-5`}>
+              {row.original?.position && <span className="text-base font-mono mr-3">{row.original?.position}</span>}
               <TitleCell row={row} preview={preview} /> 
             </div>
             )

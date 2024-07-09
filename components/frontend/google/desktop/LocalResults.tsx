@@ -9,7 +9,7 @@ const LocalNormal =({original}:{original: SerpLocalNormal})=>{
        {
         original.places.map(item => {
           return(
-            <div className="flex w-full items-center justify-between space-x-6 p-6">
+            <div className="flex w-full items-center justify-between py-4">
             <div className="flex-1 truncate">
               <div>
                 <h3 className="truncate text-base font-medium text-gray-900">{item.title}</h3>
@@ -34,7 +34,7 @@ const LocalServices =({original}:{original: SerpLocalServices})=>{
         original.places.map(item => {
           const data = SerpLocalServicePlaceSchema.parse(item);
           return(
-            <div className="flex w-full items-center justify-between space-x-6 p-6">
+            <div className="flex w-full items-center justify-between py-4">
             <div className="flex-1 truncate">
               <div>
                 <h3 className="truncate text-base font-medium text-gray-900">{item.title}</h3>
@@ -63,7 +63,7 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
           if( item.type === "normal"){
             const data = SerpLocalDirectionPlaceNormalSchema.parse(item);
             return(
-              <div className="flex w-full items-center justify-between space-x-6 p-6">
+              <div className="flex w-full items-center justify-between py-4">
                 <div className="flex-1 truncate">
                   <div className="flex items-center space-x-3">
                     <h3 className="truncate text-base font-medium text-gray-900">{data.title}</h3>
@@ -80,7 +80,7 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
           }else{
             const data = SerpLocalDirectionPlaceStoreSchema.parse(item);
             return(
-              <div className="flex w-full items-center justify-between space-x-6 p-6">
+              <div className="flex w-full items-center justify-between py-4">
                 <div className="flex-1 truncate">
                   <div>
                     <h3 className="truncate font-medium text-gray-900 text-base">{data.title}</h3>

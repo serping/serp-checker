@@ -38,7 +38,7 @@ const Overview =({
           <SiteIcon link={original.source.link} /> 
           <a href={original.source.link} target="_blank">
             <h3 className="font-semibold text-l text-blue-700 ">{original.title}</h3>
-            <div className="max-w-[700px] line-clamp-1">{original.source.link}</div> 
+            <div className="lg:max-w-[700px] line-clamp-1">{original.source.link}</div> 
           </a>
           {original.thumbnail && <ImageIcon className="ml-2 text-muted-foreground" size={25} />}
         </div> 

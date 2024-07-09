@@ -141,7 +141,7 @@ export function SerpForm({
     return (
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className={formClassName}>
-          <div className="flex flex-col mb-10 max-w-[880px] m-auto gap-8 mt-10">
+          <div className="flex flex-col pb-10 max-w-[880px] m-auto gap-8 mt-10">
             <div className="text-center leading-8">
               <h1 className="text-4xl font-bold mb-3">SERP Checker</h1>
               <p className=" leading-8">Get fresh results every single time</p>
@@ -241,7 +241,7 @@ export function SerpForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)} className={formClassName}>
-        <div className="flex flex-col mb-10">
+        <div className="flex flex-col pb-10">
           <div className="grid grid-cols-1  gap-4 w-full">
             <FormField
               control={form.control}

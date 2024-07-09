@@ -86,11 +86,11 @@ export function Main({
   }
   
   return (
-    <div className={cn("flex",landing ? "flex-col" : "flex-row")}>
+    <div className={cn("flex",landing ? "flex-col" : "flex-col md:flex-row")}>
       <div className={cn("flex-shrink-0 w-full", landing ? "": "md:w-[300px] mr-10")}>
         <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} />
       </div>
-      <div className=" flex-1">
+      <div className="flex-auto">
         {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
         {landing && <LandingPage className="md:max-w-[880px] mx-auto" />}
         {loading && <SkeletonList num={10} /> }
