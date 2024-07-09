@@ -27,7 +27,8 @@
     },
     "serp": {
       "featured_snippets": "Fragmentos destacados",
-      "people_also_ask": "La gente también pregunta"
+      "people_also_ask": "La gente también pregunta",
+      "things_to_know": "Cosas que saber"
     },
     "meta": {
       "default": {

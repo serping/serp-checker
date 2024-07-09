@@ -5,6 +5,7 @@ import {
   InlineVideos,
   LocalResults,
   PeopleAlsoAsk,
+  ThinksToKnow,
   Video
 } from "@/frontend/google/desktop";
 import { ItemNormal } from "@/frontend/google/shared/ItemNormal";
@@ -99,6 +100,8 @@ const Preview =({
         )
     case "inline_videos": 
       return <InlineVideos original={original} />
+    case "things_to_know": 
+      return <ThinksToKnow original={original} />
     case "inline_images": 
       return <InlineImages original={original} />
     case "people_also_ask": 

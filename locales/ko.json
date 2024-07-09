@@ -27,7 +27,8 @@
     },
     "serp": {
       "featured_snippets": "추천 스니펫",
-      "people_also_ask": "사람들은 또한 묻습니다"
+      "people_also_ask": "사람들은 또한 묻습니다",
+      "things_to_know": "알아야 할 사항"
     },
     "meta": {
       "default": {

@@ -27,7 +27,8 @@
     },
     "serp": {
       "featured_snippets": "注目のスニペット",
-      "people_also_ask": "人々も尋ねます"
+      "people_also_ask": "人々も尋ねます",
+      "things_to_know": "知っておくべきこと"
     },
     "meta": {
       "default": {

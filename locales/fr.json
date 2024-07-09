@@ -27,7 +27,8 @@
     },
     "serp": {
       "featured_snippets": "Extraits en vedette",
-      "people_also_ask": "Les gens demandent aussi"
+      "people_also_ask": "Les gens demandent aussi",
+      "things_to_know": "Choses à savoir"
     },
     "meta": {
       "default": {

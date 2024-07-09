@@ -37,7 +37,7 @@ export function Main({
         hl: searchParams.locale,
         gl: searchParams.country,
         location: searchParams.location,
-        snapshot: "on",
+        snapshot: process.env.NODE_ENV === "development" ? "on" : "off",
         thumbnail: "on",
         num: 100,
         // device: searchParams.device,
