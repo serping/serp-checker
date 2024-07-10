@@ -23,6 +23,9 @@
             "message": "La query deve contenere almeno 2 caratteri."
           }
         }
+      },
+      "faq": {
+        "title": "Domande frequenti"
       }
     },
     "serp": {

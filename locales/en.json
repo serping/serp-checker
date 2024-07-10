@@ -23,6 +23,9 @@
             "message": "Query must be at least 2 characters."
           }
         }
+      },
+      "faq": {
+        "title": "Faqs"
       }
     },
     "serp": {

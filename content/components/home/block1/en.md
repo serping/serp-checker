@@ -1,4 +1,4 @@
 
 # SERP Checker
 
-Analyze SERPs from 230+ Countries with SERP Checking
+Analyze SERPs from 200+ Countries & different languages

@@ -23,6 +23,9 @@
             "message": "Zapytanie musi mieć co najmniej 2 znaki."
           }
         }
+      },
+      "faq": {
+        "title": "SSS"
       }
     },
     "serp": {

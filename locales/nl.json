@@ -23,6 +23,9 @@
             "message": "Zoekopdracht moet minstens 2 tekens bevatten."
           }
         }
+      },
+      "faq": {
+        "title": "Veelgestelde vragen"
       }
     },
     "serp": {

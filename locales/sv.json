@@ -23,6 +23,9 @@
             "message": "Sökfrågan måste vara minst 2 tecken lång."
           }
         }
+      },
+      "faq": {
+        "title": "Vanliga frågor"
       }
     },
     "serp": {

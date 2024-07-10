@@ -23,6 +23,9 @@
             "message": "La requête doit comporter au moins 2 caractères."
           }
         }
+      },
+      "faq": {
+        "title": "FAQ"
       }
     },
     "serp": {

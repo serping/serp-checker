@@ -23,6 +23,9 @@
             "message": "La consulta debe tener al menos 2 caracteres."
           }
         }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes"
       }
     },
     "serp": {
