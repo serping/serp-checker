@@ -37,8 +37,8 @@ const Overview =({
         <div className="flex items-center gap-2">
           <SiteIcon link={original.source.link} /> 
           <a href={original.source.link} target="_blank">
-            <h3 className="font-semibold text-l text-blue-700 ">{original.title}</h3>
-            <div className="lg:max-w-[700px] line-clamp-1">{original.source.link}</div> 
+            <h3 className="font-semibold text-l text-blue-600">{original.title}</h3>
+            <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">{original.source.link}</div> 
           </a>
           {original.thumbnail && <ImageIcon className="ml-2 text-muted-foreground" size={25} />}
         </div> 

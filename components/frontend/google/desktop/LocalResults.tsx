@@ -12,7 +12,7 @@ const LocalNormal =({original}:{original: SerpLocalNormal})=>{
             <div className="flex w-full items-center justify-between py-4">
             <div className="flex-1 truncate">
               <div>
-                <h3 className="truncate text-base font-medium text-gray-900">{item.title}</h3>
+                <h3 className="truncate text-base font-medium">{item.title}</h3>
                 <span className="text-gray-500">{item.topic}</span>
               </div> 
               <address className="mt-1 truncate text-sm text-gray-500">{item.address}</address>
@@ -37,7 +37,7 @@ const LocalServices =({original}:{original: SerpLocalServices})=>{
             <div className="flex w-full items-center justify-between py-4">
             <div className="flex-1 truncate">
               <div>
-                <h3 className="truncate text-base font-medium text-gray-900">{item.title}</h3>
+                <h3 className="truncate text-base font-medium">{item.title}</h3>
                 <span className="text-gray-500">{item.topic}</span>
               </div> 
               <address className="mt-1 truncate text-sm text-gray-500">{item.address}</address>
@@ -66,7 +66,7 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
               <div className="flex w-full items-center justify-between py-4">
                 <div className="flex-1 truncate">
                   <div className="flex items-center space-x-3">
-                    <h3 className="truncate text-base font-medium text-gray-900">{data.title}</h3>
+                    <h3 className="truncate text-base font-medium">{data.title}</h3>
                     <span className="text-gray-500">{item.topic}</span>
                   </div> 
                   <address className="mt-1 truncate text-sm text-gray-500">{data.address}</address>
@@ -83,7 +83,7 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
               <div className="flex w-full items-center justify-between py-4">
                 <div className="flex-1 truncate">
                   <div>
-                    <h3 className="truncate font-medium text-gray-900 text-base">{data.title}</h3>
+                    <h3 className="truncate font-medium text-base">{data.title}</h3>
                     <span className="text-gray-500">{data.type}</span>
                   </div> 
                   <address className="mt-1 truncate text-sm text-gray-500">{data.address}</address>
@@ -117,7 +117,7 @@ export function LocalResults({original, className}:{original: SerpLocalResults, 
   }
   
   return(
-    <div className={cn("max-w-[500px]", className)}>
+    <div className={cn("max-w-[500px] text-current", className)}>
       <Results />
     </div>
   )
