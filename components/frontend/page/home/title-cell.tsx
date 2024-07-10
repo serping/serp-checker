@@ -9,14 +9,14 @@ import {
   ThinksToKnow,
   Video
 } from "@/frontend/google/desktop";
+import { FeaturedSnippets } from "@/frontend/google/desktop/FeaturedSnippets";
 import { ItemNormal } from "@/frontend/google/shared/ItemNormal";
 import { ItemSource } from "@/frontend/google/shared/ItemSource";
+import { SiteIcon } from "@/frontend/google/shared/SiteIcon";
 import { TypeTitle } from "@/frontend/google/shared/TypeTitle";
 import { ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SerpColumnType, type SerpNormal } from "serping/zod/google/desktop-serp";
-import { FeaturedSnippets } from "../google/desktop/FeaturedSnippets";
-import { SiteIcon } from "../google/shared/SiteIcon";
 
 const Overview =({
   original,

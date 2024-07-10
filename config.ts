@@ -1,9 +1,12 @@
+
 import config from "serping/config";
 import { serpingApiConfig } from "serping/types/config";
+
 const regions = ["us-east-1"] as const;
-const locales = ['en', 'es', 'ja', 'de', 'fr', "it", 'zh', "ko", "ru"] as const;
+const locales = ['en', 'es', 'de', 'fr', 'it', 'ru', 'zh', 'ja', "ko"] as const;
 const defaultLocale = "en" as const;
 const devices = ["desktop", "mobile"] as const;
+
 
 export type RegionType = typeof regions[number];
 export type LocaleType = typeof locales[number];

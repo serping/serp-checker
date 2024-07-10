@@ -2,7 +2,7 @@
 
 import { Skeleton } from "@/components/ui/skeleton";
 import { DeviceType } from "@/config";
-import { SerpForm } from "@/frontend/home/form";
+import { SerpForm } from "@/frontend/page/home/form";
 import apiClient from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { type HomeFormValues } from "@/shema/index";
@@ -13,11 +13,14 @@ import { Results } from "./results";
 import { Status } from "./status";
 
 export function Main({ 
-  params
+  params,
+  markdownContents
 }: Readonly<{ 
   params: { locale: string; };
+  markdownContents: Record<string, string|undefined>;
 }>) {
   const locale = params.locale;
+  const { block1 } = markdownContents;
   const defaultValues =  {
     query: "",
     locale: locale === "zh" ? "zh-Hans" : locale,
@@ -92,7 +95,7 @@ export function Main({
       </div>
       <div className="flex-auto">
         {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
-        {landing && <LandingPage className="md:max-w-[880px] mx-auto" />}
+        {landing && <LandingPage className="md:max-w-[880px] mx-auto" block1={block1} />}
         {loading && <SkeletonList num={10} /> }
         {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
       </div>
