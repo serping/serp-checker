@@ -8,7 +8,6 @@ export default function Home({
 }: Readonly<{ 
   params: { locale: string; };
 }>) {
-  console.log("markdownContents 1")
   // Load by key: data/generated/components-markdown.json
   const markdownContents = {
     block1: getComponentMarkdown({
@@ -20,7 +19,6 @@ export default function Home({
       componentPathName: "home/block2"
     }),
   }
-  console.log("markdownContents 2", markdownContents)
   return (
     <div className="px-8">
       <Main params={params} markdownContents={markdownContents} />

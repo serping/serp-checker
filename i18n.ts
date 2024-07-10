@@ -46,7 +46,7 @@ if (!loadComponentsMarkdownData) {
   try {
     const file = fs.readFileSync(path.join(process.cwd(), componentsMarkdownFile)).toString();
     if (file) loadComponentsMarkdownData = I18nComponentMarkdownSchema.parse(JSON.parse(file));
-    console.log("Components markdown data is valid.");
+    // console.log("Components markdown data is valid.");
   } catch (validationError: any) {
     console.error("Validation error:", validationError.errors);
   }
