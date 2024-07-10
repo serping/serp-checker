@@ -2,6 +2,7 @@
 "use client"
 
 import { Markdown } from '@/components/shared/markdown';
+import { cn } from "@/lib/utils";
 import { Faqs } from './faqs';
 
 export function Landing({className, block2}:{  className?: string; block2?: string;}){
@@ -17,7 +18,7 @@ export function Landing({className, block2}:{  className?: string; block2?: stri
     },
   ]
   return(
-    <div className={className}>
+    <div className={cn('pt-20',className)}>
       {block2 && <Markdown content={block2} />}
       <Faqs faqs={faqs} />
     </div>
