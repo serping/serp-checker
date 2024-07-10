@@ -145,8 +145,8 @@ export function SerpForm({
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className={formClassName}>
           <div className="flex flex-col pb-10 max-w-[880px] m-auto gap-8 mt-10">
-            <div className="text-center leading-8">
-              {block1 && <Markdown content={block1} classNames={{ h1: "scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-4xl" }} />
+            <div className="text-center flex justify-center">
+              {block1 && <Markdown content={block1} classNames={{ h1: "scroll-m-20 text-2xl tracking-tight lg:text-3xl" }} />
                 }
             </div>
             <FormField

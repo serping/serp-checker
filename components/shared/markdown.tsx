@@ -9,9 +9,10 @@ import {
   TypographyH3,
   TypographyH4,
   TypographyInlineCode,
-  TypographyList,
+  TypographyOL,
   TypographyP,
-  TypographySmall
+  TypographySmall,
+  TypographyUL
 } from '../ui/typography';
 
 export function Markdown({
@@ -29,14 +30,15 @@ export function Markdown({
       h4?: string;
       p?: string;
       blockquote?: string;
-      list?: string;
-      inline_code?: string;
+      ul?: string;
+      ol?: string;
+      code?: string;
       small?: string; 
     };
     markdownClassName?: string;
 } ){
   return(
-    <div className={cn('prose lg:prose-xl dark:prose-invert', className)}>
+    <div className={cn('prose dark:prose-invert', className)}>
       <ReactMarkdown 
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm]}
@@ -47,8 +49,9 @@ export function Markdown({
           h4: ({ children }) => <TypographyH4 className={classNames?.h4}>{children}</TypographyH4>, 
           p: ({ children }) => <TypographyP className={classNames?.p}>{children}</TypographyP>,
           blockquote: ({ children }) => <TypographyBlockquote className={classNames?.blockquote}>{children}</TypographyBlockquote>,
-          ul: ({ children }) => <TypographyList className={classNames?.list}>{children}</TypographyList>,
-          code: ({ children }) => <TypographyInlineCode className={classNames?.inline_code}>{children}</TypographyInlineCode>,   
+          ul: ({ children }) => <TypographyUL className={classNames?.ul}>{children}</TypographyUL>,
+          ol: ({ children }) => <TypographyOL className={classNames?.ol}>{children}</TypographyOL>,
+          code: ({ children }) => <TypographyInlineCode className={classNames?.code}>{children}</TypographyInlineCode>,   
           small: ({ children }) => <TypographySmall className={classNames?.small}>{children}</TypographySmall>,
         }}
         className={markdownClassName}
