@@ -4,7 +4,7 @@
 import { Markdown } from '@/components/shared/markdown';
 import { Faqs } from './faqs';
 
-export function Landing({className, block1}:{  className?: string; block1?: string;}){
+export function Landing({className, block2}:{  className?: string; block2?: string;}){
    
   const faqs = [
     {
@@ -18,7 +18,7 @@ export function Landing({className, block1}:{  className?: string; block1?: stri
   ]
   return(
     <div className={className}>
-      {block1 && <Markdown content={block1} />}
+      {block2 && <Markdown content={block2} />}
       <Faqs faqs={faqs} />
     </div>
   )

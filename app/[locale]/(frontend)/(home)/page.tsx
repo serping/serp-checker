@@ -14,7 +14,11 @@ export default function Home({
     block1: getComponentMarkdown({
       locale: params.locale as LocaleType, 
       componentPathName: "home/block1"
-    })
+    }),
+    block2: getComponentMarkdown({
+      locale: params.locale as LocaleType, 
+      componentPathName: "home/block2"
+    }),
   }
   console.log("markdownContents 2", markdownContents)
   return (

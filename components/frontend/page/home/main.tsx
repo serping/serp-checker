@@ -20,7 +20,7 @@ export function Main({
   markdownContents: Record<string, string|undefined>;
 }>) {
   const locale = params.locale;
-  const { block1 } = markdownContents;
+  const { block1, block2 } = markdownContents;
   const defaultValues =  {
     query: "",
     locale: locale === "zh" ? "zh-Hans" : locale,
@@ -91,11 +91,11 @@ export function Main({
   return (
     <div className={cn("flex",landing ? "flex-col" : "flex-col md:flex-row")}>
       <div className={cn("flex-shrink-0 w-full", landing ? "": "md:w-[300px] mr-10")}>
-        <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} />
+        <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} block1={block1} />
       </div>
       <div className="flex-auto">
         {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
-        {landing && <LandingPage className="md:max-w-[880px] mx-auto" block1={block1} />}
+        {landing && <LandingPage className="md:max-w-[880px] mx-auto" block2={block2} />}
         {loading && <SkeletonList num={10} /> }
         {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
       </div>

@@ -4,5 +4,11 @@
       "en",
       "es"
     ]
+  },
+  "home/block2": {
+    "locales": [
+      "en",
+      "es"
+    ]
   }
 }

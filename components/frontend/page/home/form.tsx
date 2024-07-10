@@ -1,5 +1,6 @@
 "use client"
 
+import { Markdown } from '@/components/shared/markdown';
 import { Button } from "@/components/ui/button";
 import { Combobox } from "@/components/ui/combobox";
 import {
@@ -40,8 +41,10 @@ export function SerpForm({
   defaultValues,
   landing = true,
   loading,
+  block1,
   onSubmit
 }:{
+  block1?: string;
   defaultValues: HomeFormValues;
   loading?: boolean;
   landing?: boolean;
@@ -143,8 +146,8 @@ export function SerpForm({
         <form onSubmit={form.handleSubmit(handleSubmit)} className={formClassName}>
           <div className="flex flex-col pb-10 max-w-[880px] m-auto gap-8 mt-10">
             <div className="text-center leading-8">
-              <h1 className="text-4xl font-bold mb-3">SERP Checker</h1>
-              <p className=" leading-8">Get fresh results every single time</p>
+              {block1 && <Markdown content={block1} classNames={{ h1: "scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-4xl" }} />
+                }
             </div>
             <FormField
                 control={form.control}
