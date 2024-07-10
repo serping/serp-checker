@@ -1,0 +1,41 @@
+{
+  "menu": {
+    "serp_checker": "Serp Checker",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "system": "System"
+  },
+  "frontend": {
+    "go_to_homepage": "Przejdź do strony głównej",
+    "page_not_found": "Strona nie znaleziona",
+    "home": {
+      "position": "Pozycja",
+      "type": "Typ Serp",
+      "title": "Tytuł",
+      "results_for": "Wyniki dla \"{query}\"",
+      "views": {
+        "preview": "Podgląd"
+      },
+      "look_up": "Sprawdź",
+      "form": {
+        "query": {
+          "error": {
+            "message": "Zapytanie musi mieć co najmniej 2 znaki."
+          }
+        }
+      }
+    },
+    "serp": {
+      "featured_snippets": "Polecane Fragmenty",
+      "people_also_ask": "Ludzie Również Pytają",
+      "things_to_know": "Rzeczy, które Warto Wiedzieć"
+    },
+    "meta": {
+      "default": {
+        "title": "SERP Checking - Darmowy SERP Checker dla Szybkich, Dokładnych Rankingów Google i Bogatych Wyników",
+        "description": "Użyj naszego darmowego SERP checkera, aby analizować wyniki z ponad 230 krajów. Zdobądź wgląd w Bogate Wyniki, top 100 rankingów i więcej. Zwiększ swoje SEO z SERP Checking już teraz!"
+      }
+    },
+    "desktop": "Komputer"
+  }
+}

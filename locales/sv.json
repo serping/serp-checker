@@ -1,0 +1,41 @@
+{
+  "menu": {
+    "serp_checker": "Serp Checker",
+    "light": "Ljus",
+    "dark": "Mörk",
+    "system": "System"
+  },
+  "frontend": {
+    "go_to_homepage": "Gå till startsidan",
+    "page_not_found": "Sidan kunde inte hittas",
+    "home": {
+      "position": "Position",
+      "type": "Serp Typ",
+      "title": "Titel",
+      "results_for": "Resultat för \"{query}\"",
+      "views": {
+        "preview": "Förhandsvisning"
+      },
+      "look_up": "Slå upp",
+      "form": {
+        "query": {
+          "error": {
+            "message": "Sökfrågan måste vara minst 2 tecken lång."
+          }
+        }
+      }
+    },
+    "serp": {
+      "featured_snippets": "Utvalda Utdrag",
+      "people_also_ask": "Folk Frågar Också",
+      "things_to_know": "Saker att Veta"
+    },
+    "meta": {
+      "default": {
+        "title": "SERP Checking - Gratis SERP-kontroll för Snabba, Exakta Google Rank & Rika Resultat",
+        "description": "Använd vår gratis SERP-kontroll för att analysera resultat från över 230 länder. Få insikter om Rika Resultat, topp 100-rankningar och mer. Förbättra din SEO med SERP Checking nu!"
+      }
+    },
+    "desktop": "Dator"
+  }
+}

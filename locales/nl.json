@@ -1,0 +1,41 @@
+{
+  "menu": {
+    "serp_checker": "Serp Checker",
+    "light": "Licht",
+    "dark": "Donker",
+    "system": "Systeem"
+  },
+  "frontend": {
+    "go_to_homepage": "Ga naar startpagina",
+    "page_not_found": "Pagina niet gevonden",
+    "home": {
+      "position": "Positie",
+      "type": "Serp Type",
+      "title": "Titel",
+      "results_for": "Resultaten voor \"{query}\"",
+      "views": {
+        "preview": "Voorbeeld"
+      },
+      "look_up": "Opzoeken",
+      "form": {
+        "query": {
+          "error": {
+            "message": "Zoekopdracht moet minstens 2 tekens bevatten."
+          }
+        }
+      }
+    },
+    "serp": {
+      "featured_snippets": "Uitgelichte Fragmenten",
+      "people_also_ask": "Mensen Vragen Ook",
+      "things_to_know": "Dingen om te Weten"
+    },
+    "meta": {
+      "default": {
+        "title": "SERP Checking - Gratis SERP Checker voor Snelle, Nauwkeurige Google Rank & Rijke Resultaten",
+        "description": "Gebruik onze gratis SERP checker om resultaten uit 230+ landen te analyseren. Krijg inzichten in Rijke Resultaten, top 100 rankings, en meer. Verhoog je SEO met SERP Checking nu!"
+      }
+    },
+    "desktop": "Desktop"
+  }
+}
