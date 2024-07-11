@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-markdown-data": "tsx bin/generateComponentsMarkdownData.ts",
+    "add-data": "git add data",
     "watch-markdown": "tsx bin/watcher.ts"
   },
   "dependencies": {
@@ -70,6 +71,7 @@
     "typescript": "^5.5.3"
   },
   "pre-commit": [
-    "generate-markdown-data"
+    "generate-markdown-data",
+    "add-data"
   ]
 }
