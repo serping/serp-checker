@@ -2,13 +2,15 @@
   "home/block1": {
     "locales": [
       "en",
-      "es"
+      "es",
+      "ru"
     ]
   },
   "home/block2": {
     "locales": [
       "en",
-      "es"
+      "es",
+      "ru"
     ]
   }
 }
