@@ -38,7 +38,7 @@ export function Markdown({
     markdownClassName?: string;
 } ){
   return(
-    <div className={cn('prose dark:prose-invert', className)}>
+    <div className={cn('prose dark:prose-invert max-w-full', className)}>
       <ReactMarkdown 
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm]}
