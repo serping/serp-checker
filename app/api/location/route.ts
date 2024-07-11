@@ -1,10 +1,9 @@
 import { GeoTargets, csvData, dataLoaded, type Row } from "@/models/GeoTrgets";
 
-GeoTargets().catch((error: any) => {
-  console.error('Failed to load CSV data:', error);
-});
+
 
 export async function GET(req: Request) {
+  if (!dataLoaded) GeoTargets();
   while (!dataLoaded) {
     await new Promise(resolve => setTimeout(resolve, 100));
   }
