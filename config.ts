@@ -16,7 +16,7 @@ export type SerpingApiType = Record<RegionType, serpingApiConfig>
 export const appConfig = {
   appDomain: "serpchecking.com",
   appName: "SerpChecking",
-  appDescriptioni: "SerpChecking",
+  appDescription: "SerpChecking",
   i18n: {
     locales,
     defaultLocale,
