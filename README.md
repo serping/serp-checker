@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SERP Checker
+
+Analyze SERPs from 230+ Countries with SERP Checking
+
+SERP Checking offers a powerful, free SERP checker designed to give you comprehensive insights into Google's search engine results pages (SERPs) for any keyword. Our tool stands out with unparalleled global coverage and detailed analysis of SERP features and Rich Results.
 
 ## Getting Started
 
@@ -13,12 +17,6 @@ pnpm dev
 # or
 bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
