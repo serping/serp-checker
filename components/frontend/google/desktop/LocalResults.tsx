@@ -1,7 +1,15 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { SerpLocalDirectionPlaceNormalSchema, SerpLocalDirectionPlaceStoreSchema, SerpLocalServicePlaceSchema, type SerpLocalDirections, type SerpLocalNormal, type SerpLocalResults, type SerpLocalServices } from "serping/zod/google/desktop-serp";
+import {
+  SerpLocalDirectionPlaceNormalSchema,
+  SerpLocalDirectionPlaceStoreSchema,
+  SerpLocalDirectionsSchema,
+  SerpLocalNormalSchema,
+  SerpLocalServicePlaceSchema,
+  SerpLocalServicesSchema,
+  type SerpLocalDirections, type SerpLocalNormal, type SerpLocalResults, type SerpLocalServices
+} from "serping/zod/google/desktop-serp";
 
 const LocalNormal =({original}:{original: SerpLocalNormal})=>{
   return(
@@ -104,15 +112,14 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
 }
 
 export function LocalResults({original, className}:{original: SerpLocalResults, className?: string;}){
-
   const Results =()=>{
-    if(original.type === "services"){
-      return <LocalServices original={original as SerpLocalServices} />
+    if(original.local_results.type === "services"){ 
+      return <LocalServices original={SerpLocalServicesSchema.parse(original.local_results)} />
       
-    }else if(original.type === "directions"){
-      return  <LocalDirections original={original as SerpLocalDirections} />
+    }else if(original.local_results.type === "directions"){
+      return  <LocalDirections original={SerpLocalDirectionsSchema.parse(original.local_results)} />
     }else{
-      return  <LocalNormal original={original as SerpLocalNormal} />
+      return  <LocalNormal original={SerpLocalNormalSchema.parse(original.local_results)} />
     }
   }
   

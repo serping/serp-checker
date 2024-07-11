@@ -47,14 +47,7 @@ export function Results({
 
   const origin_search = useMemo(() => {
     if ( !results.origin_search.results ) return [];
-    let items: any = results.origin_search.results.map(item => item);
- 
-    if (results.local_results) {
-      items.unshift({
-        type: "local_results",
-        local_results: results.local_results
-      });
-    }
+    let items: any = results.origin_search.results.map(item => item);  
 
     if (results.related_searches) {
       items.push({

@@ -57,7 +57,7 @@ const Overview =({
     case "people_also_ask": 
       return <PeopleAlsoAsk original={original} />
     case "local_results": 
-      return <LocalResults original={original.local_results} />
+      return <LocalResults original={original} />
     default:
       console.log('No conditions met');
       return (
