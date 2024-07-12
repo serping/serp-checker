@@ -17,7 +17,7 @@ function generateComponentMarkdownData(dir: string, jsonData: Record<string, { l
     if (entry.isDirectory()) {
       generateComponentMarkdownData(fullPath, jsonData);
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      const relativePath = path.relative(contentDir, path.dirname(fullPath).replace('\\', '/'));
+      const relativePath = path.relative(contentDir, path.dirname(fullPath));
       const locale = path.basename(entry.name, '.md') as LocaleType;
 
       if (locales.includes(locale)) {
@@ -44,7 +44,7 @@ function writeComponentMarkdownData(): void {
 
   fs.writeFileSync(
     componentsMarkdownFile,
-    JSON.stringify(jsonData, null, 2),
+    JSON.stringify(jsonData, null, 2).replace('\\', '/'),
     'utf8'
   );
 
