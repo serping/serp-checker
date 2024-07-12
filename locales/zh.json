@@ -36,6 +36,9 @@
         "post": {
           "posted_on": "发表于"
         }
+      },
+      "top_stories": {
+        "title": "热门故事"
       }
     },
     "meta": {

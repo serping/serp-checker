@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Geplaatst op"
         }
+      },
+      "top_stories": {
+        "title": "Topverhalen"
       }
     },
     "meta": {

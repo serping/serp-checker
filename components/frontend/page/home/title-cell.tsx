@@ -8,6 +8,8 @@ import {
   PeopleAlsoAsk,
   ThinksToKnow,
 
+  TopStories,
+
   Video
 } from "@/frontend/google/desktop";
 import { FeaturedSnippets } from "@/frontend/google/desktop/FeaturedSnippets";
@@ -57,6 +59,8 @@ const Overview =({
         return <InlineVideos original={original} />
     case "inline_images": 
       return <InlineImages original={original} /> 
+    case "top_stories": 
+      return <TopStories original={original} /> 
     case "people_also_ask": 
       return <PeopleAlsoAsk original={original} />
     case "local_results": 
@@ -108,6 +112,8 @@ const Preview =({
       return <ThinksToKnow original={original} />
     case "inline_images": 
       return <InlineImages original={original} />
+    case "top_stories": 
+      return <TopStories original={original} /> 
     case "twitter": 
       return <Twitter original={original} />
     case "people_also_ask": 

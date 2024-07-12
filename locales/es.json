@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Publicado en"
         }
+      },
+      "top_stories": {
+        "title": "Historias destacadas"
       }
     },
     "meta": {

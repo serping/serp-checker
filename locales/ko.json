@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "게시 날짜"
         }
+      },
+      "top_stories": {
+        "title": "주요 뉴스"
       }
     },
     "meta": {

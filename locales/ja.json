@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "ポストする"
         }
+      },
+      "top_stories": {
+        "title": "トップストーリー"
       }
     },
     "meta": {

@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Posté sur"
         }
+      },
+      "top_stories": {
+        "title": "Meilleures histoires"
       }
     },
     "meta": {

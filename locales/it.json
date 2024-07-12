@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Postato su"
         }
+      },
+      "top_stories": {
+        "title": "Storie principali"
       }
     },
     "meta": {

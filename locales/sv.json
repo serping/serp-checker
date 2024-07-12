@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Postat på"
         }
+      },
+      "top_stories": {
+        "title": "Mest lästa artiklar"
       }
     },
     "meta": {

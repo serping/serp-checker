@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Wysłany dnia"
         }
+      },
+      "top_stories": {
+        "title": "Kultowe historie"
       }
     },
     "meta": {

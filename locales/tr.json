@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Yayınlanan"
         }
+      },
+      "top_stories": {
+        "title": "En iyi hikayeler"
       }
     },
     "meta": {

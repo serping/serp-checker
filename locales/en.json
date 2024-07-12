@@ -37,6 +37,9 @@
         "post": {
           "posted_on": "Posted On"
         }
+      },
+      "top_stories": {
+        "title": "Top Stories"
       }
     },
     "meta": {
