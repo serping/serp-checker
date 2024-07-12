@@ -2,7 +2,7 @@
 import { serpingApiConfig } from "serping/types/config";
 
 const regions = ["us-east-1"] as const;
-const locales = ['en', 'es', 'de', 'fr', 'it', 'nl', 'pl', 'pt', 'sv', 'tr', 'ru', 'cn', 'ja', "ko"] as const;
+const locales = ['en', 'es', 'de', 'fr', 'it', 'nl', 'pl', 'pt', 'sv', 'tr', 'ru', 'zh', 'ja', "ko"] as const;
 const defaultLocale = "en" as const;
 const devices = ["desktop", "mobile"] as const;
 
@@ -37,7 +37,7 @@ export const appConfig = {
       "tr": "Türkçe",
       "ru": "Русский",
       "ja": "日本語",
-      "cn": "中文",
+      "zh": "中文",
       "ko": "한국어"
     } as Record<LocaleType, string>
   },
