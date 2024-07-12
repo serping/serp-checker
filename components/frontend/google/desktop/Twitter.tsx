@@ -14,7 +14,6 @@ import ReactMarkdown from 'react-markdown';
 import type { SerpTwitter } from "serping/zod/google/desktop-serp";
 import { ItemSource } from "../shared/ItemSource";
 import { TypeTitle } from "../shared/TypeTitle";
-
 export function Twitter({original, className}:{original: SerpTwitter, className?: string;}){
   const t = useTranslations();  
   return (
@@ -28,7 +27,7 @@ export function Twitter({original, className}:{original: SerpTwitter, className?
               <div className="p-1">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <ReactMarkdown className="text-base">{item.snippet}</ReactMarkdown>
+                    <ReactMarkdown components={{ a: ({ children, href }) => <a className="text-primary" href={href}>{children}</a>,}} className="text-base">{item.snippet}</ReactMarkdown>
                     <span className="text-base">{item.posted_on}</span>
                   </CardContent>
                 </Card>
