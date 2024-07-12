@@ -1,16 +1,28 @@
 {
-  "home/block1": {
+  "home\\block1": {
     "locales": [
+      "de",
       "en",
       "es",
-      "de"
+      "fr",
+      "it",
+      "nl",
+      "pl",
+      "pt",
+      "tr"
     ]
   },
-  "home/block2": {
+  "home\\block2": {
     "locales": [
+      "de",
       "en",
       "es",
-      "de"
+      "fr",
+      "it",
+      "nl",
+      "pl",
+      "pt",
+      "tr"
     ]
   }
 }
