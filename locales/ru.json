@@ -31,7 +31,8 @@
     "serp": {
       "featured_snippets": "Избранные фрагменты",
       "people_also_ask": "Люди также спрашивают",
-      "things_to_know": "Что нужно знать"
+      "things_to_know": "Что нужно знать",
+      "x": "X"
     },
     "meta": {
       "default": {

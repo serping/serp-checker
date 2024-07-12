@@ -7,6 +7,7 @@ import {
   LocalResults,
   PeopleAlsoAsk,
   ThinksToKnow,
+
   Video
 } from "@/frontend/google/desktop";
 import { FeaturedSnippets } from "@/frontend/google/desktop/FeaturedSnippets";
@@ -17,6 +18,7 @@ import { TypeTitle } from "@/frontend/google/shared/TypeTitle";
 import { ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SerpColumnType, type SerpNormal } from "serping/zod/google/desktop-serp";
+import { Twitter } from "../../google/desktop/Twitter";
 
 const Overview =({
   original,
@@ -31,13 +33,14 @@ const Overview =({
     case "site_links":
     case "video":
     case "book":
+    case "twitter":
       original = original as SerpNormal;
       
       return ( 
         <div className="flex items-center gap-2">
           <SiteIcon link={original.source.link} /> 
           <a href={original.source.link} target="_blank">
-            <h3 className="font-semibold text-l text-blue-600">{original.title}</h3>
+            <h3 className="font-semibold text-l text-blue-600">{original.title ?? original.source.title}</h3>
             <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">{original.source.link}</div> 
           </a>
           {original.thumbnail && <ImageIcon className="ml-2 text-muted-foreground" size={25} />}
@@ -51,9 +54,9 @@ const Overview =({
           </>
         )
     case "inline_videos": 
-      return <InlineVideos original={original} />
+        return <InlineVideos original={original} />
     case "inline_images": 
-      return <InlineImages original={original} />
+      return <InlineImages original={original} /> 
     case "people_also_ask": 
       return <PeopleAlsoAsk original={original} />
     case "local_results": 
@@ -105,6 +108,8 @@ const Preview =({
       return <ThinksToKnow original={original} />
     case "inline_images": 
       return <InlineImages original={original} />
+    case "twitter": 
+      return <Twitter original={original} />
     case "people_also_ask": 
       return <PeopleAlsoAsk original={original} />
     case "local_results": 

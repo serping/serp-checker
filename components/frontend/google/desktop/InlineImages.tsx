@@ -8,7 +8,7 @@ export function InlineImages({original, className}:{original: SerpInlineImages, 
   const collection = original.collection;
   return (
     <div className={cn(className)}>
-      <ul role="list" className="flex text-sm">
+      <ul role="list" className="flex text-sm gap-3">
         {collection.map(image =>  
           <li key={`inline-images-${image.title}`} className="flex space-x-6 py-2">
            {image.thumbnail === "imageBase64" ? <ImageIcon size={24} /> : 

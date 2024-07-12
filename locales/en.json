@@ -31,7 +31,8 @@
     "serp": {
       "featured_snippets": "Featured Snippets",
       "people_also_ask": "People Also Ask",
-      "things_to_know": "Things To Know"
+      "things_to_know": "Things To Know",
+      "x": "X"
     },
     "meta": {
       "default": {
