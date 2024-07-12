@@ -1,14 +1,38 @@
 {
   "home/block1": {
     "locales": [
+      "de",
       "en",
-      "es"
+      "es",
+      "fr",
+      "it",
+      "ja",
+      "ko",
+      "nl",
+      "pl",
+      "pt",
+      "ru",
+      "sv",
+      "tr",
+      "zh"
     ]
   },
   "home/block2": {
     "locales": [
+      "de",
       "en",
-      "es"
+      "es",
+      "fr",
+      "it",
+      "ja",
+      "ko",
+      "nl",
+      "pl",
+      "pt",
+      "ru",
+      "sv",
+      "tr",
+      "zh"
     ]
   }
 }
