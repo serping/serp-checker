@@ -17,7 +17,7 @@ function generateComponentMarkdownData(dir: string, jsonData: Record<string, { l
     if (entry.isDirectory()) {
       generateComponentMarkdownData(fullPath, jsonData);
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      const relativePath = path.relative(contentDir, path.dirname(fullPath));
+      const relativePath = path.relative(contentDir, path.dirname(fullPath)).replace(/\\/g, '/');
       const locale = path.basename(entry.name, '.md') as LocaleType;
 
       if (locales.includes(locale)) {
