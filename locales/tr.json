@@ -32,7 +32,12 @@
       "featured_snippets": "Polecane Fragmenty",
       "people_also_ask": "Ludzie Również Pytają",
       "things_to_know": "Rzeczy, które Warto Wiedzieć",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "Yayınlanan"
+        }
+      }
     },
     "meta": {
       "default": {

@@ -32,7 +32,12 @@
       "featured_snippets": "Uitgelichte Fragmenten",
       "people_also_ask": "Mensen Vragen Ook",
       "things_to_know": "Dingen om te Weten",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "Geplaatst op"
+        }
+      }
     },
     "meta": {
       "default": {

@@ -24,14 +24,14 @@ export function Twitter({original, className}:{original: SerpTwitter, className?
         <CarouselContent className="-ml-1">
           {original.posts.map((item, index) =>   (
             <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
+              <a className="p-1" href={item.link}>
                 <Card>
-                  <CardContent className="flex aspect-square items-start justify-center p-6">
-                    <ReactMarkdown components={{ a: ({ children, href }) => <a className="text-primary mt-au" href={href}>{children}</a>,}} className="text-base">{item.snippet}</ReactMarkdown>
-                    <span className="text-base">{item.posted_on}</span>
+                  <CardContent className="flex flex-col aspect-square items-start justify-center p-5">
+                    <ReactMarkdown className="text-base line-clamp-6">{item.snippet}</ReactMarkdown>
+                    <span className="text-base mt-auto"><span className="mr-2">{t('frontend.serp.twitter.post.posted_on')}</span><span className="text-muted-foreground">{item.posted_on}</span></span>
                   </CardContent>
                 </Card>
-              </div>
+              </a>
             </CarouselItem>
           ))}
         </CarouselContent>

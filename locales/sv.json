@@ -32,7 +32,12 @@
       "featured_snippets": "Utvalda Utdrag",
       "people_also_ask": "Folk Frågar Också",
       "things_to_know": "Saker att Veta",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "Postat på"
+        }
+      }
     },
     "meta": {
       "default": {

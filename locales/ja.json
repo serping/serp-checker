@@ -32,7 +32,12 @@
       "featured_snippets": "注目のスニペット",
       "people_also_ask": "人々も尋ねます",
       "things_to_know": "知っておくべきこと",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "ポストする"
+        }
+      }
     },
     "meta": {
       "default": {

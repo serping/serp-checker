@@ -32,7 +32,12 @@
       "featured_snippets": "Fragmentos destacados",
       "people_also_ask": "La gente también pregunta",
       "things_to_know": "Cosas que saber",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "Publicado en"
+        }
+      }
     },
     "meta": {
       "default": {

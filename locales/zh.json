@@ -31,7 +31,12 @@
     "serp": {
       "featured_snippets": "精选片段",
       "people_also_ask": "人们还问",
-      "things_to_know": "要知道的事情"
+      "things_to_know": "要知道的事情",
+      "twitter": {
+        "post": {
+          "posted_on": "发表于"
+        }
+      }
     },
     "meta": {
       "default": {

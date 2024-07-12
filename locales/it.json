@@ -32,7 +32,12 @@
       "featured_snippets": "Snippet in primo piano",
       "people_also_ask": "Le persone chiedono anche",
       "things_to_know": "Cose da sapere",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "Postato su"
+        }
+      }
     },
     "meta": {
       "default": {

@@ -29,7 +29,12 @@
       "featured_snippets": "Ausgewählte Ausschnitte",
       "people_also_ask": "Die Leute fragen auch",
       "things_to_know": "Sachen zu wissen",
-      "x": "X"
+      "x": "X",
+      "twitter": {
+        "post": {
+          "posted_on": "Veröffentlicht am"
+        }
+      }
     },
     "meta": {
       "default": {
