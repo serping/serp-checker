@@ -10,12 +10,12 @@ export function Landing({className, block2}:{  className?: string; block2?: stri
   const t = useTranslations();
   const faqs = [
     {
-      question: "Question",
-      answer: "Answer string"
+      question: t('frontend.home.faq.qa1.question'),
+      answer: t('frontend.home.faq.qa1.answer')
     },
     {
-      question: "Question",
-      answer: "answer string"
+      question: t('frontend.home.faq.qa2.question'),
+      answer: t('frontend.home.faq.qa2.answer')
     },
   ]
   return(
