@@ -25,7 +25,11 @@
         }
       },
       "faq": {
-        "title": "SSS"
+        "title": "SSS",
+        "qa1": {
+          "question": "Web sitemin SERP'deki sıralamasını nasıl yükseltebilirim?",
+          "answer": "Web sitenizin SERP'deki sıralamasını iyileştirmek için aşağıdaki yöntemleri kullanabilirsiniz:\n\nArama Motoru Optimizasyonu (SEO): Organik arama sonuçlarındaki sıralamasını yükseltmek için web sitenizin içeriğini, yapısını ve kodunu optimize edin.\n\nAnahtar Kelime Araştırması: İşletmenizle alakalı yüksek trafikli anahtar kelimeleri seçin ve kullanın.\n\nYüksek Kaliteli İçerik: Kullanıcıların arama ihtiyaçlarını karşılayan değerli, orijinal ve alakalı içerik oluşturun.\n\nWeb Sitesi Performans Optimizasyonu: Web sitenizin yükleme hızını ve mobil uyumluluğunu iyileştirin.\n\nKaliteli Geri Bağlantılar Alın: Sitenizin otoritesini artırmak için diğer yetkili web sitelerinden bağlantılar edinin."
+        }
       }
     },
     "serp": {

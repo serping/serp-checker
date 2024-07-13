@@ -25,7 +25,11 @@
         }
       },
       "faq": {
-        "title": "Vanliga frågor"
+        "title": "Vanliga frågor",
+        "qa1": {
+          "question": "Hur kan jag förbättra min webbplatss rankning i SERP?",
+          "answer": "För att förbättra din webbplats ranking på SERP kan du använda följande metoder:\n\nSökmotoroptimering (SEO): Optimera din webbplats innehåll, struktur och kod för att förbättra dess rankning i organiska sökresultat.\n\nSökordsforskning: Välj och använd sökord med hög trafik som är relevanta för ditt företag.\n\nInnehåll av hög kvalitet: Skapa värdefullt, originellt och relevant innehåll som möter användarnas sökbehov.\n\nWebbplatsprestandaoptimering: Förbättra din webbplats laddningshastighet och mobilkompatibilitet.\n\nSkaffa kvalitetsbakåtlänkar: Skaffa länkar från andra auktoritativa webbplatser för att öka din webbplats auktoritet."
+        }
       }
     },
     "serp": {

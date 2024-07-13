@@ -25,7 +25,11 @@
         }
       },
       "faq": {
-        "title": "Często zadawane pytania"
+        "title": "Często zadawane pytania",
+        "qa1": {
+          "question": "Jak mogę poprawić ranking mojej witryny w SERP?",
+          "answer": "Aby poprawić ranking swojej witryny w SERP, możesz skorzystać z następujących metod:\n\nOptymalizacja wyszukiwarek (SEO): Optymalizuj zawartość, strukturę i kod swojej witryny, aby poprawić jej ranking w bezpłatnych wynikach wyszukiwania.\n\nBadanie słów kluczowych: wybierz i używaj słów kluczowych generujących duży ruch, odpowiednich dla Twojej firmy.\n\nTreści wysokiej jakości: twórz wartościowe, oryginalne i trafne treści, które odpowiadają potrzebom wyszukiwania użytkowników.\n\nOptymalizacja wydajności witryny: Popraw szybkość ładowania witryny i kompatybilność z urządzeniami mobilnymi.\n\nZdobądź wysokiej jakości linki zwrotne: Zdobądź linki z innych wiarygodnych witryn, aby zwiększyć autorytet swojej witryny."
+        }
       }
     },
     "serp": {

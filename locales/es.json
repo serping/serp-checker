@@ -25,7 +25,11 @@
         }
       },
       "faq": {
-        "title": "Preguntas frecuentes"
+        "title": "Preguntas frecuentes",
+        "qa1": {
+          "question": "¿Cómo puedo mejorar el ranking de mi sitio web en SERP?",
+          "answer": "Para mejorar la clasificación de su sitio web en SERP, puede utilizar los siguientes métodos:\n\nOptimización de motores de búsqueda (SEO): optimice el contenido, la estructura y el código de su sitio web para mejorar su clasificación en los resultados de búsqueda orgánicos.\n\nInvestigación de palabras clave: elija y utilice palabras clave de alto tráfico relevantes para su negocio.\n\nContenido de alta calidad: cree contenido valioso, original y relevante que satisfaga las necesidades de búsqueda de los usuarios.\n\nOptimización del rendimiento del sitio web: mejore la velocidad de carga de su sitio web y la compatibilidad móvil.\n\nAdquiera vínculos de retroceso de calidad: obtenga vínculos de otros sitios web autorizados para aumentar la autoridad de su sitio."
+        }
       }
     },
     "serp": {

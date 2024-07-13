@@ -25,7 +25,11 @@
         }
       },
       "faq": {
-        "title": "Veelgestelde vragen"
+        "title": "Veelgestelde vragen",
+        "qa1": {
+          "question": "Hoe kan ik de ranking van mijn website op de SERP verbeteren?",
+          "answer": "Om de ranking van uw website op de SERP te verbeteren, kunt u de volgende methoden gebruiken:\n\nZoekmachineoptimalisatie (SEO): Optimaliseer de inhoud, structuur en code van uw website om de positie in de organische zoekresultaten te verbeteren.\n\nZoekwoordonderzoek: kies en gebruik zoekwoorden met veel verkeer die relevant zijn voor uw bedrijf.\n\nInhoud van hoge kwaliteit: Creëer waardevolle, originele en relevante inhoud die voldoet aan de zoekbehoeften van gebruikers.\n\nOptimalisatie van websiteprestaties: Verbeter de laadsnelheid en mobiele compatibiliteit van uw website.\n\nZorg voor kwalitatieve backlinks: verkrijg links van andere gezaghebbende websites om de autoriteit van uw site te vergroten."
+        }
       }
     },
     "serp": {
