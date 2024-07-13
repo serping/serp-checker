@@ -1,6 +1,6 @@
 {
   "menu": {
-    "serp_checker": "Verifica SERP",
+    "serp_checker": "Controllo SERP",
     "light": "Chiaro",
     "dark": "Scuro",
     "system": "Sistema"
@@ -10,13 +10,13 @@
     "page_not_found": "Pagina non trovata",
     "home": {
       "position": "Posizione",
-      "type": "Tipo di servizio",
+      "type": "Tipo di SERP",
       "title": "Titolo",
-      "results_for": "risultati per \"{query}\"",
+      "results_for": "Risultati per \"{query}\"",
       "views": {
         "preview": "Anteprima"
       },
-      "look_up": "Cercare",
+      "look_up": "Cerca",
       "form": {
         "query": {
           "error": {
@@ -25,31 +25,47 @@
         }
       },
       "faq": {
-        "title": "Domande frequenti",
+        "title": "FAQ",
         "qa1": {
-          "question": "Come posso migliorare il posizionamento del mio sito web nella SERP?",
-          "answer": "Per migliorare il posizionamento del tuo sito web nella SERP, puoi utilizzare i seguenti metodi:\n\nOttimizzazione per i motori di ricerca (SEO): ottimizza il contenuto, la struttura e il codice del tuo sito web per migliorarne il posizionamento nei risultati di ricerca organici.\n\nRicerca per parole chiave: scegli e utilizza parole chiave ad alto traffico pertinenti alla tua attività.\n\nContenuti di alta qualità: crea contenuti preziosi, originali e pertinenti che soddisfino le esigenze di ricerca degli utenti.\n\nOttimizzazione delle prestazioni del sito web: migliora la velocità di caricamento del tuo sito web e la compatibilità mobile.\n\nAcquisisci backlink di qualità: ottieni collegamenti da altri siti Web autorevoli per aumentare l'autorità del tuo sito."
+          "question": "Come posso migliorare il posizionamento del mio sito web sulla SERP?",
+          "answer": "Per migliorare il posizionamento del tuo sito web sulla SERP, puoi utilizzare i seguenti metodi:\nOttimizzazione per i motori di ricerca (SEO): Ottimizza il contenuto, la struttura e il codice del tuo sito web per migliorarne il posizionamento nei risultati di ricerca organici.\nRicerca di parole chiave: Scegli e utilizza parole chiave ad alto traffico rilevanti per la tua attività.\nContenuto di alta qualità: Crea contenuti preziosi, originali e pertinenti che soddisfino le esigenze di ricerca degli utenti.\nOttimizzazione delle prestazioni del sito web: Migliora la velocità di caricamento e la compatibilità mobile del tuo sito web.\nOttieni backlink di qualità: Ottieni link da altri siti web autorevoli per aumentare l'autorità del tuo sito."
+        },
+        "qa2": {
+          "question": "Quali sono le funzionalità SERP di Google?",
+          "answer": "Le funzionalità SERP di Google sono risultati speciali che appaiono nella pagina dei risultati del motore di ricerca, come i Rich Results. Questi includono:\n\n- Featured Snippets\n- Box \"People Also Ask\"\n- Knowledge Panels\n- Risultati del Local Pack\n- Caroselli di video e immagini\n"
+        },
+        "qa3": {
+          "question": "Perché utilizzare uno strumento di verifica della SERP?",
+          "answer": "Uno strumento di verifica della SERP ti aiuta a:\n\n- Tracciare il posizionamento del tuo sito web\n- Analizzare le SERP di diversi paesi e regioni\n- Visualizzare le SERP in varie lingue\n- Monitorare la presenza di Rich Results\n- Visualizzare le SERP da qualsiasi posizione\n"
+        },
+        "qa4": {
+          "answer": "Sì, il nostro strumento di verifica della SERP è gratuito. In futuro, potrebbero esserci alcune limitazioni di utilizzo.",
+          "question": "Il verificatore di SERP è gratuito per sempre?"
+        },
+        "qa5": {
+          "question": "Fornite un'API di verifica della SERP?",
+          "answer": "Sì, ho sviluppato un'API di SERP e la offro tramite SERP.ING. È l'API SERP più conveniente del settore, inclusi tutti i principali Rich Results."
         }
       }
     },
     "serp": {
-      "featured_snippets": "Snippet in primo piano",
-      "people_also_ask": "Le persone chiedono anche",
+      "featured_snippets": "Featured Snippets",
+      "people_also_ask": "People Also Ask",
       "things_to_know": "Cose da sapere",
       "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "Postato su"
+          "posted_on": "Pubblicato il"
         }
       },
       "top_stories": {
-        "title": "Storie principali"
+        "title": "Notizie principali"
       }
     },
     "meta": {
       "default": {
-        "title": "SerpChecking: controllo Serp gratuito",
-        "description": "Serp Checker gratuito, fonte Serping"
+        "title": "Controllo SERP - Verificatore SERP gratuito per classifiche Google rapide e precise e Rich Results",
+        "description": "Usa il nostro verificatore di SERP gratuito per analizzare i risultati di oltre 230 paesi. Ottieni informazioni sui Rich Results, le prime 100 classifiche e altro ancora. Migliora la tua SEO con il Controllo SERP ora!"
       }
     },
     "desktop": "Desktop"

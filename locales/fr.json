@@ -1,7 +1,7 @@
 {
   "menu": {
-    "serp_checker": "Vérificateur de moteurs de recherche",
-    "light": "Lumière",
+    "serp_checker": "Vérificateur de SERP",
+    "light": "Clair",
     "dark": "Sombre",
     "system": "Système"
   },
@@ -10,9 +10,9 @@
     "page_not_found": "Page non trouvée",
     "home": {
       "position": "Position",
-      "type": "Type de moteur de recherche",
+      "type": "Type de SERP",
       "title": "Titre",
-      "results_for": "résultats pour \"{query}\"",
+      "results_for": "Résultats pour \"{query}\"",
       "views": {
         "preview": "Aperçu"
       },
@@ -20,36 +20,52 @@
       "form": {
         "query": {
           "error": {
-            "message": "La requête doit comporter au moins 2 caractères."
+            "message": "La requête doit comporter au moins 2 caractères."
           }
         }
       },
       "faq": {
         "title": "FAQ",
         "qa1": {
-          "question": "Comment puis-je améliorer le classement de mon site Web sur les SERP ?",
-          "answer": "Pour améliorer le classement de votre site Web sur le SERP, vous pouvez utiliser les méthodes suivantes :\n\nOptimisation des moteurs de recherche (SEO) : optimisez le contenu, la structure et le code de votre site Web pour améliorer son classement dans les résultats de recherche organiques.\n\nRecherche de mots clés : choisissez et utilisez des mots clés à fort trafic et pertinents pour votre entreprise.\n\nContenu de haute qualité : créez un contenu précieux, original et pertinent qui répond aux besoins de recherche des utilisateurs.\n\nOptimisation des performances du site Web : améliorez la vitesse de chargement et la compatibilité mobile de votre site Web.\n\nAcquérir des backlinks de qualité : obtenez des liens provenant d'autres sites Web faisant autorité pour augmenter l'autorité de votre site."
+          "question": "Comment puis-je améliorer le classement de mon site web sur le SERP ?",
+          "answer": "Pour améliorer le classement de votre site web sur le SERP, vous pouvez utiliser les méthodes suivantes:\nOptimisation pour les moteurs de recherche (SEO): Optimisez le contenu, la structure et le code de votre site web pour améliorer son classement dans les résultats de recherche organiques.\nRecherche de mots-clés: Choisissez et utilisez des mots-clés à fort trafic pertinents pour votre entreprise.\nContenu de haute qualité: Créez un contenu précieux, original et pertinent qui répond aux besoins de recherche des utilisateurs.\nOptimisation des performances du site web: Améliorez la vitesse de chargement et la compatibilité mobile de votre site web.\nObtenez des backlinks de qualité: Obtenez des liens d'autres sites web autoritaires pour augmenter l'autorité de votre site."
+        },
+        "qa2": {
+          "question": "Quelles sont les fonctionnalités SERP de Google ?",
+          "answer": "Les fonctionnalités SERP de Google sont des résultats spéciaux qui apparaissent sur la page de résultats des moteurs de recherche, comme les Rich Results. Ceux-ci incluent:\n\n- Extraits optimisés\n- Boîtes \"Les gens demandent aussi\"\n- Panneaux de connaissances\n- Résultats du Local Pack\n- Carrousels de vidéos et d'images\n"
+        },
+        "qa3": {
+          "question": "Pourquoi utiliser un outil de vérification de SERP ?",
+          "answer": "Un outil de vérification de SERP vous aide à:\n\n- Suivre le classement de votre site web\n- Analyser les SERP de différents pays et régions\n- Voir les SERP dans diverses langues\n- Surveiller la présence des Rich Results\n- Voir les SERP depuis n'importe quel emplacement\n"
+        },
+        "qa4": {
+          "answer": "Oui, notre vérificateur de SERP est gratuit. À l'avenir, il pourrait y avoir certaines limites d'utilisation.",
+          "question": "Le vérificateur de SERP est-il gratuit pour toujours ?"
+        },
+        "qa5": {
+          "question": "Fournissez-vous une API de vérificateur de SERP ?",
+          "answer": "Oui, j'ai développé une API de SERP et je la propose via SERP.ING. C'est l'API SERP la plus rentable de l'industrie, incluant tous les principaux Rich Results."
         }
       }
     },
     "serp": {
-      "featured_snippets": "Extraits en vedette",
+      "featured_snippets": "Extraits optimisés",
       "people_also_ask": "Les gens demandent aussi",
-      "things_to_know": "Choses à savoir",
+      "things_to_know": "À savoir",
       "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "Posté sur"
+          "posted_on": "Publié le"
         }
       },
       "top_stories": {
-        "title": "Meilleures histoires"
+        "title": "Principales actualités"
       }
     },
     "meta": {
       "default": {
-        "title": "SerpChecking : vérificateur de Serp gratuit",
-        "description": "Vérificateur Serp gratuit, source par Serping"
+        "title": "Vérification de SERP - Vérificateur de SERP gratuit pour un classement Google rapide et précis et des Rich Results",
+        "description": "Utilisez notre vérificateur de SERP gratuit pour analyser les résultats de plus de 230 pays. Obtenez des informations sur les Rich Results, les 100 meilleurs classements et plus encore. Améliorez votre SEO avec la vérification de SERP maintenant !"
       }
     },
     "desktop": "Bureau"

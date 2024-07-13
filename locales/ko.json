@@ -1,55 +1,71 @@
 {
   "menu": {
-    "serp_checker": "Serp Checker",
+    "serp_checker": "SERP 체커",
     "light": "라이트",
     "dark": "다크",
     "system": "시스템"
   },
   "frontend": {
     "go_to_homepage": "홈페이지로 이동",
-    "page_not_found": "페이지를 찾을 수 없음",
+    "page_not_found": "페이지를 찾을 수 없습니다",
     "home": {
       "position": "위치",
-      "type": "Serp 유형",
+      "type": "SERP 유형",
       "title": "제목",
       "results_for": "\"{query}\"에 대한 결과",
       "views": {
-        "preview": "시사"
+        "preview": "미리보기"
       },
-      "look_up": "찾다",
+      "look_up": "검색",
       "form": {
         "query": {
           "error": {
-            "message": "쿼리는 2자 이상이어야 합니다."
+            "message": "쿼리는 최소 2자 이상이어야 합니다."
           }
         }
       },
       "faq": {
         "title": "자주 묻는 질문",
         "qa1": {
-          "question": "SERP에서 내 웹사이트 순위를 어떻게 높일 수 있나요?",
-          "answer": "SERP에서 웹사이트 순위를 높이려면 다음 방법을 사용할 수 있습니다.\n\n검색 엔진 최적화(SEO): 웹 사이트의 콘텐츠, 구조 및 코드를 최적화하여 자연적인 검색 결과에서 순위를 높입니다.\n\n키워드 조사: 귀하의 비즈니스와 관련된 트래픽이 많은 키워드를 선택하고 사용하십시오.\n\n고품질 콘텐츠: 사용자의 검색 요구 사항을 충족하는 가치 있고 독창적이며 관련성 높은 콘텐츠를 만듭니다.\n\n웹사이트 성능 최적화: 웹사이트의 로딩 속도와 모바일 호환성을 향상시킵니다.\n\n고품질 백링크 확보: 다른 권위 있는 웹사이트에서 링크를 얻어 사이트의 권위를 높이세요."
+          "question": "웹사이트의 순위를 어떻게 개선할 수 있나요?",
+          "answer": "웹사이트의 순위를 개선하기 위해 다음 방법을 사용할 수 있습니다:\n검색 엔진 최적화(SEO): 웹사이트의 콘텐츠, 구조 및 코드를 최적화하여 자연 검색 결과에서의 순위를 향상시킵니다.\n키워드 연구: 비즈니스와 관련된 고트래픽 키워드를 선택하고 사용합니다.\n고품질 콘텐츠: 사용자의 검색 요구를 충족하는 가치 있고 원본이며 관련성 높은 콘텐츠를 작성합니다.\n웹사이트 성능 최적화: 웹사이트의 로딩 속도와 모바일 호환성을 향상시킵니다.\n고품질 백링크 획득: 다른 권위 있는 웹사이트에서 링크를 얻어 사이트의 권위를 높입니다.\n"
+        },
+        "qa2": {
+          "question": "Google의 SERP 기능이란 무엇인가요?",
+          "answer": "Google의 SERP 기능은 검색 엔진 결과 페이지에 표시되는 특별한 결과로, 리치 결과 등이 있습니다. 여기에는 다음이 포함됩니다:\n\n- 추천 스니펫\n- People Also Ask 상자\n- 지식 패널\n- 로컬 팩 결과\n- 비디오 및 이미지 캐러셀\n"
+        },
+        "qa3": {
+          "question": "왜 SERP 체커 도구를 사용해야 하나요?",
+          "answer": "SERP 체커 도구는 다음에 도움이 됩니다:\n\n- 웹사이트의 순위 추적\n- 다른 국가 및 지역의 SERP 분석\n- 다양한 언어의 SERP 보기\n- 리치 결과의 존재 모니터링\n- 어느 위치에서나 SERP 보기\n"
+        },
+        "qa4": {
+          "answer": "네, 우리의 SERP 체커는 무료입니다. 미래에는 사용 한도가 있을 수 있습니다.",
+          "question": "SERP 체커는 영원히 무료인가요?"
+        },
+        "qa5": {
+          "question": "SERP 체커 API를 제공하나요?",
+          "answer": "네, 저는 SERP API를 개발했으며 SERP.ING을 통해 제공합니다. 이는 업계에서 가장 비용 효율적인 SERP API로, 주요 리치 결과를 모두 포함합니다."
         }
       }
     },
     "serp": {
       "featured_snippets": "추천 스니펫",
-      "people_also_ask": "사람들은 또한 묻습니다",
+      "people_also_ask": "People Also Ask",
       "things_to_know": "알아야 할 사항",
       "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "게시 날짜"
+          "posted_on": "게시일"
         }
       },
       "top_stories": {
-        "title": "주요 뉴스"
+        "title": "최신 뉴스"
       }
     },
     "meta": {
       "default": {
-        "title": "SerpChecking: 무료 Serp 검사기",
-        "description": "무료 Serp 검사기, Serping의 소스"
+        "title": "SERP 체크 - 빠르고 정확한 Google 순위 및 리치 결과를 위한 무료 SERP 체커",
+        "description": "무료 SERP 체커를 사용하여 230개 이상의 국가의 결과를 분석하세요. 리치 결과, 상위 100개 순위 등에 대한 통찰력을 얻습니다. 지금 SERP 체크로 SEO를 향상시키세요!"
       }
     },
     "desktop": "데스크탑"

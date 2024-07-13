@@ -1,22 +1,22 @@
 {
   "menu": {
-    "serp_checker": "Serp Checker",
+    "serp_checker": "SERP Checker",
     "light": "Jasny",
     "dark": "Ciemny",
     "system": "System"
   },
   "frontend": {
-    "go_to_homepage": "Przejdź do strony głównej",
+    "go_to_homepage": "Idź na stronę główną",
     "page_not_found": "Strona nie znaleziona",
     "home": {
       "position": "Pozycja",
-      "type": "Typ Serp",
+      "type": "Typ SERP",
       "title": "Tytuł",
       "results_for": "Wyniki dla \"{query}\"",
       "views": {
         "preview": "Podgląd"
       },
-      "look_up": "Sprawdź",
+      "look_up": "Szukaj",
       "form": {
         "query": {
           "error": {
@@ -25,31 +25,47 @@
         }
       },
       "faq": {
-        "title": "Często zadawane pytania",
+        "title": "Najczęściej zadawane pytania",
         "qa1": {
-          "question": "Jak mogę poprawić ranking mojej witryny w SERP?",
-          "answer": "Aby poprawić ranking swojej witryny w SERP, możesz skorzystać z następujących metod:\n\nOptymalizacja wyszukiwarek (SEO): Optymalizuj zawartość, strukturę i kod swojej witryny, aby poprawić jej ranking w bezpłatnych wynikach wyszukiwania.\n\nBadanie słów kluczowych: wybierz i używaj słów kluczowych generujących duży ruch, odpowiednich dla Twojej firmy.\n\nTreści wysokiej jakości: twórz wartościowe, oryginalne i trafne treści, które odpowiadają potrzebom wyszukiwania użytkowników.\n\nOptymalizacja wydajności witryny: Popraw szybkość ładowania witryny i kompatybilność z urządzeniami mobilnymi.\n\nZdobądź wysokiej jakości linki zwrotne: Zdobądź linki z innych wiarygodnych witryn, aby zwiększyć autorytet swojej witryny."
+          "question": "Jak mogę poprawić pozycję mojej strony?",
+          "answer": "Aby poprawić pozycję swojej strony, możesz użyć następujących metod:\nOptymalizacja wyszukiwarek (SEO): Optymalizuj treść, strukturę i kod swojej strony, aby poprawić jej pozycję w organicznych wynikach wyszukiwania.\nBadanie słów kluczowych: Wybierz i używaj popularnych słów kluczowych odpowiednich dla Twojego biznesu.\nTreść wysokiej jakości: Twórz wartościowe, oryginalne i odpowiednie treści, które spełniają potrzeby użytkowników wyszukiwania.\nOptymalizacja wydajności strony: Popraw szybkość ładowania strony i jej kompatybilność z urządzeniami mobilnymi.\nPozyskiwanie jakościowych linków zwrotnych: Uzyskuj linki z innych autorytatywnych stron, aby zwiększyć autorytet swojej strony.\n"
+        },
+        "qa2": {
+          "question": "Czym są funkcje SERP w Google?",
+          "answer": "Funkcje SERP w Google to specjalne wyniki, które pojawiają się na stronie wyników wyszukiwania, takie jak Rich Results. Obejmują one:\n\n- Wyróżnione fragmenty\n- Pytania ludzi\n- Panele wiedzy\n- Lokalne pakiety wyników\n- Karuzele wideo i obrazów\n"
+        },
+        "qa3": {
+          "question": "Dlaczego warto używać narzędzia SERP Checker?",
+          "answer": "Narzędzie SERP Checker pomaga:\n\n- Śledzić pozycję Twojej strony\n- Analizować wyniki SERP z różnych krajów i regionów\n- Przeglądać wyniki SERP w różnych językach\n- Monitorować obecność Rich Results\n- Przeglądać wyniki SERP z dowolnej lokalizacji\n"
+        },
+        "qa4": {
+          "answer": "Tak, nasz SERP Checker jest darmowy. W przyszłości mogą pojawić się pewne limity użycia.",
+          "question": "Czy SERP Checker będzie zawsze darmowy?"
+        },
+        "qa5": {
+          "question": "Czy oferujecie API SERP Checker?",
+          "answer": "Tak, opracowałem API SERP i oferuję je przez SERP.ING. Jest to najbardziej opłacalne API SERP w branży, obejmujące wszystkie główne Rich Results."
         }
       }
     },
     "serp": {
-      "featured_snippets": "Polecane Fragmenty",
-      "people_also_ask": "Ludzie Również Pytają",
-      "things_to_know": "Rzeczy, które Warto Wiedzieć",
+      "featured_snippets": "Wyróżnione fragmenty",
+      "people_also_ask": "Pytania ludzi",
+      "things_to_know": "Rzeczy, które warto wiedzieć",
       "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "Wysłany dnia"
+          "posted_on": "Opublikowano"
         }
       },
       "top_stories": {
-        "title": "Kultowe historie"
+        "title": "Najważniejsze historie"
       }
     },
     "meta": {
       "default": {
-        "title": "SERP Checking - Darmowy SERP Checker dla Szybkich, Dokładnych Rankingów Google i Bogatych Wyników",
-        "description": "Użyj naszego darmowego SERP checkera, aby analizować wyniki z ponad 230 krajów. Zdobądź wgląd w Bogate Wyniki, top 100 rankingów i więcej. Zwiększ swoje SEO z SERP Checking już teraz!"
+        "title": "SERP Checker - Darmowy SERP Checker do szybkiego, dokładnego sprawdzania rankingów Google i Rich Results",
+        "description": "Użyj naszego darmowego SERP Checkera, aby analizować wyniki z ponad 230 krajów. Zdobądź informacje o Rich Results, top 100 rankingach i więcej. Popraw swoje SEO z SERP Checker już teraz!"
       }
     },
     "desktop": "Komputer"

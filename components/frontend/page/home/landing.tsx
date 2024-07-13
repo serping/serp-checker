@@ -17,6 +17,18 @@ export function Landing({className, block2}:{  className?: string; block2?: stri
       question: t('frontend.home.faq.qa2.question'),
       answer: t('frontend.home.faq.qa2.answer')
     },
+    {
+      question: t('frontend.home.faq.qa3.question'),
+      answer: t('frontend.home.faq.qa3.answer')
+    },
+    {
+      question: t('frontend.home.faq.qa4.question'),
+      answer: t('frontend.home.faq.qa4.answer')
+    },
+    {
+      question: t('frontend.home.faq.qa5.question'),
+      answer: t('frontend.home.faq.qa5.answer')
+    },
   ]
   return(
     <div className={cn('pt-20',className)}>

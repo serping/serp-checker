@@ -10,48 +10,64 @@
     "page_not_found": "Sidan kunde inte hittas",
     "home": {
       "position": "Position",
-      "type": "Serp Typ",
+      "type": "Serp-typ",
       "title": "Titel",
       "results_for": "Resultat för \"{query}\"",
       "views": {
         "preview": "Förhandsvisning"
       },
-      "look_up": "Slå upp",
+      "look_up": "Sök upp",
       "form": {
         "query": {
           "error": {
-            "message": "Sökfrågan måste vara minst 2 tecken lång."
+            "message": "Frågan måste vara minst 2 tecken lång."
           }
         }
       },
       "faq": {
         "title": "Vanliga frågor",
         "qa1": {
-          "question": "Hur kan jag förbättra min webbplatss rankning i SERP?",
-          "answer": "För att förbättra din webbplats ranking på SERP kan du använda följande metoder:\n\nSökmotoroptimering (SEO): Optimera din webbplats innehåll, struktur och kod för att förbättra dess rankning i organiska sökresultat.\n\nSökordsforskning: Välj och använd sökord med hög trafik som är relevanta för ditt företag.\n\nInnehåll av hög kvalitet: Skapa värdefullt, originellt och relevant innehåll som möter användarnas sökbehov.\n\nWebbplatsprestandaoptimering: Förbättra din webbplats laddningshastighet och mobilkompatibilitet.\n\nSkaffa kvalitetsbakåtlänkar: Skaffa länkar från andra auktoritativa webbplatser för att öka din webbplats auktoritet."
+          "question": "Hur kan jag förbättra min webbplats rangordning i SERP?",
+          "answer": "För att förbättra din webbplats rangordning i SERP kan du använda följande metoder:\nSökmotoroptimering (SEO): Optimera din webbplats innehåll, struktur och kod för att förbättra dess placering i organiska sökresultat.\nNyckelordsanalys: Välj och använd högtrafik-nyckelord relevanta för ditt företag.\nHögkvalitativt innehåll: Skapa värdefullt, original och relevant innehåll som uppfyller användarnas sökbehov.\nWebbplatsprestanda-optimering: Förbättra din webbplats laddningstid och mobilkompatibilitet.\nFörvärva kvalitativa tillbakalänkar: Skaffa länkar från andra auktoritativa webbplatser för att öka din webbplats auktoritet.\n"
+        },
+        "qa2": {
+          "question": "Vad är Google SERP-funktioner?",
+          "answer": "Google SERP-funktioner är speciella resultat som visas på sökmotorresultatsidan, såsom Rika resultat. Dessa inkluderar:\n\n- Framträdande utdrag\n- Frågor som andra också frågar\n- Kunskapspaneler\n- Lokala packresultat\n- Video- och bildkaruseller\n"
+        },
+        "qa3": {
+          "question": "Varför använda en SERP Checker-verktyg?",
+          "answer": "Ett SERP Checker-verktyg hjälper dig att:\n\n- Spåra din webbplats rangordning\n- Analysera SERP från olika länder och regioner\n- Visa SERP på olika språk\n- Övervaka närvaron av Rika resultat\n- Visa SERP från vilken plats som helst\n"
+        },
+        "qa4": {
+          "question": "Är SERP Checker gratis för alltid?",
+          "answer": "Ja, vår SERP checker är gratis. I framtiden kan det finnas vissa användningsbegränsningar."
+        },
+        "qa5": {
+          "question": "Erbjuder ni en SERP Checker API?",
+          "answer": "Ja, jag har utvecklat en SERP API och erbjuder den genom SERP.ING. Det är den mest kostnadseffektiva SERP API:n i branschen, inklusive alla stora Rika resultat."
         }
       }
     },
     "serp": {
-      "featured_snippets": "Utvalda Utdrag",
-      "people_also_ask": "Folk Frågar Också",
-      "things_to_know": "Saker att Veta",
+      "featured_snippets": "Framträdande utdrag",
+      "people_also_ask": "Frågor som andra också frågar",
+      "things_to_know": "Saker att veta",
       "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "Postat på"
+          "posted_on": "Publicerad den"
         }
       },
       "top_stories": {
-        "title": "Mest lästa artiklar"
+        "title": "Toppnyheter"
       }
     },
     "meta": {
       "default": {
-        "title": "SERP Checking - Gratis SERP-kontroll för Snabba, Exakta Google Rank & Rika Resultat",
-        "description": "Använd vår gratis SERP-kontroll för att analysera resultat från över 230 länder. Få insikter om Rika Resultat, topp 100-rankningar och mer. Förbättra din SEO med SERP Checking nu!"
+        "title": "SERP-kontroll - Gratis SERP Checker för snabb och exakt Google Rank & Rika resultat",
+        "description": "Använd vår gratis SERP checker för att analysera resultat från 230+ länder. Få insikter om Rika resultat, topp 100 rankningar och mer. Öka din SEO med SERP-kontroll nu!"
       }
     },
-    "desktop": "Dator"
+    "desktop": "Skrivbord"
   }
 }

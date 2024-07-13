@@ -1,56 +1,73 @@
 {
   "menu": {
-    "serp_checker": "搜索引擎优化检查器",
-    "light": "亮",
-    "dark": "暗",
+    "serp_checker": "SERP检测器",
+    "light": "亮色",
+    "dark": "暗色",
     "system": "系统"
   },
   "frontend": {
-    "go_to_homepage": "去首页",
-    "page_not_found": "找不到网页",
+    "go_to_homepage": "返回首页",
+    "page_not_found": "页面未找到",
     "home": {
       "position": "位置",
-      "type": "搜索引擎类型",
+      "type": "SERP类型",
       "title": "标题",
-      "results_for": "\"{query}\" 的结果",
+      "results_for": "“{query}”的搜索结果",
       "views": {
         "preview": "预览"
       },
-      "look_up": "抬头",
+      "look_up": "查找",
       "form": {
         "query": {
           "error": {
-            "message": "查询必须至少有 2 个字符。"
+            "message": "查询至少需要2个字符。"
           }
         }
       },
       "faq": {
-        "title": "常见问题解答",
+        "title": "常见问题",
         "qa1": {
-          "question": "如何提高我的网站在 SERP 上的排名？",
-          "answer": "为了提高您的网站在SERP上的排名，您可以使用以下方法：\n\n搜索引擎优化 (SEO)：优化网站的内容、结构和代码，以提高其在自然搜索结果中的排名。\n\n关键词研究：选择并使用与您的业务相关的高流量关键词。\n\n高质量内容：创建有价值、原创且相关的内容，满足用户的搜索需求。\n\n网站性能优化：提高网站的加载速度和移动兼容性。\n\n获取优质反向链接：获取其他权威网站的链接，以增加网站的权威性。"
+          "question": "如何提高我的网站在SERP上的排名？",
+          "answer": "要提高您的网站在SERP上的排名，您可以使用以下方法：\n搜索引擎优化（SEO）：优化您网站的内容、结构和代码，以提升在有机搜索结果中的排名。\n关键词研究：选择和使用与您业务相关的高流量关键词。\n高质量内容：创建有价值、原创且与用户搜索需求相关的内容。\n网站性能优化：改善您网站的加载速度和移动设备兼容性。\n获取高质量的反向链接：从其他权威网站获取链接，以提高您网站的权威性。\n"
+        },
+        "qa2": {
+          "question": "什么是Google SERP特性？",
+          "answer": "Google SERP特性是出现在搜索引擎结果页面上的特殊结果，例如丰富的结果。其中包括：\n\n- 突出显示的摘录\n- 人们也在问的框\n- 知识面板\n- 本地包结果\n- 视频和图像轮播\n"
+        },
+        "qa3": {
+          "question": "为什么要使用SERP检测工具？",
+          "answer": "SERP检测工具可以帮助您：\n\n- 跟踪您网站的排名\n- 分析来自不同国家和地区的SERP\n- 查看各种语言的SERP\n- 监控丰富结果的存在\n- 查看任意位置的SERP\n"
+        },
+        "qa4": {
+          "answer": "是的，我们的SERP检测工具是免费的。将来可能会有一些使用限制。",
+          "question": "SERP检测工具永久免费吗？"
+        },
+        "qa5": {
+          "question": "您提供SERP检测工具的API吗？",
+          "answer": "是的，我开发了一个SERP API，并通过SERP.ING提供。这是行业内成本效益最高的SERP API，包括所有主要的丰富结果。"
         }
       }
     },
     "serp": {
-      "featured_snippets": "精选片段",
-      "people_also_ask": "人们还问",
-      "things_to_know": "要知道的事情",
+      "featured_snippets": "突出显示的摘录",
+      "people_also_ask": "人们也在问",
+      "things_to_know": "需要了解的内容",
+      "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "发表于"
+          "posted_on": "发布于"
         }
       },
       "top_stories": {
-        "title": "热门故事"
+        "title": "热门新闻"
       }
     },
     "meta": {
       "default": {
-        "title": "SerpChecking：免费的 Serp 检查器",
-        "description": "免费 Serp 检查器，来源：Serping"
+        "title": "SERP检测 - 免费的快速、准确的Google排名和丰富结果检测工具",
+        "description": "使用我们的免费SERP检测工具分析来自230多个国家的结果。了解丰富结果、前100名排名等信息。立即通过SERP检测增强您的SEO！"
       }
     },
-    "desktop": "桌面"
+    "desktop": "桌面版"
   }
 }

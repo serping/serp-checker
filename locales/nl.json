@@ -1,45 +1,61 @@
 {
   "menu": {
-    "serp_checker": "Serp Checker",
+    "serp_checker": "SERP Checker",
     "light": "Licht",
     "dark": "Donker",
     "system": "Systeem"
   },
   "frontend": {
-    "go_to_homepage": "Ga naar startpagina",
+    "go_to_homepage": "Ga naar homepage",
     "page_not_found": "Pagina niet gevonden",
     "home": {
       "position": "Positie",
-      "type": "Serp Type",
+      "type": "SERP Type",
       "title": "Titel",
       "results_for": "Resultaten voor \"{query}\"",
       "views": {
-        "preview": "Voorbeeld"
+        "preview": "Voorvertoning"
       },
       "look_up": "Opzoeken",
       "form": {
         "query": {
           "error": {
-            "message": "Zoekopdracht moet minstens 2 tekens bevatten."
+            "message": "Query moet minimaal 2 tekens bevatten."
           }
         }
       },
       "faq": {
         "title": "Veelgestelde vragen",
         "qa1": {
-          "question": "Hoe kan ik de ranking van mijn website op de SERP verbeteren?",
-          "answer": "Om de ranking van uw website op de SERP te verbeteren, kunt u de volgende methoden gebruiken:\n\nZoekmachineoptimalisatie (SEO): Optimaliseer de inhoud, structuur en code van uw website om de positie in de organische zoekresultaten te verbeteren.\n\nZoekwoordonderzoek: kies en gebruik zoekwoorden met veel verkeer die relevant zijn voor uw bedrijf.\n\nInhoud van hoge kwaliteit: Creëer waardevolle, originele en relevante inhoud die voldoet aan de zoekbehoeften van gebruikers.\n\nOptimalisatie van websiteprestaties: Verbeter de laadsnelheid en mobiele compatibiliteit van uw website.\n\nZorg voor kwalitatieve backlinks: verkrijg links van andere gezaghebbende websites om de autoriteit van uw site te vergroten."
+          "question": "Hoe kan ik de ranking van mijn website verbeteren?",
+          "answer": "Om de ranking van uw website te verbeteren, kunt u de volgende methoden gebruiken:\nZoekmachineoptimalisatie (SEO): Optimaliseer de inhoud, structuur en code van uw website om de ranking in organische zoekresultaten te verbeteren.\nZoekwoordonderzoek: Kies en gebruik zoekwoorden met veel verkeer die relevant zijn voor uw bedrijf.\nHoogwaardige inhoud: Maak waardevolle, originele en relevante inhoud die voldoet aan de zoekbehoeften van gebruikers.\nOptimalisatie van websiteprestaties: Verbeter de laadsnelheid en mobiele compatibiliteit van uw website.\nVerkrijg kwalitatieve backlinks: Verkrijg links van andere gezaghebbende websites om de autoriteit van uw site te vergroten.\n"
+        },
+        "qa2": {
+          "question": "Wat zijn Google SERP-functies?",
+          "answer": "Google SERP-functies zijn speciale resultaten die verschijnen op de zoekresultatenpagina, zoals rijke resultaten. Deze omvatten:\n\n- Uitgelichte fragmenten\n- Mensen vragen ook\n- Kenniskaarten\n- Lokale pakketten\n- Video- en afbeeldingscarrousels\n"
+        },
+        "qa3": {
+          "question": "Waarom een SERP Checker Tool gebruiken?",
+          "answer": "Een SERP Checker Tool helpt u:\n\n- De ranking van uw website bijhouden\n- SERP's analyseren uit verschillende landen en regio's\n- SERP's in verschillende talen bekijken\n- De aanwezigheid van rijke resultaten monitoren\n- SERP's vanuit elke locatie bekijken\n"
+        },
+        "qa4": {
+          "answer": "Ja, onze SERP Checker is gratis. In de toekomst kunnen er enkele gebruikslimieten zijn.",
+          "question": "Is de SERP Checker voor altijd gratis?"
+        },
+        "qa5": {
+          "question": "Biedt u een SERP Checker API aan?",
+          "answer": "Ja, ik heb een SERP API ontwikkeld en bied deze aan via SERP.ING. Het is de meest kosteneffectieve SERP API in de industrie, inclusief alle belangrijke rijke resultaten."
         }
       }
     },
     "serp": {
-      "featured_snippets": "Uitgelichte Fragmenten",
-      "people_also_ask": "Mensen Vragen Ook",
-      "things_to_know": "Dingen om te Weten",
+      "featured_snippets": "Uitgelichte fragmenten",
+      "people_also_ask": "Mensen vragen ook",
+      "things_to_know": "Dingen om te weten",
       "x": "X",
       "twitter": {
         "post": {
-          "posted_on": "Geplaatst op"
+          "posted_on": "Gepost op"
         }
       },
       "top_stories": {
@@ -48,8 +64,8 @@
     },
     "meta": {
       "default": {
-        "title": "SERP Checking - Gratis SERP Checker voor Snelle, Nauwkeurige Google Rank & Rijke Resultaten",
-        "description": "Gebruik onze gratis SERP checker om resultaten uit 230+ landen te analyseren. Krijg inzichten in Rijke Resultaten, top 100 rankings, en meer. Verhoog je SEO met SERP Checking nu!"
+        "title": "SERP Checker - Gratis SERP Checker voor snelle, nauwkeurige Google Ranking & Rijke Resultaten",
+        "description": "Gebruik onze gratis SERP Checker om resultaten te analyseren uit meer dan 230 landen. Krijg inzichten in rijke resultaten, top 100 rankings en meer. Verbeter uw SEO nu met SERP Checker!"
       }
     },
     "desktop": "Desktop"
