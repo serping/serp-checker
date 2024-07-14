@@ -11,7 +11,7 @@ export function NavBar() {
   const t = useTranslations();
   const memu = [
     {
-      name: "SerpChecking",
+      name: "SERP Checking",
       href: "/"
     }
   ];
@@ -22,8 +22,8 @@ export function NavBar() {
         href="#"
         className="flex items-center gap-2 text-lg font-semibold md:text-base"
       >
-        <Image alt="SerpChecking" src={"/logo.png"} width={25} height={25} className="h-6 w-6" />
-        <span className="sr-only">SerpChecking</span>
+        <Image alt="SERP Checking" src={"/logo.png"} width={25} height={25} className="h-6 w-6" />
+        <span className="sr-only">SERP Checking</span>
       </Link>
     )
   }

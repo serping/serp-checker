@@ -19,8 +19,8 @@ const serpingApi: Record<RegionType, { apiKey: string; }> = {
 }
 export const appConfig = {
   appDomain: "serpchecking.com",
-  appName: "SerpChecking",
-  appDescription: "SerpChecking",
+  appName: "SERP Checking",
+  appDescription: "SERP Checking",
   i18n: {
     locales,
     defaultLocale,

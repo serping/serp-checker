@@ -1,73 +1,12 @@
 {
-  "menu": {
-    "serp_checker": "SERP-Checker",
-    "light": "Hell",
-    "dark": "Dunkel",
-    "system": "System"
-  },
   "frontend": {
-    "go_to_homepage": "Zur Startseite gehen",
-    "page_not_found": "Seite nicht gefunden",
     "home": {
-      "position": "Position",
-      "type": "SERP-Typ",
-      "title": "Titel",
-      "results_for": "Ergebnisse für \"{query}\"",
-      "views": {
-        "preview": "Vorschau"
-      },
-      "look_up": "Nachschlagen",
-      "form": {
-        "query": {
-          "error": {
-            "message": "Die Anfrage muss mindestens 2 Zeichen lang sein."
-          }
-        }
-      },
       "faq": {
-        "title": "FAQs",
         "qa1": {
-          "question": "Wie kann ich das Ranking meiner Website im SERP verbessern?",
-          "answer": "Um das Ranking Ihrer Website im SERP zu verbessern, können Sie die folgenden Methoden verwenden:\nSuchmaschinenoptimierung (SEO): Optimieren Sie den Inhalt, die Struktur und den Code Ihrer Website, um das Ranking in den organischen Suchergebnissen zu verbessern.\nKeyword-Recherche: Wählen und verwenden Sie relevante Keywords mit hohem Traffic für Ihr Unternehmen.\nHochwertiger Inhalt: Erstellen Sie wertvolle, originelle und relevante Inhalte, die die Suchbedürfnisse der Nutzer erfüllen.\nWebsite-Performance-Optimierung: Verbessern Sie die Ladegeschwindigkeit und die mobile Kompatibilität Ihrer Website.\nErhalten Sie hochwertige Backlinks: Erhalten Sie Links von anderen autoritativen Websites, um die Autorität Ihrer Seite zu erhöhen."
-        },
-        "qa2": {
-          "question": "Was sind Google SERP-Features?",
-          "answer": "Google SERP-Features sind spezielle Ergebnisse, die auf der Suchergebnisseite erscheinen, wie Rich Results. Diese umfassen:\n\n- Featured Snippets\n- Kästchen 'Nutzer fragen auch'\n- Knowledge Panels\n- Lokale Pack-Ergebnisse\n- Video- und Bilderkarusselle\n"
-        },
-        "qa3": {
-          "question": "Warum ein SERP-Checker-Tool verwenden?",
-          "answer": "Ein SERP-Checker-Tool hilft Ihnen:\n\n- Das Ranking Ihrer Website zu verfolgen\n- SERPs aus verschiedenen Ländern und Regionen zu analysieren\n- SERPs in verschiedenen Sprachen anzuzeigen\n- Die Präsenz von Rich Results zu überwachen\n- SERPs von jedem Standort aus anzuzeigen\n"
-        },
-        "qa4": {
-          "answer": "Ja, unser SERP-Checker ist kostenlos. In Zukunft kann es einige Nutzungseinschränkungen geben.",
-          "question": "Ist der SERP-Checker für immer kostenlos?"
-        },
-        "qa5": {
-          "question": "Bieten Sie eine SERP-Checker-API an?",
-          "answer": "Ja, ich habe eine SERP-API entwickelt und biete sie über SERP.ING an. Es ist die kostengünstigste SERP-API der Branche, die alle wichtigen Rich Results umfasst."
+          "answer": "Um das Ranking Ihrer Website in den SERP zu verbessern, können Sie die folgenden Methoden verwenden:\n\n- **Suchmaschinenoptimierung (SEO)**:\nOptimieren Sie den Inhalt, die Struktur und den Code Ihrer Website, um das Ranking in den organischen Suchergebnissen zu verbessern.\n\n- **Keyword-Recherche**:\nWählen und verwenden Sie Keywords mit hohem Traffic, die für Ihr Geschäft relevant sind.\n\n- **Hochwertige Inhalte**:\nErstellen Sie wertvolle, originale und relevante Inhalte, die den Suchbedürfnissen der Nutzer entsprechen.\n\n- **Optimierung der Website-Performance**:\nVerbessern Sie die Ladegeschwindigkeit Ihrer Website und deren mobile Kompatibilität.\n\n- **Erwerb qualitativ hochwertiger Backlinks**:\nErhalten Sie Links von anderen autoritativen Websites, um die Autorität Ihrer Website zu erhöhen.\n",
+          "question": "Wie kann ich das Ranking meiner Website in den SERP verbessern?"
         }
       }
-    },
-    "serp": {
-      "featured_snippets": "Featured Snippets",
-      "people_also_ask": "Nutzer fragen auch",
-      "things_to_know": "Wissenswertes",
-      "x": "X",
-      "twitter": {
-        "post": {
-          "posted_on": "Veröffentlicht am"
-        }
-      },
-      "top_stories": {
-        "title": "Top-Geschichten"
-      }
-    },
-    "meta": {
-      "default": {
-        "title": "SERP-Prüfung - Kostenloser SERP-Checker für schnelle, genaue Google-Rankings und Rich Results",
-        "description": "Verwenden Sie unseren kostenlosen SERP-Checker, um Ergebnisse aus über 230 Ländern zu analysieren. Erhalten Sie Einblicke in Rich Results, die Top-100-Rankings und mehr. Verbessern Sie Ihr SEO jetzt mit der SERP-Prüfung!"
-      }
-    },
-    "desktop": "Desktop"
+    }
   }
 }

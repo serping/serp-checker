@@ -6,7 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
+import { TypographyUL } from "@/components/ui/typography";
+import ReactMarkdown from 'react-markdown';
 
 type Faq = {
   question: string;
@@ -20,8 +21,8 @@ export function Faqs({ faqs, title }:{ faqs: Faq[], title?: string;}){
     return (
     <AccordionItem value={value}>
       <AccordionTrigger>{faq.question}</AccordionTrigger>
-      <AccordionContent>
-        {faq.answer}
+      <AccordionContent className="prose dark:prose-invert text-base max-w-full">
+        <ReactMarkdown components={ {ul: ({ children }) => <TypographyUL className="my-6 ml-6 list-disc [&>li]:mt-2">{children}</TypographyUL>}}>{faq.answer}</ReactMarkdown>
       </AccordionContent>
     </AccordionItem>
     )
