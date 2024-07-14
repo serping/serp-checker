@@ -23,7 +23,7 @@ import { DeviceType } from "@/config";
 import { countryOptions } from "@/country";
 import { languageOptions } from "@/language";
 import apiClient from "@/lib/api";
-import { HomeFormSchema, type HomeFormValues, type Location } from "@/shema/index";
+import { HomeFormSchema, type HomeFormValues, type Location } from "@/schema/index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { debounce } from 'lodash';
 import {

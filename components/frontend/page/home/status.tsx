@@ -2,7 +2,7 @@
 
 import { Switch } from "@/components/ui/switch";
 import { countries } from "@/country";
-import { HomeFormValues } from "@/shema";
+import { HomeFormValues } from "@/schema";
 import {
   Monitor,
   Smartphone

@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
-import { ComboboxFramework } from "@/shema"
+import { ComboboxFramework } from "@/schema"
 
  
 type Props = {

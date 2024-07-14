@@ -5,7 +5,7 @@ import { DeviceType } from "@/config";
 import { SerpForm } from "@/frontend/page/home/form";
 import apiClient from "@/lib/api";
 import { cn } from "@/lib/utils";
-import { type HomeFormValues } from "@/shema/index";
+import { type HomeFormValues } from "@/schema/index";
 import { useEffect, useState } from "react";
 import { SerpJsonSchema, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { Landing as LandingPage } from "./landing";
