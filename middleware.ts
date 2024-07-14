@@ -43,7 +43,8 @@ export default async function middleware(req: NextRequest) {
   const intlMiddleware = createMiddleware({
     locales: appConfig.i18n.locales,
     defaultLocale,
-    localePrefix: "never",
+    localePrefix: "as-needed",
+    alternateLinks: true
   });
 
   return intlMiddleware(req);
