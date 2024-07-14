@@ -4,9 +4,9 @@ import { Link } from "@/lib/i18n";
 import { useTranslations } from "next-intl";
 
 import {
-  Menu,
-  Package2
+  Menu
 } from "lucide-react";
+import Image from "next/image";
 export function NavBar() {
   const t = useTranslations();
   const memu = [
@@ -22,7 +22,7 @@ export function NavBar() {
         href="#"
         className="flex items-center gap-2 text-lg font-semibold md:text-base"
       >
-        <Package2 className="h-6 w-6" />
+        <Image alt="SerpChecking" src={"/logo.png"} width={25} height={25} className="h-6 w-6" />
         <span className="sr-only">SerpChecking</span>
       </Link>
     )
