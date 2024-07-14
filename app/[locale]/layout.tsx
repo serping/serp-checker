@@ -24,7 +24,7 @@ export async function generateMetadata(locale: LocaleType): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params
 }: Readonly<{
@@ -37,7 +37,7 @@ export default async function RootLayout({
   if (!appConfig.i18n.locales.includes(locale)) {
     notFound();
   }
-  const messages = await getMessagesForLocale(locale);
+  const messages = getMessagesForLocale(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning={true}>

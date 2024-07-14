@@ -6,29 +6,28 @@ import path from "path";
 import z from "zod";
 import { LocaleType, appConfig } from "./config";
 
-export const importLocale = async (
+export const getLocale = (
   locale: string,
-): Promise<AbstractIntlMessages> => {
-  return (
-    (await import(`./locales/${locale}.json`)).default as AbstractIntlMessages
-  );
+): AbstractIntlMessages => {
+  const data = fs.readFileSync(path.join(process.cwd(), `./locales/${locale}.json`), 'utf-8');
+  return JSON.parse(data) as AbstractIntlMessages;
 };
 
-export const getMessagesForLocale = async (
+export const getMessagesForLocale = (
   locale: string,
-): Promise<AbstractIntlMessages> => {
-  const localeMessages = await importLocale(locale);
+): AbstractIntlMessages => {
+  const localeMessages = getLocale(locale);
   if (locale === appConfig.i18n.defaultLocale) {
     return localeMessages;
   }
-  const defaultLocaleMessages = await importLocale(
+  const defaultLocaleMessages = getLocale(
     appConfig.i18n.defaultLocale,
   );
   return deepmerge(defaultLocaleMessages, localeMessages);
 };
 
-export default getRequestConfig(async ({ locale }) => ({
-  messages: await getMessagesForLocale(locale),
+export default getRequestConfig(({ locale }) => ({
+  messages: getMessagesForLocale(locale),
 }));
 
 // I18n Components Markdown
@@ -44,7 +43,7 @@ export type I18nComponentMarkdown = z.infer<typeof I18nComponentMarkdownSchema>;
 let loadComponentsMarkdownData;
 if (!loadComponentsMarkdownData) {
   try {
-    const file = fs.readFileSync(path.join(process.cwd(), componentsMarkdownFile)).toString();
+    const file = fs.readFileSync(path.join(process.cwd(), componentsMarkdownFile), 'utf-8');
     if (file) loadComponentsMarkdownData = I18nComponentMarkdownSchema.parse(JSON.parse(file));
     // console.log("Components markdown data is valid.");
   } catch (validationError: any) {

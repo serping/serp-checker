@@ -33,7 +33,10 @@ export function Header() {
     <NavBar />
     <div className="flex items-center justify-end gap-2 md:ml-auto text-primary">
       <LocaleSwitch />
-      <ModeToggle />
+      <ModeToggle /> 
+      <a href="https://github.com/serping/serp-checker" className="flex flex-shrink-0">
+        <img title="Github" alt="Github" height={20} className="h-[20px]" src="https://img.shields.io/github/stars/serping/serp-checker?style=social" />
+      </a>
     </div>
   </header>
   )
