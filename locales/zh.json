@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "热门新闻"
-      }
+      },
+      "images": "图片",
+      "videos": "视频",
+      "places": "地点"
     },
     "meta": {
       "default": {

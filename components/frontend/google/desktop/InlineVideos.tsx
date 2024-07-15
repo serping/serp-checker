@@ -2,12 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import { VideoIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import type { SerpInlineVideos, SerpVideo } from "serping/zod/google/desktop-serp";
+import { TypeTitle } from "../shared/TypeTitle";
 
 export function InlineVideos({original, className}:{original: SerpInlineVideos, className?: string;}){
   const videos = original.inline_videos;
+  const t = useTranslations();
   return (
-    <div className={cn(className)}> 
+    <div className={cn(className)}>
+      <TypeTitle title={t('frontend.serp.videos')} className="capitalize" />
       <ul role="list" className="divide-y divide-gray-200 text-sm">
         {videos.map(video =>  
           <li key={`videos-${video.title}`} className="flex space-x-6 py-2">

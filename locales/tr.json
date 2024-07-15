@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "En Çok Okunan Haberler"
-      }
+      },
+      "images": "Görüntüler",
+      "videos": "Videolar",
+      "places": "Yer"
     },
     "meta": {
       "default": {

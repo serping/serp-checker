@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "Najważniejsze historie"
-      }
+      },
+      "images": "Obrazy",
+      "videos": "Filmy",
+      "places": "Miejsca"
     },
     "meta": {
       "default": {

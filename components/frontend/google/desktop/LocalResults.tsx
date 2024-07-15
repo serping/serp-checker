@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import {
   SerpLocalDirectionPlaceNormalSchema,
   SerpLocalDirectionPlaceStoreSchema,
@@ -10,6 +11,7 @@ import {
   SerpLocalServicesSchema,
   type SerpLocalDirections, type SerpLocalNormal, type SerpLocalResults, type SerpLocalServices
 } from "serping/zod/google/desktop-serp";
+import { TypeTitle } from "../shared/TypeTitle";
 
 const LocalNormal =({original}:{original: SerpLocalNormal})=>{
   return(
@@ -112,6 +114,7 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
 }
 
 export function LocalResults({original, className}:{original: SerpLocalResults, className?: string;}){
+  const t = useTranslations();
   const Results =()=>{
     if(original.local_results.type === "services"){ 
       return <LocalServices original={SerpLocalServicesSchema.parse(original.local_results)} />
@@ -125,6 +128,7 @@ export function LocalResults({original, className}:{original: SerpLocalResults, 
   
   return(
     <div className={cn("max-w-[500px] text-current", className)}>
+      <TypeTitle title={t('frontend.serp.places')} className="capitalize" />
       <Results />
     </div>
   )

@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "Toppnyheter"
-      }
+      },
+      "images": "Bilder",
+      "videos": "videoklipp",
+      "places": "Platser"
     },
     "meta": {
       "default": {

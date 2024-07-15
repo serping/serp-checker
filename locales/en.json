@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "Top Stories"
-      }
+      },
+      "images": "Images",
+      "videos": "Videos",
+      "places": "Places"
     },
     "meta": {
       "default": {

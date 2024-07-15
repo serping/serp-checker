@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "Principales actualités"
-      }
+      },
+      "images": "Images",
+      "videos": "Vidéos",
+      "places": "Lieux"
     },
     "meta": {
       "default": {

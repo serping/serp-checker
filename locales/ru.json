@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "Топ новости"
-      }
+      },
+      "images": "Изображений",
+      "videos": "Видео",
+      "places": "Места"
     },
     "meta": {
       "default": {

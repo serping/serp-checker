@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "Topverhalen"
-      }
+      },
+      "images": "Afbeeldingen",
+      "videos": "Videos",
+      "places": "Plaatsen"
     },
     "meta": {
       "default": {

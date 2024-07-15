@@ -60,7 +60,10 @@
       },
       "top_stories": {
         "title": "トップストーリー"
-      }
+      },
+      "images": "画像",
+      "videos": "動画",
+      "places": "場所"
     },
     "meta": {
       "default": {

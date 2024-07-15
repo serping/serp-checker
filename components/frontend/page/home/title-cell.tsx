@@ -66,10 +66,9 @@ const Overview =({
     case "local_results": 
       return <LocalResults original={original} />
     default:
-      console.log('No conditions met');
       return (
-        <div className="flex items-center gap-2"> 
-          -
+        <div className="flex items-center gap-2 capitalize"> 
+          {original.type.replace(/_/g, " ")}
         </div>
       )
   } 
@@ -120,11 +119,10 @@ const Preview =({
       return <PeopleAlsoAsk original={original} />
     case "local_results": 
       return <LocalResults original={original} />
-    default:
-      console.log('No conditions met');
+    default: 
       return (
-        <div className="flex items-center gap-2"> 
-          -
+        <div className="flex items-center gap-2 capitalize"> 
+          {original.type.replace(/_/g, " ")}
         </div>
       )
   }
