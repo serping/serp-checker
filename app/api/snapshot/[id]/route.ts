@@ -13,7 +13,8 @@ export async function GET(__req: Request, { params }: { params: { id: string } }
       {
         status: 200,
         headers: {
-          'Content-Type': 'text/html'
+          'Content-Type': 'text/html; charset=utf-8;',
+          'Cache-Control': 'public, max-age=2592000, stale-while-revalidate=59'
         }
       }
     );
