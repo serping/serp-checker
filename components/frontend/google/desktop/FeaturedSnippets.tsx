@@ -17,7 +17,7 @@ const List =({item, className}:{item: SerpFeaturedList, className?: string;})=>{
     <div className={className}>
       {item.snippet_title && <h3 className="font-medium mb-2"> {item.snippet_title}</h3>}
       <ul>
-        {item.snippet_list?.map(obj => <li key={obj.position}>{obj.item}</li>)}
+        {item.snippet_list?.map(obj => <li key={obj}>{obj}</li>)}
       </ul>
       {item.images && <img src={item.images[0].thumbnail} />}
     </div>
