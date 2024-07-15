@@ -71,6 +71,12 @@
         "description": "Använd vår gratis SERP checker för att analysera resultat från 230+ länder. Få insikter om Rika resultat, topp 100 rankningar och mer. Öka din SEO med SERP-kontroll nu!"
       }
     },
-    "desktop": "Skrivbord"
+    "desktop": "Skrivbord",
+    "snapshot": "Ögonblicksbild"
+  },
+  "home": {
+    "status": {
+      "online_google": "Google online"
+    }
   }
 }

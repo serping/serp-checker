@@ -21,12 +21,13 @@ export function Main({
 }>) {
   const locale = params.locale;
   const { block1, block2 } = markdownContents;
-  const defaultValues =  {
+  const defaultValues: HomeFormValues =  {
     query: "",
     locale: locale === "zh" ? "zh-Hans" : locale,
     country: "us" ,
     location: "",
     device: "desktop" as DeviceType,
+    snapshot: "off"
   }
   const [searchParams, setSearchParams] = useState<HomeFormValues>(defaultValues);
   const [results, setResults] = useState<SerpJSON|null>(null); 
@@ -41,7 +42,7 @@ export function Main({
         hl: searchParams.locale,
         gl: searchParams.country,
         location: searchParams.location,
-        snapshot: process.env.NODE_ENV === "development" ? "on" : "off",
+        snapshot: searchParams.snapshot,
         thumbnail: "on",
         num: 100,
         // device: searchParams.device,
@@ -94,7 +95,7 @@ export function Main({
         <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} block1={block1} />
       </div>
       <div className="flex-auto">
-        {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} />}
+        {!landing && <Status searchParams={searchParams} onCheckedChange={onCheckedChange} searchUrl={results?.meta?.url} snapshotId={results?.meta?.snapshot_id} />}
         {landing && <LandingPage className="md:max-w-[880px] mx-auto" block2={block2} />}
         {loading && <SkeletonList num={10} /> }
         {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 

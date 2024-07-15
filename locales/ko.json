@@ -71,6 +71,12 @@
         "description": "무료 SERP 체커를 사용하여 230개 이상의 국가의 결과를 분석하세요. 리치 결과, 상위 100개 순위 등에 대한 통찰력을 얻습니다. 지금 SERP 체크로 SEO를 향상시키세요!"
       }
     },
-    "desktop": "데스크탑"
+    "desktop": "데스크탑",
+    "snapshot": "스냅 사진"
+  },
+  "home": {
+    "status": {
+      "online_google": "온라인 구글"
+    }
   }
 }

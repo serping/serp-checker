@@ -71,6 +71,12 @@
         "description": "Use our free SERP checker to analyze results from 230+ countries. Get insights on Rich Results, top 100 rankings, and more. Boost your SEO with SERP Checking now!"
       }
     },
-    "desktop": "Desktop"
+    "desktop": "Desktop",
+    "snapshot": "Snapshot"
+  },
+  "home": {
+    "status": {
+      "online_google": "Online Google"
+    }
   }
 }

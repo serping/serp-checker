@@ -27,6 +27,7 @@ import { HomeFormSchema, type HomeFormValues, type Location } from "@/schema/ind
 import { zodResolver } from "@hookform/resolvers/zod";
 import { debounce } from 'lodash';
 import {
+  Camera,
   MapPin,
   Monitor,
   Search,
@@ -127,6 +128,14 @@ export function SerpForm({
     console.log("onDesktopChange", checked)
   }
 
+  const onSnapshotChange =(checked: boolean, field: any)=>{
+    if(checked){
+      field.onChange("on")
+    }else{
+      field.onChange("off")
+    }
+  }
+
   const locationResults = useMemo(()=>{
     return locations.map(item => {
       return { 
@@ -220,7 +229,17 @@ export function SerpForm({
                   </FormItem>
                 )}
               />
-            </div> 
+            </div>
+            <div className='flex items-center justify-center gap-5'>
+              <FormField
+                control={form.control}
+                name="snapshot"
+                render={({ field }) => (
+                  <FormItem nospace={true} className="flex items-center justify-center">
+                      <Switch defaultValue={field.value} defaultChecked={field.value === "on"} onCheckedChange={(e)=> onSnapshotChange(e, field) } className="mr-3" />  <Camera size={18} className="mr-2" /> {t('frontend.snapshot')}
+                  </FormItem>
+                )}
+              /> 
               <FormField
                 control={form.control}
                 name="device"
@@ -230,6 +249,8 @@ export function SerpForm({
                   </FormItem>
                 )}
               /> 
+            </div>
+             
             <Button size="icon" loading={loading} type="submit" className="md:w-[200px] w-full mx-auto">{t('frontend.home.look_up')}<Search size={20} className="ml-3" /></Button>
           </div>
         </form>
@@ -253,7 +274,7 @@ export function SerpForm({
                 <FormItem nospace={true} className="relative">
                   <Search size={20} className="absolute left-3.5 top-3 text-muted-foreground" />
                   <FormControl>
-                    <Input type="search" className="pl-11" placeholder="Search ..." {...field} />
+                    <Input type="search" disabled={loading} className="pl-11" placeholder="Search ..." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -339,6 +360,15 @@ export function SerpForm({
                 </FormItem>
               )}
             />
+            <FormField
+                control={form.control}
+                name="snapshot"
+                render={({ field }) => (
+                  <FormItem nospace={true} className="flex items-center justify-center">
+                      <Switch disabled={loading} defaultValue={field.value} defaultChecked={field.value === "on"} onCheckedChange={(e)=> onSnapshotChange(e, field) } className="mr-3" /> <Camera size={18} className="mr-2" /> <span>{t('frontend.snapshot')}</span>
+                  </FormItem>
+                )}
+              /> 
           </div>
           <Button loading={loading} type="submit" className="mt-4">{t('frontend.home.look_up')}</Button>
         </div>

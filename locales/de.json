@@ -12,6 +12,12 @@
       "images": "Bilder",
       "videos": "Videos",
       "places": "Setzt"
+    },
+    "snapshot": "Schnappschuss"
+  },
+  "home": {
+    "status": {
+      "online_google": "Online-Google"
     }
   }
 }

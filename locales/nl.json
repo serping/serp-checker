@@ -71,6 +71,12 @@
         "description": "Gebruik onze gratis SERP Checker om resultaten te analyseren uit meer dan 230 landen. Krijg inzichten in rijke resultaten, top 100 rankings en meer. Verbeter uw SEO nu met SERP Checker!"
       }
     },
-    "desktop": "Desktop"
+    "desktop": "Desktop",
+    "snapshot": "Momentopname"
+  },
+  "home": {
+    "status": {
+      "online_google": "Online Googlen"
+    }
   }
 }

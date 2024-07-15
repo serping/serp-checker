@@ -71,6 +71,12 @@
         "description": "Ücretsiz SERP kontrolcümüzü kullanarak 230'dan fazla ülkeden sonuçları analiz edin. Zengin Sonuçlar, ilk 100 sıralama ve daha fazlası hakkında bilgi edinin. SEO'nuzu SERP Kontrol ile güçlendirin!"
       }
     },
-    "desktop": "Masaüstü"
+    "desktop": "Masaüstü",
+    "snapshot": "Enstantane fotoğraf"
+  },
+  "home": {
+    "status": {
+      "online_google": "Çevrimiçi Google"
+    }
   }
 }

@@ -71,6 +71,12 @@
         "description": "Utilisez notre vérificateur de SERP gratuit pour analyser les résultats de plus de 230 pays. Obtenez des informations sur les Rich Results, les 100 meilleurs classements et plus encore. Améliorez votre SEO avec la vérification de SERP maintenant !"
       }
     },
-    "desktop": "Bureau"
+    "desktop": "Bureau",
+    "snapshot": "Instantané"
+  },
+  "home": {
+    "status": {
+      "online_google": "Google en ligne"
+    }
   }
 }

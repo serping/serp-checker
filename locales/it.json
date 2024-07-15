@@ -71,6 +71,12 @@
         "description": "Usa il nostro verificatore di SERP gratuito per analizzare i risultati di oltre 230 paesi. Ottieni informazioni sui Rich Results, le prime 100 classifiche e altro ancora. Migliora la tua SEO con il Controllo SERP ora!"
       }
     },
-    "desktop": "Desktop"
+    "desktop": "Desktop",
+    "snapshot": "Istantanea"
+  },
+  "home": {
+    "status": {
+      "online_google": "In linea Google"
+    }
   }
 }

@@ -7,7 +7,8 @@ export const HomeFormSchema = z.object({
   locale: z.string(),
   country: z.string(),
   device: z.enum(appConfig.devices),
-  location: z.string().optional()
+  location: z.string().optional(),
+  snapshot: z.enum(["on", "off"])
 })
 export type HomeFormValues = z.infer<typeof HomeFormSchema>;
 

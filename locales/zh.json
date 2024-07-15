@@ -71,6 +71,12 @@
         "description": "使用我们的免费SERP检测工具分析来自230多个国家的结果。了解丰富结果、前100名排名等信息。立即通过SERP检测增强您的SEO！"
       }
     },
-    "desktop": "桌面版"
+    "desktop": "桌面版",
+    "snapshot": "快照"
+  },
+  "home": {
+    "status": {
+      "online_google": "在线谷歌"
+    }
   }
 }

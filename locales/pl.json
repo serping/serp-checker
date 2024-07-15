@@ -71,6 +71,12 @@
         "description": "Użyj naszego darmowego SERP Checkera, aby analizować wyniki z ponad 230 krajów. Zdobądź informacje o Rich Results, top 100 rankingach i więcej. Popraw swoje SEO z SERP Checker już teraz!"
       }
     },
-    "desktop": "Komputer"
+    "desktop": "Komputer",
+    "snapshot": "Migawka"
+  },
+  "home": {
+    "status": {
+      "online_google": "Internetowe Google"
+    }
   }
 }
