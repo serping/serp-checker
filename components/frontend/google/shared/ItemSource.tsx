@@ -18,7 +18,7 @@ export function ItemSource({
         <SiteIcon link={source.link} size={size} />
       </div>
       <div className="min-w-0 flex-1">
-        <a href={source.link} className="focus:outline-none">
+        <a href={source.link} target="_blank" className="focus:outline-none">
           <span aria-hidden="true" className="absolute inset-0" />
           <p className="text-sm font-medium text-primary">{source.name}</p>
           <p className="truncate text-sm text-muted-foreground">{source.display_link}</p>
