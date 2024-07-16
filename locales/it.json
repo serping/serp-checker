@@ -63,7 +63,8 @@
       },
       "images": "immagini",
       "videos": "Video",
-      "places": "Luoghi"
+      "places": "Luoghi",
+      "related_searches": "Ricerche correlate"
     },
     "meta": {
       "default": {

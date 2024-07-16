@@ -6,10 +6,9 @@ import {
   InlineVideos,
   LocalResults,
   PeopleAlsoAsk,
+  RelatedSearches,
   ThinksToKnow,
-
   TopStories,
-
   Video
 } from "@/frontend/google/desktop";
 import { FeaturedSnippets } from "@/frontend/google/desktop/FeaturedSnippets";
@@ -65,6 +64,8 @@ const Overview =({
       return <PeopleAlsoAsk original={original} />
     case "local_results": 
       return <LocalResults original={original} />
+    case "related_searches": 
+      return <RelatedSearches original={original.related_searches} />
     default:
       return (
         <div className="flex items-center gap-2 capitalize"> 
@@ -119,6 +120,8 @@ const Preview =({
       return <PeopleAlsoAsk original={original} />
     case "local_results": 
       return <LocalResults original={original} />
+    case "related_searches": 
+      return <RelatedSearches original={original.related_searches} />
     default: 
       return (
         <div className="flex items-center gap-2 capitalize"> 

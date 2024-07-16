@@ -63,7 +63,8 @@
       },
       "images": "Imágenes",
       "videos": "Vídeos",
-      "places": "Lugares"
+      "places": "Lugares",
+      "related_searches": "búsquedas relacionadas"
     },
     "meta": {
       "default": {

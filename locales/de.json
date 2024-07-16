@@ -11,7 +11,8 @@
     "serp": {
       "images": "Bilder",
       "videos": "Videos",
-      "places": "Setzt"
+      "places": "Setzt",
+      "related_searches": "Verwandte Suchanfragen"
     },
     "snapshot": "Schnappschuss"
   },

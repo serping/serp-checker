@@ -63,7 +63,8 @@
       },
       "images": "图片",
       "videos": "视频",
-      "places": "地点"
+      "places": "地点",
+      "related_searches": "相关搜索"
     },
     "meta": {
       "default": {

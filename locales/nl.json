@@ -63,7 +63,8 @@
       },
       "images": "Afbeeldingen",
       "videos": "Videos",
-      "places": "Plaatsen"
+      "places": "Plaatsen",
+      "related_searches": "Verwante zoekopdrachten"
     },
     "meta": {
       "default": {

@@ -63,7 +63,8 @@
       },
       "images": "Изображений",
       "videos": "Видео",
-      "places": "Места"
+      "places": "Места",
+      "related_searches": "Похожие Запросы"
     },
     "meta": {
       "default": {

@@ -63,7 +63,8 @@
       },
       "images": "Görüntüler",
       "videos": "Videolar",
-      "places": "Yer"
+      "places": "Yer",
+      "related_searches": "ilgili aramalar"
     },
     "meta": {
       "default": {

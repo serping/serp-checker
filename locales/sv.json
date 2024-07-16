@@ -63,7 +63,8 @@
       },
       "images": "Bilder",
       "videos": "videoklipp",
-      "places": "Platser"
+      "places": "Platser",
+      "related_searches": "Relaterade sökningar"
     },
     "meta": {
       "default": {
