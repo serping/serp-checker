@@ -7,7 +7,6 @@ import { TypeTitle } from "../shared/TypeTitle";
 
 export function RelatedSearches({original, className}:{original: SerpRelatedSearches[], className?: string;}){
   const t = useTranslations();
-  console.log("RelatedSearches", original)
   // TODO: other types
   const Item =({item}:{item: SerpRelatedSearches})=>{
     switch(item.type){
