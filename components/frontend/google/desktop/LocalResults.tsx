@@ -19,7 +19,7 @@ const LocalNormal =({original}:{original: SerpLocalNormal})=>{
        {
         original.places.map(item => {
           return(
-            <div className="flex w-full items-center justify-between py-4">
+          <div key={item.position} className="flex w-full items-center justify-between py-4">
             <div className="flex-1 truncate">
               <div>
                 <h3 className="truncate text-base font-medium">{item.title}</h3>
