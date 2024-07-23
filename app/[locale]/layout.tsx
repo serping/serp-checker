@@ -2,6 +2,7 @@
 import { appConfig, type LocaleType } from "@/config";
 import { getMessagesForLocale } from "@/i18n";
 import { cn } from "@/lib/utils";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -9,6 +10,7 @@ import { ThemeProvider } from "next-themes";
 import { Inter as FontSans } from "next/font/google";
 import { notFound } from "next/navigation";
 import NextTopLoader from "nextjs-toploader";
+
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -58,6 +60,7 @@ export default function RootLayout({
           {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        {appConfig.gaId && <GoogleAnalytics gaId={appConfig.gaId} />}
       </body>
     </html>
   );

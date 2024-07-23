@@ -21,6 +21,7 @@ export const appConfig = {
   appDomain: "serpchecking.com",
   appName: "SERP Checking",
   appDescription: "SERP Checking",
+  gaId: process.env.NEXT_PUBLIC_GA_ID,
   i18n: {
     locales,
     defaultLocale,
