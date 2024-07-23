@@ -1,7 +1,8 @@
 "use client";
 
 import { Markdown } from "@/components/shared/markdown";
-import { TypeTitle } from "@/frontend/google/shared/TypeTitle";
+import { cn } from "@/lib/utils";
+import { CrownIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import {
   SerpFeaturedListSchema,
@@ -14,12 +15,14 @@ import {
 
 const List =({item, className}:{item: SerpFeaturedList, className?: string;})=>{
   return (
-    <div className={className}>
-      {item.snippet_title && <h3 className="font-medium mb-2"> {item.snippet_title}</h3>}
-      <ul>
-        {item.snippet_list?.map(obj => <li key={obj}>{obj}</li>)}
-      </ul>
-      {item.images && <img src={item.images[0].thumbnail} />}
+    <div className={cn("flex",className)}>
+      <div>
+        {item.snippet_title && <h3 className="font-medium mb-2"> {item.snippet_title}</h3>}
+        <ul>
+          {item.snippet_list?.map(obj => <li key={obj}>{obj}</li>)}
+        </ul>
+      </div>
+      {item.images && <img src={item.images[0].thumbnail} className="ml-5" />}
     </div>
   )
 }
@@ -48,9 +51,9 @@ export function FeaturedSnippets({original, className}:{original: SerpFeaturedSn
   }
   
   return (
-    <>
-      <TypeTitle title={t('frontend.serp.featured_snippets')} />
-      <Content /> 
-    </>
+    <div className="flex">
+      <CrownIcon textDecoration={t('frontend.serp.featured_snippets')} className="mr-2 absolute top-8 left-0 -m-8 text-muted-foreground" />
+      <Content />  
+    </div>
   )
 }

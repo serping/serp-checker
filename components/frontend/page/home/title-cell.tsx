@@ -2,6 +2,7 @@
 "use client"
 
 import {
+  FeaturedSnippets,
   InlineImages,
   InlineVideos,
   LocalResults,
@@ -11,12 +12,10 @@ import {
   TopStories,
   Video
 } from "@/frontend/google/desktop";
-import { FeaturedSnippets } from "@/frontend/google/desktop/FeaturedSnippets";
 import { ItemNormal } from "@/frontend/google/shared/ItemNormal";
 import { ItemSource } from "@/frontend/google/shared/ItemSource";
 import { SiteIcon } from "@/frontend/google/shared/SiteIcon";
-import { TypeTitle } from "@/frontend/google/shared/TypeTitle";
-import { ImageIcon } from "lucide-react";
+import { CrownIcon, ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SerpColumnType, type SerpNormal } from "serping/zod/google/desktop-serp";
 import { Twitter } from "../../google/desktop/Twitter";
@@ -49,10 +48,10 @@ const Overview =({
       )
     case "featured_snippets":
         return (
-          <>
-            <TypeTitle title={t('frontend.serp.featured_snippets')} />
+          <div title={t('frontend.serp.featured_snippets')} className="flex items-center">
+            <CrownIcon textDecoration={t('frontend.serp.featured_snippets')} className="mr-2 text-muted-foreground" />
             <ItemSource source={original.featured_snippets.source} className="mt-2" />
-          </>
+          </div>
         )
     case "inline_videos": 
         return <InlineVideos original={original} />
@@ -82,7 +81,7 @@ const Preview =({
   original: any;
   type: SerpColumnType
 })=>{
-
+  const t = useTranslations();
   switch( type ){
     case "normal":
     case "site_links":
@@ -101,10 +100,10 @@ const Preview =({
       return <Video original={original} />
     case "featured_snippets":
         return (
-          <>
+          <div title={t('frontend.serp.featured_snippets')} className="flex flex-col relative">
             <FeaturedSnippets original={original} className="text-sm text-secondary-foreground" />
             <ItemSource source={original.featured_snippets.source} className="mt-2" />
-          </>
+          </div>
         )
     case "inline_videos": 
       return <InlineVideos original={original} />

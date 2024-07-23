@@ -53,25 +53,27 @@ export function ThinksToKnow({original, className}:{original: SerpThingsToKnow, 
       <TypeTitle title={t("frontend.serp.things_to_know")} />
       <ul role="list" className="divide-y divide-gray-200 text-secondary-foreground max-w-[200px] lg:max-w-[500px]">
         {original.things_to_know.map((item, index) => { 
+            const licn = cn("flex space-x-6 py-2", index > 3 ? `${open ? "" : "hidden"}` : "");
+            const key = `things_to_know-${index}`;
           if( item.type === 'listing'){
-            const data = SerpThingsToKnowListingSchema.parse(item)
+            const data = SerpThingsToKnowListingSchema.parse(item); 
             return(
-              <li key={`things_to_know-${index}`} className={cn("flex space-x-6 py-2", index > 3 ? "hidden" : "")}>   
+              <li key={key} className={licn}>   
                 <Listing item={data}/>
               </li> 
             )
           }else{
             const data =  SerpThingsToKnowNormalSchema.parse(item)
             return(
-              <li key={`things_to_know-${index}`} className={cn("flex space-x-6 py-2", index > 3 ? "hidden" : "")}>   
+              <li key={key} className={licn}>   
                 <Normal item={data}/>
               </li> 
             )
           } 
         })}
-        <li className="flex justify-center items-center cursor-pointer hover:bg-slate-100" onClick={()=>setOpen(!open)}>
+        {original.things_to_know.length >= 4 && <li className="flex justify-center items-center cursor-pointer hover:bg-slate-100" onClick={()=>setOpen(!open)}>
           {open ? <ChevronUp className="text-muted-foreground" /> : <ChevronDown className="text-muted-foreground" />}
-        </li>
+        </li>}
       </ul>
 
     </div>
