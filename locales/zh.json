@@ -44,7 +44,7 @@
         },
         "qa5": {
           "question": "您提供SERP检测工具的API吗？",
-          "answer": "是的，我开发了一个SERP API，并通过SERP.ING提供。这是行业内成本效益最高的SERP API，包括所有主要的丰富结果。"
+          "answer": "是的，我开发了一个SERP API，并通过[SERP.ING](https://www.serp.ing)提供。这是行业内成本效益最高的SERP API，包括所有主要的丰富结果。"
         }
       }
     },

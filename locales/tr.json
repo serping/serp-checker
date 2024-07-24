@@ -44,7 +44,7 @@
         },
         "qa5": {
           "question": "Bir SERP Kontrolcüsü API Sunuyor musunuz?",
-          "answer": "Evet, bir SERP API geliştirdim ve SERP.ING aracılığıyla sunuyorum. Endüstrideki en maliyet etkin SERP API'sidir ve tüm önemli Zengin Sonuçları içerir."
+          "answer": "Evet, bir SERP API geliştirdim ve [SERP.ING](https://www.serp.ing) aracılığıyla sunuyorum. Endüstrideki en maliyet etkin SERP API'sidir ve tüm önemli Zengin Sonuçları içerir."
         }
       }
     },

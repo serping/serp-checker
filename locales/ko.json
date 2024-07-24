@@ -44,7 +44,7 @@
         },
         "qa5": {
           "question": "SERP 체커 API를 제공하나요?",
-          "answer": "네, 저는 SERP API를 개발했으며 SERP.ING을 통해 제공합니다. 이는 업계에서 가장 비용 효율적인 SERP API로, 주요 리치 결과를 모두 포함합니다."
+          "answer": "네, 저는 SERP API를 개발했으며 [SERP.ING](https://www.serp.ing)을 통해 제공합니다. 이는 업계에서 가장 비용 효율적인 SERP API로, 주요 리치 결과를 모두 포함합니다."
         }
       }
     },
