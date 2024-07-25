@@ -8,6 +8,7 @@ export default async function middleware(req: NextRequest) {
     locales: appConfig.i18n.locales,
     defaultLocale: appConfig.i18n.defaultLocale,
     localePrefix: "as-needed",
+    localeDetection: false,
     alternateLinks: true
   });
 
