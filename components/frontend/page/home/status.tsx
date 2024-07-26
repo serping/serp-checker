@@ -17,6 +17,7 @@ export function Status({
   searchUrl,
   snapshotId,
   searchParams,
+  loading,
   onCheckedChange,
   results,
 }: {
@@ -25,6 +26,7 @@ export function Status({
   searchUrl?: string;
   snapshotId?: string;
   results: SerpJSON | null;
+  loading: boolean;
 }){
   const t = useTranslations(); 
   const devicesIcons = {
@@ -45,7 +47,7 @@ export function Status({
           <div>{country?.flag} {country?.name } <span className="text-sm">({searchParams.locale})</span> </div>
           {searchUrl && <a href={searchUrl} target="_blank" className="flex items-center"><Globe size={18} className="mr-2 text-lime-800" />{t('home.status.online_google')}</a>}
           {snapshotId && <a href={`/api/snapshot/${snapshotId}`} target="_blank" className="flex items-center"><Camera size={18} className="mr-2" />{t('frontend.snapshot')}</a>}
-          {results && <DownloadCsv searchParams={searchParams} results={results} />}
+          { !loading && results && <DownloadCsv searchParams={searchParams} results={results} />}
         </div>
         <div className="flex">
         <span className="mr-2">{t("frontend.home.views.preview")}</span><Switch onCheckedChange={onSwitchChange}/> 

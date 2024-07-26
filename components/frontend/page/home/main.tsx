@@ -95,7 +95,7 @@ export function Main({
         <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} block1={block1} />
       </div>
       <div className="flex-auto">
-        {!landing && <Status results={results} searchParams={searchParams} onCheckedChange={onCheckedChange} searchUrl={results?.meta?.url} snapshotId={results?.meta?.snapshot_id} />}
+        {!landing && <Status loading={loading} results={results} searchParams={searchParams} onCheckedChange={onCheckedChange} searchUrl={results?.meta?.url} snapshotId={results?.meta?.snapshot_id} />}
         {landing && <LandingPage className="md:max-w-[880px] mx-auto" block2={block2} />}
         {loading && <SkeletonList num={10} /> }
         {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
