@@ -19,13 +19,16 @@ import { CrownIcon, ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SerpColumnType, type SerpNormal } from "serping/zod/google/desktop-serp";
 import { Twitter } from "../../google/desktop/Twitter";
+import { FilterUrl } from "../../google/shared/FilterUrl";
 
 const Overview =({
   original,
+  filterUrl,
   type
 }:{
   original: any;
-  type: SerpColumnType
+  type: SerpColumnType;
+  filterUrl: string;
 })=>{
   const t = useTranslations();
   switch( type ){
@@ -34,24 +37,34 @@ const Overview =({
     case "video":
     case "book":
     case "twitter":
-      original = original as SerpNormal;
-      
+      original = original as SerpNormal; 
       return ( 
         <div className="flex items-center gap-2">
           <SiteIcon link={original.source.link} /> 
           <a href={original.source.link} target="_blank">
             <h3 className="font-semibold text-l text-blue-600">{original.title ?? original.source.title}</h3>
-            <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">{original.source.link}</div> 
+            <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
+              <FilterUrl link={original.source.link} filter={filterUrl} />
+            </div> 
           </a>
           {original.thumbnail && <ImageIcon className="ml-2 text-muted-foreground" size={25} />}
         </div> 
       )
-    case "featured_snippets":
-        return (
-          <div title={t('frontend.serp.featured_snippets')} className="flex items-center">
+    case "featured_snippets": 
+        return ( 
+          <div className="flex items-center gap-2">
             <CrownIcon textDecoration={t('frontend.serp.featured_snippets')} className="mr-2 text-muted-foreground" />
-            <ItemSource source={original.featured_snippets.source} className="mt-2" />
-          </div>
+            <div className="flex">
+              <SiteIcon link={original.featured_snippets.source.link} /> 
+              <a href={original.featured_snippets.source.link} target="_blank">
+                <h3 className="font-semibold text-l text-blue-600">{original.featured_snippets.title ?? original.featured_snippets.source.title}</h3>
+                <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
+                  <FilterUrl link={original.featured_snippets.source.link} filter={filterUrl} />
+                </div> 
+              </a>
+            </div> 
+            {original.featured_snippets.images && <ImageIcon className="ml-2 text-muted-foreground" size={25} />}
+        </div> 
         )
     case "inline_videos": 
         return <InlineVideos original={original} />
@@ -60,7 +73,7 @@ const Overview =({
     case "top_stories": 
       return <TopStories original={original} /> 
     case "people_also_ask": 
-      return <PeopleAlsoAsk original={original} />
+      return <PeopleAlsoAsk original={original} filterUrl={filterUrl} />
     case "local_results": 
       return <LocalResults original={original} />
     case "related_searches": 
@@ -76,10 +89,12 @@ const Overview =({
 
 const Preview =({
   original,
-  type
+  type,
+  filterUrl
 }:{
   original: any;
-  type: SerpColumnType
+  type: SerpColumnType;
+  filterUrl: string;
 })=>{
   const t = useTranslations();
   switch( type ){
@@ -116,7 +131,7 @@ const Preview =({
     case "twitter": 
       return <Twitter original={original} />
     case "people_also_ask": 
-      return <PeopleAlsoAsk original={original} />
+      return <PeopleAlsoAsk original={original} filterUrl={filterUrl} />
     case "local_results": 
       return <LocalResults original={original} />
     case "related_searches": 
@@ -132,18 +147,20 @@ const Preview =({
 
 export function TitleCell({
   row,
-  preview = false
+  preview = false,
+  filterUrl
 }:{
   row: any;
   preview?: boolean;
+  filterUrl: string;
 }) {
   let original = row.original;
   const type = original.type as SerpColumnType;
 
   if(preview){
-    return <Preview type={type} original={original} />
+    return <Preview filterUrl={filterUrl} type={type} original={original} />
   }else{
-    return <Overview type={type} original={original} />;
+    return <Overview filterUrl={filterUrl} type={type} original={original} />;
   } 
   
 }

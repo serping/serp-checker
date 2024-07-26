@@ -6,7 +6,7 @@ import { SerpForm } from "@/frontend/page/home/form";
 import apiClient from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { type HomeFormValues } from "@/schema/index";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { SerpJsonSchema, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { Landing as LandingPage } from "./landing";
 import { Results } from "./results";
@@ -34,6 +34,7 @@ export function Main({
   const [loading, setLoading] = useState<boolean>(false); 
   const [preview, setPreview] = useState<boolean>(false); 
   const [landing, setLanding] = useState<boolean>(true); 
+  const [filterUrl, setFilterUrl] = useState<string>(""); 
 
   useEffect(()=>{
     if(searchParams.query){
@@ -88,6 +89,10 @@ export function Main({
   const onCheckedChange=(checked: boolean)=>{
     setPreview(checked)
   }
+
+  const filterOnChange =(e: ChangeEvent<HTMLInputElement>)=>{
+    setFilterUrl(e.target.value)
+  }
   
   return (
     <div className={cn("flex",landing ? "flex-col" : "flex-col md:flex-row")}>
@@ -95,10 +100,10 @@ export function Main({
         <SerpForm loading={loading} defaultValues={defaultValues} onSubmit={onSubmit} landing={landing} block1={block1} />
       </div>
       <div className="flex-auto">
-        {!landing && <Status loading={loading} results={results} searchParams={searchParams} onCheckedChange={onCheckedChange} searchUrl={results?.meta?.url} snapshotId={results?.meta?.snapshot_id} />}
+        {!landing && <Status filterOnChange={filterOnChange} loading={loading} results={results} searchParams={searchParams} onCheckedChange={onCheckedChange} searchUrl={results?.meta?.url} snapshotId={results?.meta?.snapshot_id} />}
         {landing && <LandingPage className="md:max-w-[880px] mx-auto" block2={block2} />}
         {loading && <SkeletonList num={10} /> }
-        {!loading &&  searchParams.query && results && <Results results={results} preview={preview} /> } 
+        {!loading &&  searchParams.query && results && <Results filterUrl={filterUrl} results={results} preview={preview} /> } 
       </div>
     </div>
   );

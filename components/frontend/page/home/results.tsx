@@ -12,15 +12,17 @@ import {
 } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
-import { type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { SerpItemSource, SerpPeopleAlsoAsk, type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { TitleCell } from "./title-cell";
 
 export function Results({ 
   results,
-  preview = false
+  preview = false,
+  filterUrl
 }:{
   results: SerpJSON;
   preview?: boolean;
+  filterUrl: string;
 }) {
 
   const t = useTranslations();
@@ -35,19 +37,45 @@ export function Results({
            return (
             <div className={`${row.original?.position ? "flex" : ""} items-center px-5`}>
               {row.original?.position && <span className="text-base font-mono mr-3">{row.original?.position}</span>}
-              <TitleCell row={row} preview={preview} /> 
+              <TitleCell row={row} preview={preview} filterUrl={filterUrl} /> 
             </div>
             )
           },
         }
       ], 
-      [results, preview],
+      [results, preview, filterUrl],
     );
 
 
   const origin_search = useMemo(() => {
     if ( !results.origin_search.results ) return [];
-    let items: any = results.origin_search.results.map(item => item);  
+    let items: any = [];
+    results.origin_search.results.map(item => {
+      if(filterUrl){
+        // TODO: top_stories
+        let source: SerpItemSource;
+        if(["normal", "site_links", "video", "book", "twitter"].includes(item.type)){
+          source = item.source as SerpItemSource;
+          if(source.link.includes(filterUrl)) items.push(item);
+
+        }else if( "featured_snippets" === item.type ){
+          source = item.featured_snippets.source as SerpItemSource
+          if(source.link.includes(filterUrl)) items.push(item);
+
+        }else if( "people_also_ask" === item.type ){
+          const spaa = item as SerpPeopleAlsoAsk;
+          const people_also_ask: any = [];
+          spaa.people_also_ask.map(paa => paa?.source?.link.includes(filterUrl) ? people_also_ask.push(paa) : null ); 
+          if(people_also_ask.length > 0) items.push({
+            ...spaa,
+            people_also_ask
+          });
+        } 
+      }else{
+        if( "people_also_ask" === item.type ) console.log("people_also_ask", item)
+        items.push(item); 
+      }
+    });
 
     if (results.related_searches) {
       items.push({
@@ -56,7 +84,7 @@ export function Results({
       });
     }
     return items;
-  } , [results]); 
+  } , [results, filterUrl]); 
 
   const table = useReactTable({
     data: origin_search,

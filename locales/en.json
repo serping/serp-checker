@@ -65,7 +65,8 @@
       "videos": "Videos",
       "places": "Places",
       "related_searches": "Related Searches",
-      "download_csv": "Download CSV"
+      "download_csv": "Download CSV",
+      "url": "URL filtering"
     },
     "meta": {
       "default": {

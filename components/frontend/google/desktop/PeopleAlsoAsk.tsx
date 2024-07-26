@@ -5,9 +5,17 @@ import { ExternalLinkIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import type { SerpPeopleAlsoAsk } from "serping/zod/google/desktop-serp";
+import { FilterUrl } from "../../google/shared/FilterUrl";
 import { TypeTitle } from "../shared/TypeTitle";
-
-export function PeopleAlsoAsk({original, className}:{original: SerpPeopleAlsoAsk, className?: string;}){
+export function PeopleAlsoAsk({
+  original, 
+  className,
+  filterUrl
+}:{
+  original: SerpPeopleAlsoAsk, 
+  className?: string;
+  filterUrl?: string;
+}){
   const t = useTranslations();
 
   return (
@@ -20,7 +28,9 @@ export function PeopleAlsoAsk({original, className}:{original: SerpPeopleAlsoAsk
               <h3 className="truncate flex items-center text-blue-700">
                 {item.question} {item.source && <a href={item.source.link} target="_blank" title={item.question}> <ExternalLinkIcon size={15} className="ml-2" /></a>}
               </h3>
-              {item.source && <Link href={item.source.link}>{item.source.link.replace(/#.*/,'')}</Link>} 
+              {item.source && <Link href={item.source.link}>
+                <FilterUrl link={item.source.link.replace(/#.*/,'')} filter={filterUrl} />
+              </Link>} 
             </div>
           </li> 
         )}
