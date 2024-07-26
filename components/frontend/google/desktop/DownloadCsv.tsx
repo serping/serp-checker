@@ -13,6 +13,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
     { label: "Location" , key: 'location' },
     { label: "Position" , key: 'position' },
     { label: "Type" , key: 'type' },
+    { label: "Domain" , key: 'domain' },
     { label: "Title" , key: 'title' },
     { label: "Thumbnail" , key: 'thumbnail' },
     { label: "Duration" , key: 'duration' },
@@ -26,7 +27,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
 
   const itemDefault:{
     country: string;
-    location?: string;
+    location?: string; 
     locale: string;
   } = {country: searchParams.country, location: searchParams.location, locale: searchParams.locale }
 
@@ -38,6 +39,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
       locale: string;
       position?: number;
       type: string;
+      domain?: string;
       title: string;
       thumbnail: "yes" | 'no';
       snippet: string;
@@ -79,6 +81,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
               display_link: source.display_link,
               source_name: source.name,
               source_link: source.link,
+              domain: new URL(source.link).hostname,
               thumbnail:  data.thumbnail ? "yes" : "no",
               duration: data?.duration,
             })
@@ -94,6 +97,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 display_link: qa?.source?.display_link,
                 source_name: qa?.source?.name,
                 source_link: qa?.source?.link,
+                domain: qa?.source?.link ? new URL(qa?.source?.link).hostname : "",
                 thumbnail: "no",
               })
             });
