@@ -60,7 +60,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
             const data = item as {
               position: number;
               type: string;
-              title: string;
+              title?: string;
               thumbnail?: string;
               snippet: string;
               snippet_highlighted_words: string[];
@@ -75,7 +75,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 ...itemDefault,
                 position: data.position,
                 type: data.type,
-                title: data.title,
+                title: data?.title ?? source?.title!,
                 snippet: data.snippet,
                 snippet_highlighted_words: JSON.stringify(data.snippet_highlighted_words),
                 display_link: source?.display_link,
