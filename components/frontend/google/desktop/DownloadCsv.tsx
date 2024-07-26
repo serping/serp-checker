@@ -67,25 +67,31 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
               snippet_highlighted_words: string[];
               duration?: string;
               links?: string;
-              source: SerpItemSource
+              source: SerpItemSource | undefined;
             };
 
             const source = data.source; 
-            items.push({
-              ...itemDefault,
-              position: data.position,
-              type: data.type,
-              title: data.title,
-              snippet: data.snippet,
-              snippet_highlighted_words: JSON.stringify(data.snippet_highlighted_words),
-              display_link: source.display_link,
-              source_name: source.name,
-              source_link: source.link,
-              domain: new URL(source.link).hostname,
-              thumbnail:  data.thumbnail ? "yes" : "no",
-              duration: data?.duration,
-            })
-            break;
+            try{
+              items.push({
+                ...itemDefault,
+                position: data.position,
+                type: data.type,
+                title: data.title,
+                snippet: data.snippet,
+                snippet_highlighted_words: JSON.stringify(data.snippet_highlighted_words),
+                display_link: source?.display_link,
+                source_name: source?.name,
+                source_link: source?.link,
+                domain: source ? new URL(source.link).hostname: "",
+                thumbnail:  data.thumbnail ? "yes" : "no",
+                duration: data?.duration,
+              })
+              break;
+            }catch(error:any){
+              console.error("data", data)
+              throw error;
+            }
+            
           case "people_also_ask":
             const ask = item as SerpPeopleAlsoAsk; 
             ask.people_also_ask.map(qa =>{
