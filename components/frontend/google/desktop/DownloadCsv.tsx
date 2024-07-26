@@ -26,12 +26,12 @@ export function DownloadCsv({results}:{results: SerpJSON}){
       position?: number;
       type: string;
       title: string;
+      thumbnail: "yes" | 'no';
       snippet: string;
       snippet_highlighted_words?: string;
       display_link?: string;
       source_name?: string;
       source_link?: string;
-      thumbnail: "yes" | 'no';
       duration?: string;
       links?: string;
     }[] = []
