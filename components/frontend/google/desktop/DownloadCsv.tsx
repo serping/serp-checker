@@ -24,11 +24,18 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
     { label: "Links" , key: 'links' }, 
   ];
 
-  const itemDefault = {country: searchParams.country, location: searchParams.location, locale: searchParams.locale }
+  const itemDefault:{
+    country: string;
+    location?: string;
+    locale: string;
+  } = {country: searchParams.country, location: searchParams.location, locale: searchParams.locale }
 
   const origin_search_results = useMemo(() => {
     if ( !results.origin_search.results ) return [];
     let items: {
+      country: string;
+      location?: string;
+      locale: string;
       position?: number;
       type: string;
       title: string;
