@@ -1,5 +1,5 @@
 
-import { serpingApiConfig } from "serping/types/config";
+import { serpingApiConfig } from "serping/types";
 
 const regions = ["us-east-1"] as const;
 const locales = ['en', 'es', 'de', 'fr', 'it', 'nl', 'pl', 'pt', 'sv', 'tr', 'ru', 'zh', 'ja', "ko"] as const;

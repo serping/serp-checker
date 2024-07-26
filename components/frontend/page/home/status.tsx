@@ -10,17 +10,21 @@ import {
   Smartphone
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { SerpJSON } from "serping/zod/google/desktop-serp";
+import { DownloadCsv } from "../../google/desktop";
 
 export function Status({
   searchUrl,
   snapshotId,
   searchParams,
-  onCheckedChange
+  onCheckedChange,
+  results,
 }: {
   searchParams: HomeFormValues;
   onCheckedChange?: ( checked: boolean )=> void;
   searchUrl?: string;
   snapshotId?: string;
+  results: SerpJSON | null;
 }){
   const t = useTranslations(); 
   const devicesIcons = {
@@ -41,6 +45,7 @@ export function Status({
           <div>{country?.flag} {country?.name } <span className="text-sm">({searchParams.locale})</span> </div>
           {searchUrl && <a href={searchUrl} target="_blank" className="flex items-center"><Globe size={18} className="mr-2 text-lime-800" />{t('home.status.online_google')}</a>}
           {snapshotId && <a href={`/api/snapshot/${snapshotId}`} target="_blank" className="flex items-center"><Camera size={18} className="mr-2" />{t('frontend.snapshot')}</a>}
+          {results && <DownloadCsv results={results} />}
         </div>
         <div className="flex">
         <span className="mr-2">{t("frontend.home.views.preview")}</span><Switch onCheckedChange={onSwitchChange}/> 
