@@ -64,7 +64,8 @@
       "images": "Afbeeldingen",
       "videos": "Videos",
       "places": "Plaatsen",
-      "related_searches": "Verwante zoekopdrachten"
+      "related_searches": "Verwante zoekopdrachten",
+      "download_csv": "CSV downloaden"
     },
     "meta": {
       "default": {

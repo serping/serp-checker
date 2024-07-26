@@ -64,7 +64,8 @@
       "images": "immagini",
       "videos": "Video",
       "places": "Luoghi",
-      "related_searches": "Ricerche correlate"
+      "related_searches": "Ricerche correlate",
+      "download_csv": "Scarica CSV"
     },
     "meta": {
       "default": {

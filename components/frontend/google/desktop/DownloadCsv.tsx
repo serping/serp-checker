@@ -1,10 +1,11 @@
 "use client";
 import { DownloadIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { CSVLink } from 'react-csv';
 import { SerpPeopleAlsoAsk, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
 export function DownloadCsv({results}:{results: SerpJSON}){
-
+  const t = useTranslations();
   const headers: { label: string; key: string; }[] = [
     { label: "Position" , key: 'position' },
     { label: "Type" , key: 'type' },
@@ -90,8 +91,8 @@ export function DownloadCsv({results}:{results: SerpJSON}){
   } , [results]); 
 
   return(
-    <CSVLink data={origin_search_results} headers={headers} filename={"my-data.csv"}>
-      <DownloadIcon className="size-8" /> Download CSV 
+    <CSVLink data={origin_search_results} headers={headers} filename={"my-data.csv"} className="flex">
+      <DownloadIcon className="size-5 mr-2" /> {t('frontend.serp.download_csv')}
     </CSVLink>
   )
 

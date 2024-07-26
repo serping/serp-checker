@@ -64,7 +64,8 @@
       "images": "Изображений",
       "videos": "Видео",
       "places": "Места",
-      "related_searches": "Похожие Запросы"
+      "related_searches": "Похожие Запросы",
+      "download_csv": "Скачать CSV-файл"
     },
     "meta": {
       "default": {

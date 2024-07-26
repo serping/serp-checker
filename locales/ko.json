@@ -64,7 +64,8 @@
       "images": "이미지",
       "videos": "비디오",
       "places": "장소",
-      "related_searches": "관련 검색어"
+      "related_searches": "관련 검색어",
+      "download_csv": "CSV 다운로드"
     },
     "meta": {
       "default": {

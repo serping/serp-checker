@@ -12,7 +12,8 @@
       "images": "Bilder",
       "videos": "Videos",
       "places": "Setzt",
-      "related_searches": "Verwandte Suchanfragen"
+      "related_searches": "Verwandte Suchanfragen",
+      "download_csv": "CSV herunterladen"
     },
     "snapshot": "Schnappschuss"
   },

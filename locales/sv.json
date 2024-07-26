@@ -64,7 +64,8 @@
       "images": "Bilder",
       "videos": "videoklipp",
       "places": "Platser",
-      "related_searches": "Relaterade sökningar"
+      "related_searches": "Relaterade sökningar",
+      "download_csv": "Ladda ner CSV"
     },
     "meta": {
       "default": {

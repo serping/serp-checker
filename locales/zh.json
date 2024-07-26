@@ -64,7 +64,8 @@
       "images": "图片",
       "videos": "视频",
       "places": "地点",
-      "related_searches": "相关搜索"
+      "related_searches": "相关搜索",
+      "download_csv": "下载 CSV 文件"
     },
     "meta": {
       "default": {

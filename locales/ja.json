@@ -64,7 +64,8 @@
       "images": "画像",
       "videos": "動画",
       "places": "場所",
-      "related_searches": "関連検索"
+      "related_searches": "関連検索",
+      "download_csv": "CSVをダウンロード"
     },
     "meta": {
       "default": {

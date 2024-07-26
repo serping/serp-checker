@@ -64,7 +64,8 @@
       "images": "Imágenes",
       "videos": "Vídeos",
       "places": "Lugares",
-      "related_searches": "búsquedas relacionadas"
+      "related_searches": "búsquedas relacionadas",
+      "download_csv": "Descargar CSV"
     },
     "meta": {
       "default": {

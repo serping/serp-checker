@@ -64,7 +64,8 @@
       "images": "Görüntüler",
       "videos": "Videolar",
       "places": "Yer",
-      "related_searches": "ilgili aramalar"
+      "related_searches": "ilgili aramalar",
+      "download_csv": "CSV'yi indirin"
     },
     "meta": {
       "default": {
