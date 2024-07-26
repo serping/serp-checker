@@ -1,10 +1,11 @@
 "use client";
+import { HomeFormValues } from "@/schema";
 import { DownloadIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { CSVLink } from 'react-csv';
 import { SerpPeopleAlsoAsk, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
-export function DownloadCsv({results}:{results: SerpJSON}){
+export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchParams: HomeFormValues}){
   const t = useTranslations();
   const headers: { label: string; key: string; }[] = [
     { label: "Position" , key: 'position' },
@@ -91,7 +92,7 @@ export function DownloadCsv({results}:{results: SerpJSON}){
   } , [results]); 
 
   return(
-    <CSVLink data={origin_search_results} headers={headers} filename={"my-data.csv"} className="flex">
+    <CSVLink data={origin_search_results} headers={headers} filename={`${searchParams.country}-${searchParams.locale}-${searchParams.device}-${searchParams.query}.csv`} className="flex">
       <DownloadIcon className="size-5 mr-2" /> {t('frontend.serp.download_csv')}
     </CSVLink>
   )
