@@ -8,18 +8,23 @@ import { SerpPeopleAlsoAsk, type SerpItemSource, type SerpJSON } from "serping/z
 export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchParams: HomeFormValues}){
   const t = useTranslations();
   const headers: { label: string; key: string; }[] = [
+    { label: "Country" , key: 'country' },
+    { label: "Locale" , key: 'locale' },
+    { label: "Location" , key: 'location' },
     { label: "Position" , key: 'position' },
     { label: "Type" , key: 'type' },
     { label: "Title" , key: 'title' },
+    { label: "Thumbnail" , key: 'thumbnail' },
+    { label: "Duration" , key: 'duration' },
     { label: "Snippet" , key: 'snippet' },
     { label: "Snippet Highlighted Words" , key: 'snippet_highlighted_words' },
     { label: "Display Link" , key: 'display_link' },
     { label: "Source Name" , key: 'source_name' },
     { label: "Source Link" , key: 'source_link' },
-    { label: "Thumbnail" , key: 'thumbnail' },
-    { label: "Duration" , key: 'duration' },
     { label: "Links" , key: 'links' }, 
-  ]
+  ];
+
+  const itemDefault = {country: searchParams.country, location: searchParams.location, locale: searchParams.locale }
 
   const origin_search_results = useMemo(() => {
     if ( !results.origin_search.results ) return [];
@@ -58,6 +63,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
 
             const source = data.source; 
             items.push({
+              ...itemDefault,
               position: data.position,
               type: data.type,
               title: data.title,
@@ -74,6 +80,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
             const ask = item as SerpPeopleAlsoAsk; 
             ask.people_also_ask.map(qa =>{
               items.push({ 
+                ...itemDefault,
                 type: ask.type,
                 title: qa.question,
                 snippet: qa.snippet,  
