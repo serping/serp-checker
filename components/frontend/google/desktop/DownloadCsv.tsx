@@ -63,7 +63,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
               title?: string;
               thumbnail?: string;
               snippet: string;
-              snippet_highlighted_words: string[];
+              snippet_highlighted_words?: string[];
               duration?: string;
               links?: string;
               source: SerpItemSource | undefined;
@@ -77,7 +77,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 type: data.type,
                 title: data?.title ?? source?.title!,
                 snippet: data.snippet,
-                snippet_highlighted_words: JSON.stringify(data.snippet_highlighted_words),
+                snippet_highlighted_words: data.snippet_highlighted_words?.join("\n"),
                 display_link: source?.display_link,
                 source_name: source?.name,
                 source_link: source?.link,
@@ -114,7 +114,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 type: item.type,
                 title: featuredNormal.source.title,
                 snippet: featuredNormal.snippet, 
-                snippet_highlighted_words: JSON.stringify(featuredNormal.snippet_highlighted_words),
+                snippet_highlighted_words: featuredNormal.snippet_highlighted_words?.join("\n"),
                 display_link: featuredNormal.source.display_link,
                 source_name: featuredNormal.source.name,
                 source_link: featuredNormal.source.link,
