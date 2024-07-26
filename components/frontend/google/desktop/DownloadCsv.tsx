@@ -4,7 +4,7 @@ import { DownloadIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { CSVLink } from 'react-csv';
-import { SerpPeopleAlsoAsk, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { SerpFeaturedListSchema, SerpFeaturedNormalSchema, SerpPeopleAlsoAsk, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
 export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchParams: HomeFormValues}){
   const t = useTranslations();
   const headers: { label: string; key: string; }[] = [
@@ -56,8 +56,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
           case "normal":
           case "site_links":
           case "twitter":
-          case "video":
-          case "featured_snippets":
+          case "video": 
             const data = item as {
               position: number;
               type: string;
@@ -91,7 +90,40 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
               console.error("data", data)
               throw error;
             }
-            
+          case "featured_snippets":
+            if(item.featured_snippets.type === "featured_list" ){
+              const featuredList = SerpFeaturedListSchema.parse(item.featured_snippets);
+              items.push({
+                ...itemDefault,
+                position: item.position,
+                type: item.type,
+                title: featuredList.source.title,
+                snippet: featuredList.snippet_list.join("\n"), 
+                display_link: featuredList.source.display_link,
+                source_name: featuredList.source.name,
+                source_link: featuredList.source.link,
+                domain: featuredList.source ? new URL(featuredList.source.link).hostname: "",
+                thumbnail:  featuredList.images ? "yes" : "no"
+              })
+              break;
+            }else{
+              const featuredNormal = SerpFeaturedNormalSchema.parse(item.featured_snippets);
+              items.push({
+                ...itemDefault,
+                position: item.position,
+                type: item.type,
+                title: featuredNormal.source.title,
+                snippet: featuredNormal.snippet, 
+                snippet_highlighted_words: JSON.stringify(featuredNormal.snippet_highlighted_words),
+                display_link: featuredNormal.source.display_link,
+                source_name: featuredNormal.source.name,
+                source_link: featuredNormal.source.link,
+                domain: featuredNormal.source ? new URL(featuredNormal.source.link).hostname: "",
+                thumbnail:  featuredNormal.images ? "yes" : "no"
+              })
+              break;
+            } 
+               
           case "people_also_ask":
             const ask = item as SerpPeopleAlsoAsk; 
             ask.people_also_ask.map(qa =>{
