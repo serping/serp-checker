@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { SerpThingsToKnowListingSchema, SerpThingsToKnowNormal, SerpThingsToKnowNormalSchema, type SerpThingsToKnow, type SerpThingsToKnowListing } from "serping/zod/google/desktop-serp";
+import { FilterUrl } from "../shared/FilterUrl";
 import { TypeTitle } from "../shared/TypeTitle";
 
 
@@ -44,7 +45,7 @@ const Heading = ({
   )
 }
 
-export function ThinksToKnow({original, className}:{original: SerpThingsToKnow, className?: string;}){
+export function ThinksToKnow({original, className, filterUrl}:{original: SerpThingsToKnow, className?: string; filterUrl?: string;}){
   const t = useTranslations();
   const [open,setOpen] = useState<boolean>(false);
 
@@ -53,13 +54,21 @@ export function ThinksToKnow({original, className}:{original: SerpThingsToKnow, 
       <TypeTitle title={t("frontend.serp.things_to_know")} />
       <ul role="list" className="divide-y divide-gray-200 text-secondary-foreground max-w-[200px] lg:max-w-[500px]">
         {original.things_to_know.map((item, index) => { 
-            const licn = cn("flex space-x-6 py-2", index > 3 ? `${open ? "" : "hidden"}` : "");
+            const licn = cn("flex gap-3 py-2 flex-col", index > 3 ? `${open ? "" : "hidden"}` : "");
             const key = `things_to_know-${index}`;
           if( item.type === 'listing'){
             const data = SerpThingsToKnowListingSchema.parse(item); 
             return(
               <li key={key} className={licn}>   
                 <Listing item={data}/>
+                {data.items.map(li=>
+                  <a key={li.source.title} href={li.source.link} target="_blank">
+                    <h3 className="font-semibold text-l text-blue-600">{li.source.title}</h3>
+                    <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
+                      <FilterUrl link={li.source.link} filter={filterUrl} />
+                    </div> 
+                  </a>
+                )} 
               </li> 
             )
           }else{
@@ -67,6 +76,12 @@ export function ThinksToKnow({original, className}:{original: SerpThingsToKnow, 
             return(
               <li key={key} className={licn}>   
                 <Normal item={data}/>
+                <a key={data.source.title} href={data.source.link} target="_blank">
+                    <h3 className="font-semibold text-l text-blue-600">{data.source.title}</h3>
+                    <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
+                      <FilterUrl link={data.source.link} filter={filterUrl} />
+                    </div> 
+                </a>
               </li> 
             )
           } 

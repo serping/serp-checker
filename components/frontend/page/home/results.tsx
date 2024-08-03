@@ -12,7 +12,7 @@ import {
 } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
-import { SerpItemSource, SerpPeopleAlsoAsk, type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { SerpItemSource, SerpPeopleAlsoAsk, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { TitleCell } from "./title-cell";
 
 export function Results({ 
@@ -64,11 +64,41 @@ export function Results({
 
         }else if( "people_also_ask" === item.type ){
           const spaa = item as SerpPeopleAlsoAsk;
-          const people_also_ask: any = [];
+          const people_also_ask: any[] = [];
           spaa.people_also_ask.map(paa => paa?.source?.link.includes(filterUrl) ? people_also_ask.push(paa) : null ); 
           if(people_also_ask.length > 0) items.push({
             ...spaa,
             people_also_ask
+          });
+        }
+        else if( "things_to_know" === item.type ){
+          const things = item as SerpThingsToKnow;
+          const things_to_know: any = [];
+          things.things_to_know.map(thing => {
+            if(thing.type === "normal"){
+              const normal = thing as SerpThingsToKnowNormal;
+              if(normal.source.link.includes(filterUrl)) things_to_know.push(thing); 
+            }else{
+              const listing = thing as SerpThingsToKnowListing;
+              const listingItems: {
+                  source: {
+                      link: string;
+                      name: string;
+                      title: string;
+                  };
+                  snippet: string;
+              }[] = [];
+              listing.items.map(list => { if(list.source.link.includes(filterUrl)) listingItems.push(list); } );
+
+              if(listingItems.length > 0) things_to_know.push({
+                ...listing,
+                items: listingItems
+              }); 
+            }
+          }); 
+          if(things_to_know.length > 0) items.push({
+            ...things,
+            things_to_know
           });
         } 
       }else{

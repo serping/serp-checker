@@ -4,7 +4,7 @@ import { DownloadIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { CSVLink } from 'react-csv';
-import { SerpFeaturedListSchema, SerpFeaturedNormalSchema, SerpPeopleAlsoAsk, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { SerpFeaturedListSchema, SerpFeaturedNormalSchema, SerpPeopleAlsoAsk, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
 export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchParams: HomeFormValues}){
   const t = useTranslations();
   const headers: { label: string; key: string; }[] = [
@@ -139,6 +139,39 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 thumbnail: "no",
               })
             });
+            break;
+          case "things_to_know":
+              const things_to_know = item as SerpThingsToKnow; 
+              things_to_know.things_to_know.map(thing =>{ 
+                if(thing.type === "normal"){
+                  const obj = thing as SerpThingsToKnowNormal;
+                  items.push({ 
+                    ...itemDefault,
+                    type: item.type,
+                    title: obj.source.title,
+                    snippet: obj.snippet,  
+                    display_link: obj.source.display_link,
+                    source_name: obj.source.name,
+                    source_link: obj.source.link,
+                    domain: obj.source.link ? new URL(obj.source.link).hostname : "",
+                    thumbnail: "no",
+                  })
+                }else{
+                  const objs = thing as SerpThingsToKnowListing;
+                  objs.items.map(obj => {
+                    items.push({ 
+                      ...itemDefault,
+                      type: item.type,
+                      title: obj.source.title,
+                      snippet: obj.snippet,
+                      source_name: obj.source.name,
+                      source_link: obj.source.link,
+                      domain: obj.source.link ? new URL(obj.source.link).hostname : "",
+                      thumbnail: "no",
+                    })
+                  })
+                }
+              });
             break;
           default:
             break;

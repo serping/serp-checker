@@ -67,15 +67,17 @@ const Overview =({
         </div> 
         )
     case "inline_videos": 
-        return <InlineVideos original={original} />
+        return <InlineVideos original={original} className="ml-6" />
     case "inline_images": 
-      return <InlineImages original={original} /> 
+      return <InlineImages original={original} className="ml-6" /> 
+    case "things_to_know": 
+        return <ThinksToKnow original={original} className="ml-6" filterUrl={filterUrl}  />
     case "top_stories": 
-      return <TopStories original={original} /> 
+      return <TopStories original={original} className="ml-6" /> 
     case "people_also_ask": 
-      return <PeopleAlsoAsk original={original} filterUrl={filterUrl} />
+      return <PeopleAlsoAsk original={original} className="ml-6" filterUrl={filterUrl} />
     case "local_results": 
-      return <LocalResults original={original} />
+      return <LocalResults original={original} className="ml-6" />
     case "related_searches": 
       return <RelatedSearches original={original.related_searches} />
     default:
@@ -121,19 +123,19 @@ const Preview =({
           </div>
         )
     case "inline_videos": 
-      return <InlineVideos original={original} />
+      return <InlineVideos original={original} className="ml-6" />
     case "things_to_know": 
-      return <ThinksToKnow original={original} />
+      return <ThinksToKnow original={original} className="ml-6" filterUrl={filterUrl}  />
     case "inline_images": 
-      return <InlineImages original={original} />
+      return <InlineImages original={original} className="ml-6" />
     case "top_stories": 
-      return <TopStories original={original} /> 
+      return <TopStories original={original} className="ml-6" /> 
     case "twitter": 
       return <Twitter original={original} />
     case "people_also_ask": 
-      return <PeopleAlsoAsk original={original} filterUrl={filterUrl} />
+      return <PeopleAlsoAsk original={original} className="ml-6" filterUrl={filterUrl} />
     case "local_results": 
-      return <LocalResults original={original} />
+      return <LocalResults original={original} className="ml-6" />
     case "related_searches": 
       return <RelatedSearches original={original.related_searches} />
     default: 
