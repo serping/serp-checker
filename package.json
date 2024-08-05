@@ -1,6 +1,8 @@
 {
   "name": "serp-checker",
   "version": "0.1.6.rc",
+  "license": "MIT",
+  "author": "Sead Feng",
   "private": true,
   "scripts": {
     "dev": "next dev",
