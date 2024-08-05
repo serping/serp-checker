@@ -150,10 +150,10 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                     type: item.type,
                     title: obj.source.title,
                     snippet: obj.snippet,  
-                    display_link: obj.source.display_link,
-                    source_name: obj.source.name,
-                    source_link: obj.source.link,
-                    domain: obj.source.link ? new URL(obj.source.link).hostname : "",
+                    display_link: obj.source?.display_link,
+                    source_name: obj.source?.name,
+                    source_link: obj.source?.link,
+                    domain: obj.source?.link ? new URL(obj.source.link).hostname : "",
                     thumbnail: "no",
                   })
                 }else{
@@ -164,9 +164,9 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                       type: item.type,
                       title: obj.source.title,
                       snippet: obj.snippet,
-                      source_name: obj.source.name,
-                      source_link: obj.source.link,
-                      domain: obj.source.link ? new URL(obj.source.link).hostname : "",
+                      source_name: obj.source?.name,
+                      source_link: obj.source?.link,
+                      domain: obj.source?.link ? new URL(obj.source.link).hostname : "",
                       thumbnail: "no",
                     })
                   })
