@@ -204,7 +204,7 @@ export const countries = [
   { "code": "se", "name": " Sweden ", "flag": "🇸🇪" },
   { "code": "ch", "name": " Switzerland ", "flag": "🇨🇭" },
   { "code": "sy", "name": " Syrian Arab Republic ", "flag": "🇸🇾" },
-  { "code": "tw", "name": " Taiwan, Province of China ", "flag": "🇹🇼" },
+  { "code": "tw", "name": " Taiwan ", "flag": "🇹🇼" },
   { "code": "tj", "name": " Tajikistan ", "flag": "🇹🇯" },
   { "code": "tz", "name": " Tanzania, United Republic of ", "flag": "🇹🇿" },
   { "code": "th", "name": " Thailand ", "flag": "🇹🇭" },
