@@ -1,7 +1,7 @@
 
 import { appConfig, type LocaleType } from "@/config";
 import { getMessagesForLocale } from "@/i18n";
-import { cn } from "@/lib/utils";
+import { cn, createAlternates } from "@/lib/utils";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
@@ -11,6 +11,7 @@ import { Inter as FontSans } from "next/font/google";
 import { notFound } from "next/navigation";
 import NextTopLoader from "nextjs-toploader";
 
+import { headers } from "next/headers";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -20,9 +21,12 @@ const fontSans = FontSans({
 
 export async function generateMetadata(locale: LocaleType): Promise<Metadata> {
   const t = await getTranslations(locale);
+  const headersList = headers();
+
   return {
     title: t('frontend.meta.default.title'),
     description: t('frontend.meta.default.description'),
+    alternates: createAlternates({ headers: headersList })
   };
 }
 
