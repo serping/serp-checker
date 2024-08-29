@@ -54,7 +54,7 @@ const LocalServices =({original}:{original: SerpLocalServices})=>{
               <p className="mt-1 truncate text-sm text-gray-500">{item.description}</p>
             </div>
             <div className="flex gap-6">
-              {data.links.map(link =>
+              {data.links?.map(link =>
                 <a href={link.link} key={link.name}>{link.name}</a>
               )}
             </div>
