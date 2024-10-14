@@ -20,7 +20,7 @@ export const getCanonical = ({ headers }: { headers: Headers }) => {
 }
 
 export const createAlternates = ({ headers }: { headers: Headers; }) => {
-  let languages = {} as Record<LocaleType, string>;
+  const languages = {} as Record<LocaleType, string>;
   const linkStr = headers.get("Link")!;
   const links = linkStr.split(',');
   links.forEach(alternateStr => {

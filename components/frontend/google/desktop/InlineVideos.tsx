@@ -23,7 +23,7 @@ export function InlineVideos({original, className}:{original: SerpInlineVideos, 
               </div>
               <div className="flex-auto space-y-1 max-w-[200px] lg:max-w-[300px]">
                 <h3 className="truncate font-medium">
-                  <a href={video.source.link} target="_blank" title={video.title}>{video.title}</a>
+                  <a href={video.source.link} target="_blank" title={video.title} rel="noopener noreferrer">{video.title}</a>
                 </h3>
                 <p>{video.source.creator}</p>
                 <p>{video.date}</p>
@@ -37,10 +37,11 @@ export function InlineVideos({original, className}:{original: SerpInlineVideos, 
   )
 }
 
+// TODO: Video
 export function SerpVideo({original, className}:{original: SerpVideo, className?: string;}){
   return (
     <div className={cn("flex items-center gap-2", className)}> 
-      
+      {original.title}
     </div>
   )
 }

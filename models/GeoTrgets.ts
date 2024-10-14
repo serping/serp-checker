@@ -5,7 +5,7 @@ import path from 'path';
 export type Row = Record<string, string>;
 const filePath = path.join(process.cwd(), 'data', 'geotargets.csv');
 
-let csvData: Row[] = [];
+const csvData: Row[] = [];
 let dataLoaded = false;
 
 export default function GeoTargets(): void {
@@ -26,4 +26,5 @@ export default function GeoTargets(): void {
   }
 }
 
-export { GeoTargets, csvData, dataLoaded };
+export { csvData, dataLoaded, GeoTargets };
+

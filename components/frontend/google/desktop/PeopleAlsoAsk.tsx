@@ -26,7 +26,7 @@ export function PeopleAlsoAsk({
           <li key={`people_also_ask-${index}`} className="flex space-x-6 py-2">   
             <div className="flex-auto space-y-1">
               <h3 className="truncate flex items-center text-blue-700">
-                {item.question} {item.source && <a href={item.source.link} target="_blank" title={item.question}> <ExternalLinkIcon size={15} className="ml-2" /></a>}
+                {item.question} {item.source && <a href={item.source.link} target="_blank" title={item.question} rel="noreferrer"> <ExternalLinkIcon size={15} className="ml-2" /></a>}
               </h3>
               {item.source && <Link href={item.source.link}>
                 <FilterUrl link={item.source.link.replace(/#.*/,'')} filter={filterUrl} />

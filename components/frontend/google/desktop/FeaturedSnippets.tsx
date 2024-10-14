@@ -51,7 +51,7 @@ export function FeaturedSnippets({original, className}:{original: SerpFeaturedSn
   }
   
   return (
-    <div className="flex">
+    <div className={cn("flex", className)}>
       <CrownIcon textDecoration={t('frontend.serp.featured_snippets')} className="mr-2 absolute top-8 left-0 -m-8 text-muted-foreground" />
       <Content />  
     </div>

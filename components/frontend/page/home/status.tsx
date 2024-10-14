@@ -49,8 +49,8 @@ export function Status({
         <div className="flex gap-5 w-full items-center">
           <div className="flex items-center">{devicesIcons[searchParams.device]} <span className="capitalize ml-2">{searchParams.device}</span></div>
           <div>{country?.flag} {country?.name } <span className="text-sm">({searchParams.locale})</span> </div>
-          {searchUrl && <a href={searchUrl} target="_blank" className="flex items-center"><Globe size={18} className="mr-2 text-lime-800" />{t('home.status.online_google')}</a>}
-          {snapshotId && <a href={`/api/snapshot/${snapshotId}`} target="_blank" className="flex items-center"><Camera size={18} className="mr-2" />{t('frontend.snapshot')}</a>}
+          {searchUrl && <a href={searchUrl} target="_blank" rel="noreferrer" className="flex items-center"><Globe size={18} className="mr-2 text-lime-800" />{t('home.status.online_google')}</a>}
+          {snapshotId && <a href={`/api/snapshot/${snapshotId}`} target="_blank" rel="noreferrer" className="flex items-center"><Camera size={18} className="mr-2" />{t('frontend.snapshot')}</a>}
           { !loading && results && <DownloadCsv searchParams={searchParams} results={results} />}
         </div>
         <div className="flex flex-shrink-0 items-center gap-5">

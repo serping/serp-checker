@@ -41,7 +41,7 @@ const Overview =({
       return ( 
         <div className="flex items-center gap-2">
           <SiteIcon link={original.source.link} /> 
-          <a href={original.source.link} target="_blank">
+          <a href={original.source.link} target="_blank" rel="noreferrer">
             <h3 className="font-semibold text-l text-blue-600">{original.title ?? original.source.title}</h3>
             <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
               <FilterUrl link={original.source.link} filter={filterUrl} />
@@ -56,7 +56,7 @@ const Overview =({
             <CrownIcon textDecoration={t('frontend.serp.featured_snippets')} className="mr-2 text-muted-foreground" />
             <div className="flex">
               <SiteIcon link={original.featured_snippets.source.link} /> 
-              <a href={original.featured_snippets.source.link} target="_blank">
+              <a href={original.featured_snippets.source.link} target="_blank" rel="noreferrer">
                 <h3 className="font-semibold text-l text-blue-600">{original.featured_snippets.title ?? original.featured_snippets.source.title}</h3>
                 <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
                   <FilterUrl link={original.featured_snippets.source.link} filter={filterUrl} />
@@ -156,7 +156,7 @@ export function TitleCell({
   preview?: boolean;
   filterUrl: string;
 }) {
-  let original = row.original;
+  const original = row.original;
   const type = original.type as SerpColumnType;
 
   if(preview){

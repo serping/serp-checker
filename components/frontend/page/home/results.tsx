@@ -10,7 +10,6 @@ import {
   getCoreRowModel,
   useReactTable
 } from "@tanstack/react-table";
-import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { SerpItemSource, SerpPeopleAlsoAsk, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { TitleCell } from "./title-cell";
@@ -23,9 +22,7 @@ export function Results({
   results: SerpJSON;
   preview?: boolean;
   filterUrl: string;
-}) {
-
-  const t = useTranslations();
+}) { 
 
   const columns: ColumnDef<SerpColumn>[] =
     useMemo(
@@ -49,7 +46,7 @@ export function Results({
 
   const origin_search = useMemo(() => {
     if ( !results.origin_search.results ) return [];
-    let items: any = [];
+    const items: any = [];
     results.origin_search.results.map(item => {
       if(filterUrl){
         // TODO: top_stories

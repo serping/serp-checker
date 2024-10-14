@@ -3,16 +3,27 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "plugin:react/recommended"
   ],
   "plugins": [
     "react",
     "@typescript-eslint",
-    "react-hooks",
-    "prettier"
+    "react-hooks" 
   ],
   "rules": {
-    "react/react-in-jsx-scope": "off"
-  } 
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "react-hooks/exhaustive-deps": "warn",
+    "prefer-const": "error",
+    "react/no-unknown-property": ["error", { "ignore": ["cmdk-input-wrapper"] }],
+    "@next/next/no-img-element": "off",
+    "jsx-a11y/alt-text": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

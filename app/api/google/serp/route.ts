@@ -17,10 +17,11 @@ export async function POST(req: Request) {
         headers: { 'Content-Type': 'application/json' }
       }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.log("error", error)
+    const typedError = error as Error;
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: typedError.message }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json' }

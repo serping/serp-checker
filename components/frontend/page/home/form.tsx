@@ -79,7 +79,7 @@ export function SerpForm({
   const [submited, setSubmited] = useState<boolean>(false);
   const [values, setValues] = useState<HomeFormValues>(defaultValues);
   const [locations, setLocations] = useState<Location[]>([]);
-  let form = useForm<HomeFormValues>({
+  const form = useForm<HomeFormValues>({
     resolver: zodResolver(HomeFormSchemaOverWrite),
     defaultValues
   })

@@ -62,7 +62,7 @@ export function ThinksToKnow({original, className, filterUrl}:{original: SerpThi
               <li key={key} className={licn}>   
                 <Listing item={data}/>
                 {data.items.map(li=>
-                  <a key={li.source.title} href={li.source.link} target="_blank">
+                  <a key={li.source.title} href={li.source.link} target="_blank" rel="noopener noreferrer">
                     <h3 className="font-semibold text-l text-blue-600">{li.source.title}</h3>
                     <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
                       <FilterUrl link={li.source.link} filter={filterUrl} />
@@ -76,7 +76,7 @@ export function ThinksToKnow({original, className, filterUrl}:{original: SerpThi
             return(
               <li key={key} className={licn}>   
                 <Normal item={data}/>
-                <a key={data.source.title} href={data.source.link} target="_blank">
+                <a key={data.source.title} href={data.source.link} target="_blank" rel="noopener noreferrer">
                     <h3 className="font-semibold text-l text-blue-600">{data.source.title}</h3>
                     <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
                       <FilterUrl link={data.source.link} filter={filterUrl} />

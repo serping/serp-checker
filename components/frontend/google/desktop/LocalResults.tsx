@@ -41,24 +41,24 @@ const LocalServices =({original}:{original: SerpLocalServices})=>{
   return(
     <> 
       {
-        original.places.map(item => {
+        original.places.map((item,index) => {
           const data = SerpLocalServicePlaceSchema.parse(item);
           return(
-            <div className="flex w-full items-center justify-between py-4">
-            <div className="flex-1 truncate">
-              <div>
-                <h3 className="truncate text-base font-medium">{item.title}</h3>
-                <span className="text-gray-500">{item.topic}</span>
-              </div> 
-              <address className="mt-1 truncate text-sm text-gray-500">{item.address}</address>
-              <p className="mt-1 truncate text-sm text-gray-500">{item.description}</p>
+            <div key={index} className="flex w-full items-center justify-between py-4">
+              <div className="flex-1 truncate">
+                <div>
+                  <h3 className="truncate text-base font-medium">{item.title}</h3>
+                  <span className="text-gray-500">{item.topic}</span>
+                </div> 
+                <address className="mt-1 truncate text-sm text-gray-500">{item.address}</address>
+                <p className="mt-1 truncate text-sm text-gray-500">{item.description}</p>
+              </div>
+              <div className="flex gap-6">
+                {data.links?.map(link =>
+                  <a href={link.link} key={link.name}>{link.name}</a>
+                )}
+              </div>
             </div>
-            <div className="flex gap-6">
-              {data.links?.map(link =>
-                <a href={link.link} key={link.name}>{link.name}</a>
-              )}
-            </div>
-          </div>
           )
         })
         }
@@ -69,11 +69,11 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
   return(
     <> 
       {
-        original.places.map(item => {
+        original.places.map((item,index) => {
           if( item.type === "normal"){
             const data = SerpLocalDirectionPlaceNormalSchema.parse(item);
             return(
-              <div className="flex w-full items-center justify-between py-4">
+              <div key={index} className="flex w-full items-center justify-between py-4">
                 <div className="flex-1 truncate">
                   <div className="flex items-center space-x-3">
                     <h3 className="truncate text-base font-medium">{data.title}</h3>
@@ -90,7 +90,7 @@ const LocalDirections =({original}:{original: SerpLocalDirections})=>{
           }else{
             const data = SerpLocalDirectionPlaceStoreSchema.parse(item);
             return(
-              <div className="flex w-full items-center justify-between py-4">
+              <div key={index} className="flex w-full items-center justify-between py-4">
                 <div className="flex-1 truncate">
                   <div>
                     <h3 className="truncate font-medium text-base">{data.title}</h3>

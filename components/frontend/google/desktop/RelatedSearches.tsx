@@ -10,7 +10,7 @@ export function RelatedSearches({original, className}:{original: SerpRelatedSear
   // TODO: other types
   const Item =({item}:{item: SerpRelatedSearches})=>{
     switch(item.type){
-      case "normal":
+      case "normal":{
         const data = SerpRelatedNormalSchema.parse(item);
         return (
           <ul role="list" className=" text-secondary-foreground max-w-[200px] lg:max-w-[500px]">
@@ -20,13 +20,16 @@ export function RelatedSearches({original, className}:{original: SerpRelatedSear
               </li> 
             )}
           </ul>
-        )
+        ) 
+      }
       case "videos":
         return <></>
       case "people_also_search_for":
         return <></>
       case "near":
         return <></>
+      default:
+        return <></>;
     }
   }
   

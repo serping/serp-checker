@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "@/lib/i18n";
-import { useTranslations } from "next-intl";
 
 import {
   Menu
 } from "lucide-react";
 import Image from "next/image";
-export function NavBar() {
-  const t = useTranslations();
+export function NavBar() { 
   const memu = [
     {
       name: "SERP Checking",

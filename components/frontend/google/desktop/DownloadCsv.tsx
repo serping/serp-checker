@@ -33,7 +33,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
 
   const origin_search_results = useMemo(() => {
     if ( !results.origin_search.results ) return [];
-    let items: {
+    const items: {
       country: string;
       location?: string;
       locale: string;
@@ -56,7 +56,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
           case "normal":
           case "site_links":
           case "twitter":
-          case "video": 
+          case "video":{ 
             const data = item as {
               position: number;
               type: string;
@@ -75,7 +75,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 ...itemDefault,
                 position: data.position,
                 type: data.type,
-                title: data?.title ?? source?.title!,
+                title: data?.title || source?.title || "",
                 snippet: data.snippet,
                 snippet_highlighted_words: data.snippet_highlighted_words?.join("\n"),
                 display_link: source?.display_link,
@@ -90,7 +90,8 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
               console.error("data", data)
               throw error;
             }
-          case "featured_snippets":
+          }
+          case "featured_snippets":{
             if(item.featured_snippets.type === "featured_list" ){
               const featuredList = SerpFeaturedListSchema.parse(item.featured_snippets);
               items.push({
@@ -104,8 +105,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 source_link: featuredList.source.link,
                 domain: featuredList.source ? new URL(featuredList.source.link).hostname: "",
                 thumbnail:  featuredList.images ? "yes" : "no"
-              })
-              break;
+              }) 
             }else{
               const featuredNormal = SerpFeaturedNormalSchema.parse(item.featured_snippets);
               items.push({
@@ -121,10 +121,10 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 domain: featuredNormal.source ? new URL(featuredNormal.source.link).hostname: "",
                 thumbnail:  featuredNormal.images ? "yes" : "no"
               })
-              break;
             } 
-               
-          case "people_also_ask":
+              break;
+          }
+          case "people_also_ask":{
             const ask = item as SerpPeopleAlsoAsk; 
             ask.people_also_ask.map(qa =>{
               items.push({ 
@@ -140,7 +140,8 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
               })
             });
             break;
-          case "things_to_know":
+          }
+          case "things_to_know":{
               const things_to_know = item as SerpThingsToKnow; 
               things_to_know.things_to_know.map(thing =>{ 
                 if(thing.type === "normal"){
@@ -173,6 +174,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                 }
               });
             break;
+          }
           default:
             break;
         } 
