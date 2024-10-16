@@ -4,7 +4,7 @@ import { DownloadIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { CSVLink } from 'react-csv';
-import { SerpFeaturedListSchema, SerpFeaturedNormalSchema, SerpPeopleAlsoAsk, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { SerpFeaturedListSchema, SerpFeaturedNormalSchema, SerpPeopleAlsoAsk, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, SerpThingsToKnowTable, type SerpItemSource, type SerpJSON } from "serping/zod/google/desktop-serp";
 export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchParams: HomeFormValues}){
   const t = useTranslations();
   const headers: { label: string; key: string; }[] = [
@@ -157,7 +157,7 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                     domain: obj.source?.link ? new URL(obj.source.link).hostname : "",
                     thumbnail: "no",
                   })
-                }else{
+                }else if(thing.type === "listing"){
                   const objs = thing as SerpThingsToKnowListing;
                   objs.items.map(obj => {
                     items.push({ 
@@ -170,6 +170,19 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                       domain: obj.source?.link ? new URL(obj.source.link).hostname : "",
                       thumbnail: "no",
                     })
+                  })
+                }else if(thing.type === "table"){
+                  const obj = thing as SerpThingsToKnowTable;
+                  items.push({ 
+                    ...itemDefault,
+                    type: item.type,
+                    title: obj.source.title,
+                    snippet: "",  // table
+                    display_link: obj.source?.display_link,
+                    source_name: obj.source?.name,
+                    source_link: obj.source?.link,
+                    domain: obj.source?.link ? new URL(obj.source.link).hostname : "",
+                    thumbnail: "no",
                   })
                 }
               });
