@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { SerpThingsToKnowListingSchema, SerpThingsToKnowNormal, SerpThingsToKnowNormalSchema, type SerpThingsToKnow, type SerpThingsToKnowListing } from "serping/zod/google/desktop-serp";
+import { SerpThingsToKnowListingSchema, SerpThingsToKnowNormal, type SerpThingsToKnow, type SerpThingsToKnowListing } from "serping/zod/google/desktop-serp";
 import { FilterUrl } from "../shared/FilterUrl";
 import { TypeTitle } from "../shared/TypeTitle";
 
@@ -72,7 +72,7 @@ export function ThinksToKnow({original, className, filterUrl}:{original: SerpThi
               </li> 
             )
           }else{
-            const data =  SerpThingsToKnowNormalSchema.parse(item)
+            const data = item as SerpThingsToKnowNormal
             return(
               <li key={key} className={licn}>   
                 <Normal item={data}/>
