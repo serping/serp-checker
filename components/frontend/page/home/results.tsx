@@ -11,7 +11,7 @@ import {
   useReactTable
 } from "@tanstack/react-table";
 import { useMemo } from "react";
-import { SerpItemSource, SerpPeopleAlsoAsk, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
+import { SerpItemSource, SerpPeopleAlsoAsk, SerpRecipes, SerpThingsToKnow, SerpThingsToKnowListing, SerpThingsToKnowNormal, type SerpColumn, type SerpJSON } from "serping/zod/google/desktop-serp";
 import { TitleCell } from "./title-cell";
 
 export function Results({ 
@@ -68,13 +68,22 @@ export function Results({
             people_also_ask
           });
         }
+        else if( "recipes" === item.type ){
+          const obj = item as SerpRecipes;
+          const recipes: SerpRecipes["recipes"] = [];
+          obj.recipes.map(item => item.link.includes(filterUrl) ? recipes.push(item) : null ); 
+          if(recipes.length > 0) items.push({
+            ...obj,
+            recipes
+          });
+        }
         else if( "things_to_know" === item.type ){
           const things = item as SerpThingsToKnow;
           const things_to_know: any = [];
           things.things_to_know.map(thing => {
             if(thing.type === "normal"){
               const normal = thing as SerpThingsToKnowNormal;
-              if(normal.source.link.includes(filterUrl)) things_to_know.push(thing); 
+              if(normal.source && normal.source.link.includes(filterUrl)) things_to_know.push(thing); 
             }else{
               const listing = thing as SerpThingsToKnowListing;
               const listingItems: {

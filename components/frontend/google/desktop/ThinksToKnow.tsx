@@ -76,12 +76,12 @@ export function ThinksToKnow({original, className, filterUrl}:{original: SerpThi
             return(
               <li key={key} className={licn}>   
                 <Normal item={data}/>
-                <a key={data.source.title} href={data.source.link} target="_blank" rel="noopener noreferrer">
+                {data.source && <a key={data.source.title} href={data.source.link} target="_blank" rel="noopener noreferrer">
                     <h3 className="font-semibold text-l text-blue-600">{data.source.title}</h3>
                     <div className="lg:max-w-[700px] line-clamp-1 text-muted-foreground">
                       <FilterUrl link={data.source.link} filter={filterUrl} />
                     </div> 
-                </a>
+                </a>}
               </li> 
             )
           } 

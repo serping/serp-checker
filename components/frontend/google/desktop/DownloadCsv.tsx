@@ -149,8 +149,8 @@ export function DownloadCsv({results, searchParams}:{results: SerpJSON, searchPa
                   items.push({ 
                     ...itemDefault,
                     type: item.type,
-                    title: obj.source.title,
-                    snippet: obj.snippet,  
+                    title: obj.source ? obj.source.title : "",
+                    snippet: obj.snippet ?? "",  
                     display_link: obj.source?.display_link,
                     source_name: obj.source?.name,
                     source_link: obj.source?.link,

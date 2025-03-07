@@ -7,6 +7,7 @@ import {
   InlineVideos,
   LocalResults,
   PeopleAlsoAsk,
+  Recipes,
   RelatedSearches,
   ThinksToKnow,
   TopStories,
@@ -76,6 +77,8 @@ const Overview =({
       return <TopStories original={original} className="ml-6" /> 
     case "people_also_ask": 
       return <PeopleAlsoAsk original={original} className="ml-6" filterUrl={filterUrl} />
+    case "recipes": 
+      return <Recipes original={original} className="ml-6" filterUrl={filterUrl}  />
     case "local_results": 
       return <LocalResults original={original} className="ml-6" />
     case "related_searches": 
