@@ -171,7 +171,7 @@ export function SerpForm({
                   </FormItem>
                 )}
               />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full items-center">
               
               <FormField
                 control={form.control}
@@ -215,20 +215,24 @@ export function SerpForm({
                 render={({ field }) => (
                   <FormItem nospace={true} className="relative">
                     <FormControl>
-                      <Combobox
-                        canCancel={true}
-                        defaultSelectIcon={<MapPin size={20} className="text-muted-foreground" />}
-                        className="w-full h-12"
-                        defaultSelectLabel="All Location"
-                        onInputValueChange={locationOnInputValueChange}
-                        onValueChange={(e) => {field.onChange(e);} }
-                        frameworks={locationResults}
-                      />
+                      <div className=''>
+                        <Combobox
+                          canCancel={true}
+                          defaultSelectIcon={<MapPin size={20} className="text-muted-foreground" />}
+                          className="w-full h-12"
+                          defaultSelectLabel="All Location"
+                          onInputValueChange={locationOnInputValueChange}
+                          onValueChange={(e) => {field.onChange(e);} }
+                          frameworks={locationResults}
+                        />
+                      </div> 
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+              <div className="text-sm text-muted-foreground mt-2 ml-2">Proxy by <a className="text-primary" href="https://get.brightdata.com/proxy-networks" target="_blank" rel="nofollow noreferrer">bright data</a ></div>
+
             </div>
             <div className='flex items-center justify-center gap-5'>
               <FormField
